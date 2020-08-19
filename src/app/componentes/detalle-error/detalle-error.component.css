@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#contenedor {
+    background-color: #66bb6a;
+}
+img {
+    display: block;
+    width: 70vw;
+    height: auto;
+    margin: 0 auto;
+}
+
