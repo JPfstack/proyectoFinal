@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+ img {
+     display: block;
+     width: 100%;
+     height: auto;
+     border-radius: 50%;
+
+ }
+.contenedor {
+    background-image: url("./../../../assets/productos.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+}
+
+.carteles {
+    width: 100vw;
+    height: 100px;
+    background-color: rgba(153, 205, 50, 0.753);
+    margin-top:20px;
+}
+
+.carteles h2 {
+    font-family: 'Kalam', 'cursive';
+    font-size: 40px;
+    text-align: center;
+    padding-top: 25px;
+}
+
+
+#pestanas {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 5px 20px;
+    background-color: rgb(68, 124, 68);
+}
+
+#pestanas a:first-child{
+    border-right: 2px solid silver;
+    border-bottom: 2px solid silver;
+    width: 30%;
+    margin-left: 10px;
+}
+
+#pestanas a:first-child:hover{
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    transition: 0.3s;
+   
+    
+}
+
+#pestanas a:last-child{
+    border-right: 2px solid silver;
+    border-bottom: 2px solid silver;
+    width: 30%;
+    margin-left: 10px;
+}
+
+#pestanas a:last-child:hover{
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    transition: 0.3s;
+}
+
+#pestanas a:nth-child(2){
+    border-right: 2px solid silver;
+    border-bottom: 2px solid silver;
+    width: 30%;
+    margin-left: 10px;
+}
+
+#pestanas a:nth-child(2):hover{
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    transition: 0.3s;
+}
+
+
+#pestanas a {
+    text-decoration: none;
+    color: silver;
+    font-size: 25px;
+
+}
+
+#pestanas a:hover {
+    color: black;
+    font-weight: bold;
+}
+
+#pestanas a:active {
+    color: black;
+}
+
+.contenedor main {
+    background-color: rgba(255, 255, 255, 0.950);
+    display: flex;
+    padding: 25px 0px;
+    border: 2px solid black;
+    position: relative;
+}
+
+.contenedor main section:first-child {
+    width: 32%;
+    border-right: 1px solid black;
+}
+
+.contenedor main section:nth-child(2){
+    width: 70%;
+}
+
+.contenedor main section:first-child h4 {
+    margin: 10px;   
+}
+
+.contenedor main section:nth-child(2) h4 {
+    width: 60%;
+    margin: 10px; 
+}
+
+button {
+    position: absolute;
+    top: 32%;
+    left: 85% ;
+    width: 150px;
+    height: 100px;
+    border-radius: 5px;
+
+
+}
