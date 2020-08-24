@@ -1,35 +1,40 @@
-*{
-    margin: 0;
+.jumbotron{
+	background-color:green;
+    border-radius:0;
+    background-repeat:no-repeat ;
+    background-size: cover;
+    height: 70vh;
+    text-align: center;
+    color: white;
+    font-family: 'kalam', 'cursive';
+
 }
 
-body{
-    height: 100%;
-}
-/* 
-empieza carrusel */
-
-.wrapper{
-    min-height: calc(100% - 4rem);
+.container-info{
+padding: 10px;
+font-family: 'Kalam', 'cursive';
 }
 
-.carrusel {
-padding: 0;
-margin: 0;
-list-style: none inside;
+.container-info img{
+width: 40vw;
+height: 60vh;
 }
 
-.slider{
-    position: relative;
+.container-prod{
+    padding: 5px;
+    margin: 30px;
+}
+.container-prod h1{
+    text-align: center;
+}
+.container-prod a{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
 }
 
-div .slider ul{
-opacity: 0;
-transition: opacity .5s;
-position: absolute;
-left: 0px;
-top:0px;
-margin: 50px;
-border: 2px solid red;
-background:fff;
+.container-prod img{
+    width: 80%;
+    border: green 2px solid;
 
 }
