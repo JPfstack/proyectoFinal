@@ -1,15 +1,42 @@
-@import "https://fonts.googleapis.com/css2?family=Martel:wght@600&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Martel:wght@600&display=swap";
 
-
-#button {
+#boton {
+    width: auto;
     padding: 0;
+    box-sizing: border-box;
 }
 
 #boton li {
     display: inline;
+    margin: 20px;
 }
 
 #boton li a{
-
+font-family: Arial;
+font-size: 20 px; 
+text-decoration: none;
+float: right;
+padding: 10px;
+background-color: rgb(23, 168, 23);
+color: honeydew;
 }
+
+#boton li a:hover {
+    background-color: #2586d7;
+    margin-top: -2;
+    padding-bottom: 12px;
+    }
+
+    .footer{
+        height: 4rem;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(23, 168, 23);
+     /*    font-family: ; */
+    }
+
+    .footer{
+        align-content: center;
+        text-decoration: none;
+    }
+
+

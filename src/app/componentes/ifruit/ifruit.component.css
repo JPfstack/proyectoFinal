@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+}
+
+body{
+    height: 100%;
+}
+/* 
+empieza carrusel */
+
+.wrapper{
+    min-height: calc(100% - 4rem);
+}
+
+.carrusel {
+padding: 0;
+margin: 0;
+list-style: none inside;
+}
+
+.slider{
+    position: relative;
+}
+
+div .slider ul{
+opacity: 0;
+transition: opacity .5s;
+position: absolute;
+left: 0px;
+top:0px;
+margin: 50px;
+border: 2px solid red;
+background:fff;
+
+}
