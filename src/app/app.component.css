@@ -1,42 +1,21 @@
-* {
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
+/* Menu de navegacion */
+
+.bg-dark{
+    background-color: green !important;
 }
 
-#boton {
-    width: auto;
-    padding: 0;
-    box-sizing: border-box;
+nav img{
+    width: 10%;
 }
-
-#boton li {
-    display: inline;
-    margin: 20px;
+.collapse navbar-collapse{
+    color: black;
 }
-
-#boton li a{
-font-family: Arial;
-font-size: 20 px; 
-text-decoration: none;
-float: right;
-padding: 10px;
-background-color: rgb(23, 168, 23);
-color: honeydew;
-}
-
-#boton li a:hover {
-    background-color: #2586d7;
-    margin-top: -2;
-    padding-bottom: 12px;
-    }
-
+/* Aqui empieza el footer  */
     .footer{
         height: 4rem;
         display: flex;
         flex-wrap: wrap;
         background-color: rgb(23, 168, 23);
-     /*    font-family: ; */
     }
 
     .footer{
