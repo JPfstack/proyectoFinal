@@ -7,12 +7,21 @@ import { LoginComponent } from './componentes/login/login.component';
 import { ProductosComponent } from './componentes/productos/productos.component';
 import { CartComponent } from './componentes/cart/cart.component';
 import { DetalleErrorComponent } from './componentes/detalle-error/detalle-error.component';
+import { DatosPersonalesComponent } from './componentes/usuariosChildren/datos-personales/datos-personales.component';
+import { HistoricoPedidosComponent } from './componentes/usuariosChildren/historico-pedidos/historico-pedidos.component';
+import { FavoritosComponent } from './componentes/usuariosChildren/favoritos/favoritos.component';
 
 const routes: Routes = [
 
   { path: '', pathMatch: 'full', redirectTo: 'ifruit' },
   { path: 'ifruit', component: IfruitComponent },
-  { path: 'users', component: UsuariosComponent },
+  {
+    path: 'users', component: UsuariosComponent, children:
+
+      [{ path: 'datospersonales', component: DatosPersonalesComponent },
+      { path: 'historico', component: HistoricoPedidosComponent },
+      { path: 'favoritos', component: FavoritosComponent }]
+  },
   { path: 'admin', component: AdministradorComponent },
   { path: 'login', component: LoginComponent },
   { path: 'productos', component: ProductosComponent },

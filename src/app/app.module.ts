@@ -10,6 +10,9 @@ import { LoginComponent } from './componentes/login/login.component';
 import { ProductosComponent } from './componentes/productos/productos.component';
 import { CartComponent } from './componentes/cart/cart.component';
 import { DetalleErrorComponent } from './componentes/detalle-error/detalle-error.component';
+import { FavoritosComponent } from './componentes/usuariosChildren/favoritos/favoritos.component';
+import { DatosPersonalesComponent } from './componentes/usuariosChildren/datos-personales/datos-personales.component';
+import { HistoricoPedidosComponent } from './componentes/usuariosChildren/historico-pedidos/historico-pedidos.component';
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { DetalleErrorComponent } from './componentes/detalle-error/detalle-error
 
     ProductosComponent,
     CartComponent,
-    DetalleErrorComponent
+    DetalleErrorComponent,
+    FavoritosComponent,
+    DatosPersonalesComponent,
+    HistoricoPedidosComponent
   ],
   imports: [
     BrowserModule,

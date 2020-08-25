@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.contenedor{
+    background-image: url("./../../../assets/productos.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+}
+
+#imagenes {
+    display: flex;
+    justify-content: space-around;
+     margin-top: 40px;
+  
+}
+
+img {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    border-radius: 50%;
+    border:2px solid rgba(153, 205, 50);
+}
+
+.contenedor h2 {
+    margin-top:75px;
+    width: 100vw;
+    height: 110px;
+    background-color: rgba(153, 205, 50, 0.753);
+    padding-top: 25px;
+    text-align: center;
+    font-family: 'Kalam', 'cursive';
+    font-size: 40px;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.950);
+}
+
+#linea {
+    border: 2px solid  rgba(153, 205, 50);
+    background-color: rgba(153, 205, 50);
+}
+
+main section {
+    width: 45%;
+}
+
+main section h3, h4 {
+    margin: 15px;
+    text-align: center;
+    font-family: 'Martel', 'cursive';
+}
+
+main section form {
+    margin-top: 15px;
+    text-align: center;
+}
+
+label{
+    width: 150px;
+    text-align: left;
+    padding: 5px 0px;
+}
+
+.boton {
+    width: 50%;
+    margin: 10px;
+}
+
+.boton:hover{
+    background-color: rgba(153, 205, 50, 0.5);
+}
+
+p {
+    width: 73.5%;
+    text-align: right;
+    font-size:x-small;
+}
+

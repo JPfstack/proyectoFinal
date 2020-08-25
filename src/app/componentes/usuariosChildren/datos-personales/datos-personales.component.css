@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+ img {
+     display: block;
+     width: 100%;
+     height: auto;
+     border-radius: 50%;
+
+ }
+.contenedor {
+    background-image: url("./../../../../assets/productos.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+}
+
+.contenedor main {
+    background-color: rgba(255, 255, 255, 0.950);
+    display: flex;
+    padding: 25px 0px;
+    border: 2px solid black;
+    position: relative;
+}
+
+.contenedor main section:first-child {
+    width: 32%;
+    border-right: 1px solid black;
+}
+
+.contenedor main section:nth-child(2){
+    width: 70%;
+}
+
+.contenedor main section:first-child h4 {
+    margin: 10px;   
+}
+
+.contenedor main section:nth-child(2) h4 {
+    width: 60%;
+    margin: 10px; 
+}
+
+button {
+    position: absolute;
+    top: 32%;
+    left: 85% ;
+    width: 150px;
+    height: 100px;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: rgba(153, 205, 50, 0.5);
+}
