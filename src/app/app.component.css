@@ -1,3 +1,5 @@
+/* Menu de navegacion */
+
 .bg-dark{
     background-color: green !important;
 }
@@ -8,7 +10,7 @@ nav img{
 .collapse navbar-collapse{
     color: black;
 }
-/* AQUI EMPIEZA FOOTER  */
+/* Aqui empieza el footer  */
     .footer{
         height: 4rem;
         display: flex;
