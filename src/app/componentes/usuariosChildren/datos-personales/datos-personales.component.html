@@ -9,17 +9,51 @@
             <h4>Teléfono</h4>
             <h4>eMail</h4>
         </section>
-        <section>
+        <section *ngIf="datos">
             <h4>JPiFruit</h4>
-            <h4>78787544</h4>
+            <h4>1234</h4>
             <h4>Juan Pedro</h4>
             <h4>Jimenez</h4>
             <h4>Valdemoro</h4>
-            <h4>8979754445</h4>
+            <h4>666666666</h4>
             <h4>JPifruit@gmail.com</h4>
         </section>
 
-        <button>Editar perfil</button>
+        <section *ngIf="editar">
+            <form action="">
+                <div>
+
+                    <input type="text" placeholder="JPiFruit">
+                </div>
+                <div>
+                    <input type="password" placeholder="1234">
+                </div>
+                <div>
+                    <input type="text" placeholder="Juan Pedro">
+                </div>
+                <div>
+                    <input type="text" placeholder="Jimenez">
+                </div>
+                <div>
+                    <input type="text" placeholder="Valdemoro">
+                </div>
+                <div>
+                    <input type="phone" placeholder="666666666">
+                </div>
+                <div>
+                    <input type="email" placeholder="JPifruit@gmail.com">
+                </div>
+                <br>
+                <input class="boton" type="submit" value="Guardar cambios">
+
+            </form>
+        </section>
+
+        <button *ngIf="boton" (click)="onEditarPerfil()">Editar perfil</button>
+
+
+
+
     </main>
 
 </div>

@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatosPersonalesComponent implements OnInit {
 
-  constructor() { }
+  boton: boolean;
+  editar: boolean;
+  datos: boolean;
+
+
+  constructor() {
+    this.boton = true;
+    this.editar = false;
+    this.datos = true;
+  }
 
   ngOnInit(): void {
   }
 
+
+  onEditarPerfil() {
+    if (this.boton) {
+      this.editar = true;
+      this.datos = false;
+      this.boton = false;
+
+    }
+
+  }
 }

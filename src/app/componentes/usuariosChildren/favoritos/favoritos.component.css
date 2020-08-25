@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+ img {
+     display: block;
+     width: 100%;
+     height: auto;
+     border-radius: 50%;
+
+ }
+.contenedor {
+    background-image: url("./../../../../assets/productos.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+}
+
+.contenedor main {
+    background-color: rgba(255, 255, 255, 0.950);
+    display: flex;
+    padding: 25px 0px;
+    border: 2px solid black;
+    position: relative;
+}
+
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0);
+    width: 99vw;
+    padding: 20px;
+   
+}
+
+.prod {
+    width: 22%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.950);
+}
+
+.prod:hover {
+    border: 1px solid black;
+}
+
+.prod h3 {
+    font-family: 'Martel', 'cursive';
+    text-align: center;
+    margin: 10px auto;
+}
+
+.prod p {
+    margin: 10px auto;
+    text-align: center;
+    width: 30%;
+    font-family: 'Martel', 'cursive';
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.prod p:hover{
+    background-color: rgba(153, 205, 50, 0.205);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
