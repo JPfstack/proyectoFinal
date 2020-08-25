@@ -19,9 +19,10 @@
 
 .carteles {
     width: 100vw;
-    height: 100px;
+    height: 110px;
     background-color: rgba(153, 205, 50, 0.753);
-    margin-top:20px;
+    margin-top: 75px;
+
 }
 
 .carteles h2 {

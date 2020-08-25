@@ -20,7 +20,9 @@
 .carteles {
     width: 99vw;
     height: 100px;
+    margin-top: 75px;
     background-color: rgba(153, 205, 50, 0.753);
+
 }
 
 .carteles h2 {
