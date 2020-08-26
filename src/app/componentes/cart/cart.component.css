@@ -1,0 +1,34 @@
+.container{
+    width: 100%;
+    padding: 0;
+}
+
+.container-cart{
+margin-top: 70px;
+    width: 50%;
+    padding: 20px;
+    
+}
+
+.container-cart img{
+    width: 30%;
+}
+
+.container h1{
+    text-align: center;
+    align-content: center;
+    font-family: 'Kalam', 'Martel';
+    color: orangered;
+
+}
+
+#btn-eliminar-agregar{
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.btn-tramitar-pedido{
+    width: 30%;
+    align-content: center;
+    text-align: center;
+}
