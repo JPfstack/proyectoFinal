@@ -11,6 +11,7 @@ export class HistoricoPedidosComponent implements OnInit {
   starOff: boolean;
   starOn: boolean;
 
+  rate: number;
   constructor() {
     this.star = true;
 

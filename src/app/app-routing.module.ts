@@ -10,6 +10,7 @@ import { DetalleErrorComponent } from './componentes/detalle-error/detalle-error
 import { DatosPersonalesComponent } from './componentes/usuariosChildren/datos-personales/datos-personales.component';
 import { HistoricoPedidosComponent } from './componentes/usuariosChildren/historico-pedidos/historico-pedidos.component';
 import { FavoritosComponent } from './componentes/usuariosChildren/favoritos/favoritos.component';
+import { ProdComponent } from './componentes/prod/prod.component';
 
 const routes: Routes = [
 
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'productos', component: ProductosComponent },
   { path: 'carrito', component: CartComponent },
+  { path: 'prod', component: ProdComponent },
   { path: '**', component: DetalleErrorComponent }
 ];
 

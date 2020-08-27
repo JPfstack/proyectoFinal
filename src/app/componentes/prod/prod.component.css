@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+ img {
+     display: block;
+     width: 100%;
+     height: auto;
+     border-radius: 50%;
+ }
+
+.contenedor {
+    background-image: url("./../../../assets/productos.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    margin-top: 75px;
+}
+
+.carteles {
+    width: 100vw;
+    height: 100px;
+    background-color: rgba(153, 205, 50, 0.753);
+}
+
+.carteles h2 {
+    font-family: 'Kalam', 'cursive';
+    font-size: 40px;
+    text-align: center;
+    padding-top: 25px;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.950);
+}
+
+#linea {
+    border: 2px solid  rgba(153, 205, 50);
+    background-color: rgba(153, 205, 50);
+}
+
+main section {
+    width: 45%;
+}
+
+main section h3, h4, h2{
+    margin: 15px;
+    text-align: center;
+    font-family: 'Martel', 'cursive';
+}
+
+.fotos {
+    display: flex ;
+    flex-wrap: nowrap;
+}
+
+main section img {
+    width: 80%;
+    border: 2px solid rgba(153, 205, 50);
+    margin: 10px auto;
+
+}
+
+

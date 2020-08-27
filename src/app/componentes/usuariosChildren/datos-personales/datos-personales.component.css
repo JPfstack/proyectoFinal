@@ -2,14 +2,15 @@
     box-sizing: border-box;
     margin:0;
     padding: 0;
+
 }
  img {
      display: block;
      width: 100%;
      height: auto;
      border-radius: 50%;
-
  }
+
 .contenedor {
     background-image: url("./../../../../assets/productos.jpg");
     background-size: cover;
@@ -27,13 +28,15 @@
 
 .contenedor main section form {
     width: 60%;
-    margin-left: 10px;
-}
+    margin: 10px 0px 0px 10px;
+} 
 
 .contenedor main section form input {
-    margin-bottom: 7px;
-    padding: 5px;
+    margin-bottom: 13px;
+    padding: 0px 0px 5px 3px;
+    height: 35px;
 }
+
 .contenedor main section:first-child {
     width: 32%;
     border-right: 1px solid black;
@@ -41,19 +44,20 @@
 
 .contenedor main section:nth-child(2){
     width: 60%;
- 
 }
 
 .contenedor main section:first-child h4 {
-    margin: 10px;   
+    margin: 10px;  
+    padding-bottom: 10px; 
 }
 
 .contenedor main section:nth-child(2) h4 {
     width: 60%;
     margin: 10px; 
+    padding-bottom: 10px;
 }
 
-button {
+.boton {
     position: absolute;
     top: 32%;
     left: 85% ;
@@ -62,7 +66,7 @@ button {
     border-radius: 5px;
 }
 
-button:hover{
+.boton:hover{
     background-color: rgba(153, 205, 50, 0.5);
 }
 
