@@ -14,17 +14,21 @@ margin-top: 70px;
     width: 30%;
 }
 
-.container h1{
+.container-fluid h1{
     text-align: center;
     align-content: center;
     font-family: 'Kalam', 'Martel';
-    color: orangered;
-
+    color: orange;
 }
 
-#btn-eliminar-agregar{
-   display: flex;
-   flex-wrap: wrap;
+.container-fluid h5{
+    font-family: 'Kamel', 'Martel';
+    color: orange;
+}
+
+#btn-eliminar{
+   width: 30%;
+   background-color: red;
 }
 
 .btn-tramitar-pedido{
