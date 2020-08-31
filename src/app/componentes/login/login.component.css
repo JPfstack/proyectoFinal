@@ -4,8 +4,8 @@
     padding: 0px;
 }
 
-.contenedor{
-    background-image: url("./../../../assets/productos.jpg");
+.container{
+    background-image: url("../../../assets/images/productos.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
@@ -26,7 +26,7 @@ img {
     border:2px solid rgba(153, 205, 50);
 }
 
-.contenedor h2 {
+.container h2 {
     margin-top:75px;
     width: 100vw;
     height: 110px;

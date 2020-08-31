@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-#contenedor {
+#container {
     background-color: #66bb6a;
 }
 img {
@@ -14,27 +14,27 @@ img {
     margin: 0 auto;
 }
 
-#contenedor div:first-child {
+#container div:first-child {
     display: block;
     position: fixed;
     top:35%;
     left: 22%;
 }
 
-#contenedor div:first-child a {
+#container div:first-child a {
     text-decoration: none;
     color: white;
     font-family: 'Rammetto One', cursive;
     font-size: 85px;
 }
 
-#contenedor div:first-child h4 {
+#container div:first-child h4 {
     color: white;
     font-family: 'Rammetto One', cursive;
     font-size: 50px;
 }
 
-#contenedor div:first-child p {
+#container div:first-child p {
     color: white;
     font-family: 'Rammetto One', cursive;
     font-size: 25px;
