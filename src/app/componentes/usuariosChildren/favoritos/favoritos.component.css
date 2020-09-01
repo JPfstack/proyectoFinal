@@ -3,13 +3,15 @@
     margin:0;
     padding: 0;
 }
+
  img {
      display: block;
      width: 100%;
      height: auto;
      border-radius: 50%;
-
+     border: 2px solid rgba(153, 205, 50);
  }
+
 .contenedor {
     background-image: url("./../../../../assets/productos.jpg");
     background-size: cover;
@@ -19,24 +21,27 @@
 
 .contenedor main {
     background-color: rgba(255, 255, 255, 0.950);
-    display: flex;
     padding: 25px 0px;
     border: 2px solid black;
-    position: relative;
 }
 
+.contenedor h2 {
+    font-family: 'Martel', 'cursive';
+    text-align: center;
+    margin: 10px auto;
+}
 
 .productos {
     display: flex;
     flex-wrap: wrap;
     background-color: rgba(255, 255, 255, 0);
-    width: 99vw;
+    width: 100vw;
     padding: 20px;
    
 }
 
 .prod {
-    width: 22%;
+    width: 18%;
     margin: 0 auto;
     margin-bottom: 40px;
     padding: 10px;
@@ -53,16 +58,30 @@
     margin: 10px auto;
 }
 
-.prod p {
+
+
+#precio {
     margin: 10px auto;
     text-align: center;
-    width: 30%;
+    width: 35%;
     font-family: 'Martel', 'cursive';
+    font-size: 20px;
+    color: black;
+    text-shadow: rgb(153, 205, 50) 2px 0px 0px;
+}
+
+
+#comprar {
+    margin: 10px auto;
+    text-align: center;
+    width: 35%;
+    font-family: 'Martel', 'cursive';
+    font-size: 10px;
     border: 1px solid black;
     border-radius: 10px;
 }
 
-.prod p:hover{
+#comprar:hover {
     background-color: rgba(153, 205, 50, 0.205);
     transition: 0.3s;
     cursor: pointer;

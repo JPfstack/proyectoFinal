@@ -22,7 +22,6 @@
         <section *ngIf="editar">
             <form action="">
                 <div>
-
                     <input type="text" placeholder="JPiFruit">
                 </div>
                 <div>
@@ -44,12 +43,13 @@
                     <input type="email" placeholder="JPifruit@gmail.com">
                 </div>
                 <br>
-                <input class="boton" type="submit" value="Guardar cambios">
+                <button class="boton">Guardar cambios</button>
+
 
             </form>
         </section>
 
-        <button *ngIf="boton" (click)="onEditarPerfil()">Editar perfil</button>
+        <button class="boton" *ngIf="boton" (click)="onEditarPerfil()">Editar perfil</button>
 
 
 

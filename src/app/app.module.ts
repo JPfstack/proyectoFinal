@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BarRatingModule } from "ngx-bar-rating";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { DetalleErrorComponent } from './componentes/detalle-error/detalle-error
 import { FavoritosComponent } from './componentes/usuariosChildren/favoritos/favoritos.component';
 import { DatosPersonalesComponent } from './componentes/usuariosChildren/datos-personales/datos-personales.component';
 import { HistoricoPedidosComponent } from './componentes/usuariosChildren/historico-pedidos/historico-pedidos.component';
+import { ProdComponent } from './componentes/prod/prod.component';
 
 
 @NgModule({
@@ -22,17 +24,18 @@ import { HistoricoPedidosComponent } from './componentes/usuariosChildren/histor
     UsuariosComponent,
     AdministradorComponent,
     LoginComponent,
-
     ProductosComponent,
     CartComponent,
     DetalleErrorComponent,
     FavoritosComponent,
     DatosPersonalesComponent,
-    HistoricoPedidosComponent
+    HistoricoPedidosComponent,
+    ProdComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BarRatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

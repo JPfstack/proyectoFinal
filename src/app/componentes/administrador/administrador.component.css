@@ -14,10 +14,9 @@
 
 #pestanas {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 20px 20px 5px 20px;
     background-color: rgb(68, 124, 68);
-    margin: 75px;
 }
 
 #pestanas a:first-child{

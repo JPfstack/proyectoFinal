@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BarRatingModule } from "ngx-bar-rating";
+
 
 @Component({
   selector: 'app-productos',
@@ -7,9 +9,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductosComponent implements OnInit {
 
-  constructor() { }
+  rate: number;
+  favorite: boolean;
+  color: string;
+  fondo: any;
+
+
+  constructor() {
+    this.favorite = true;
+    this.fondo = {
+      backgroundColor: "",
+    }
+
+
+  }
+
+
 
   ngOnInit(): void {
   }
 
+
+
+  onFavorite() {
+    if (!this.fondo.backgroundColor) {
+      this.fondo.backgroundColor = 'darkgoldenrod'
+    } else {
+      this.fondo.backgroundColor = null;
+    }
+  }
 }
