@@ -3,6 +3,12 @@
 
 /* Menu de navegacion */
 
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .bg-dark{
     background-color: rgb(197, 243, 33) !important;
 }
@@ -19,5 +25,6 @@ nav img{
 .collapse navbar-collapse{
     color: black;
 }
+
 
 
