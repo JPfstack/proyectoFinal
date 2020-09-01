@@ -3,7 +3,7 @@
         <h2>Fresas</h2>
     </div>
     <main>
-        <section>
+        <section *ngFor="let producto of productos">
             <div class="fotos">
                 <div>
                     <img src="../../../assets/fresas.jpg" alt="">
@@ -16,8 +16,8 @@
                 </div>
             </div>
 
-            <h2>Fresas</h2>
-            <p>5.25€</p>
+            <h2>{{producto.nombre}}</h2>
+            <p>{{producto.precio}}</p>
             <p>Comprar</p>
             <p>Añadir a favoritos</p>
             <p>Temporada</p>

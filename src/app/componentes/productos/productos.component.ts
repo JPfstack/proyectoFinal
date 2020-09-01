@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BarRatingModule } from "ngx-bar-rating";
+import { ProductosService } from '../../productos.service';
+import { PRODUCTO } from '../../../Models/productoModel';
 
 
 @Component({
@@ -14,19 +15,27 @@ export class ProductosComponent implements OnInit {
   color: string;
   fondo: any;
 
+  productos: PRODUCTO[];
 
-  constructor() {
+  constructor(private productosService: ProductosService) {
     this.favorite = true;
     this.fondo = {
       backgroundColor: "",
     }
-
-
   }
 
 
 
   ngOnInit(): void {
+    this.productosService.getAllProductos()
+      .then(respuesta => {
+        console.log(respuesta);
+        this.productos = respuesta;
+      })
+      .catch(error => {
+        console.log(error);
+      })
+
   }
 
 

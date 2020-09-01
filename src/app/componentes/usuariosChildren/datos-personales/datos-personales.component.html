@@ -1,46 +1,42 @@
 <div class="contenedor">
     <main>
         <section>
-            <h4>Nombre de usuario</h4>
-            <h4>Contraseña</h4>
             <h4>Nombre</h4>
             <h4>Apellidos</h4>
+            <h4>Contraseña</h4>
             <h4>Dirección</h4>
             <h4>Teléfono</h4>
             <h4>eMail</h4>
         </section>
         <section *ngIf="datos">
-            <h4>JPiFruit</h4>
+            <h4>{{cliente.nombre}}</h4>
+            <h4>{{cliente.apellidos}}</h4>
             <h4>1234</h4>
-            <h4>Juan Pedro</h4>
-            <h4>Jimenez</h4>
-            <h4>Valdemoro</h4>
-            <h4>666666666</h4>
-            <h4>JPifruit@gmail.com</h4>
+            <h4>{{cliente.direccion}}</h4>
+            <h4>{{cliente.telefono}}</h4>
+            <h4>{{cliente.email}}</h4>
         </section>
 
         <section *ngIf="editar">
             <form action="">
                 <div>
-                    <input type="text" placeholder="JPiFruit">
+                    <input type="text" [(placeholder)]="cliente.nombre">
+                </div>
+                <div>
+                    <input type="text" [(placeholder)]="cliente.apellidos">
                 </div>
                 <div>
                     <input type="password" placeholder="1234">
                 </div>
+
                 <div>
-                    <input type="text" placeholder="Juan Pedro">
+                    <input type="text" [(placeholder)]="cliente.direccion">
                 </div>
                 <div>
-                    <input type="text" placeholder="Jimenez">
+                    <input type="phone" [(placeholder)]="cliente.telefono">
                 </div>
                 <div>
-                    <input type="text" placeholder="Valdemoro">
-                </div>
-                <div>
-                    <input type="phone" placeholder="666666666">
-                </div>
-                <div>
-                    <input type="email" placeholder="JPifruit@gmail.com">
+                    <input type="email" [(placeholder)]="cliente.email">
                 </div>
                 <br>
                 <button class="boton">Guardar cambios</button>

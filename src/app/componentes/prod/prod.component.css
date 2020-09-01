@@ -11,7 +11,7 @@
  }
 
 .contenedor {
-    background-image: url("./../../../assets/productos.jpg");
+    background-image: url("./../../../assets/images/productos.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;

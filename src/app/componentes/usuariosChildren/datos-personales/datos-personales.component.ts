@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientesService } from '../../../clientes.service';
+import { CLIENTE } from '../../../../Models/clienteModel';
+
 
 @Component({
   selector: 'app-datos-personales',
@@ -11,14 +14,26 @@ export class DatosPersonalesComponent implements OnInit {
   editar: boolean;
   datos: boolean;
 
+  cliente: CLIENTE;
 
-  constructor() {
+  constructor(private clientesService: ClientesService) {
     this.boton = true;
     this.editar = false;
     this.datos = true;
   }
 
   ngOnInit(): void {
+    this.clientesService.getDetalleCliente()
+      .then(respuesta => {
+        this.cliente = respuesta;
+        console.log(respuesta);
+
+      })
+      .catch(error => {
+        console.log(error);
+      })
+
+
   }
 
 

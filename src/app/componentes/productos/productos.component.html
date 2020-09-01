@@ -26,19 +26,18 @@
             </select>
         </div>
         <div class="productos">
-            <div class="prod">
-                <img src="../../../assets/images/fresas.jpg" alt="">
+            <div class="prod" *ngFor="let producto of productos">
+                <img (src)="producto.imagen" alt="">
                 <div class="star">
                     <img [ngStyle]="fondo" (click)="onFavorite()" src="../../../assets/startrans.png" alt="">
                 </div>
-                <img src="./../../../assets/fresas.jpg" alt="">
-                <h3>FRESAS</h3>
+                <h3>{{producto.nombre}}</h3>
                 <div>
-                    <p id="precio">5.25€</p>
+                    <p id="precio">{{producto.precio}}</p>
                     <p id="comprar">Comprar</p>
                 </div>
             </div>
-            <div class="prod">
+            <!--  <div class="prod">
                 <img src="../../../assets/images/sandia-5.jpg" alt="">
                 <div class="star">
                     <img [ngStyle]="fondo" (click)="onFavorite()" src="../../../assets/startrans.png" alt="">
@@ -121,7 +120,7 @@
                     <p id="precio">2.25€</p>
                     <p id="comprar">Comprar</p>
                 </div>
-            </div>
+            </div> -->
 
         </div>
 

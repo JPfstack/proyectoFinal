@@ -17,12 +17,6 @@ main {
      height: auto;
      border-radius: 50%;
  }
-/* .container {
-    background-image: url("../../../assets/images/productos.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 99vw;
-} */
 
 .carteles {
     width: 100vw;
@@ -100,6 +94,7 @@ select option{
     font-size: 20px;
     text-align: center;
     margin: 10px auto;
+    text-transform: uppercase;
 }
 
 #precio {
