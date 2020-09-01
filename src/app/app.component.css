@@ -1,41 +1,23 @@
-
+@import url(https://fontawesome.com/v4.7.0/icons/
+);
 
 /* Menu de navegacion */
 
 .bg-dark{
-    background-color: green !important;
+    background-color: rgb(197, 243, 33) !important;
 }
 
+.container a{
+    color: white;
+}
+a.nav-link{
+    color: black;
+}
 nav img{
     width: 10%;
 }
 .collapse navbar-collapse{
     color: black;
 }
-/* Aqui empieza el footer  */
-.container-footer{
-    width: 100%;
-    padding-top: 75px;
-    align-content: center;
-    text-align: center;
-    font-family: 'kalam','cursive';
-}
-
-.container-footer img{
-    width: 100%;
-    border-radius: 1 px solid white;
-    align-content: center;
-}
-    .footer{
-        height: 4rem;
-        display: flex;
-        flex-wrap: wrap;
-        background-color: rgb(23, 168, 23);
-    }
-
-    .footer{
-        align-content: center;
-        text-decoration: none;
-    }
 
 
