@@ -16,6 +16,8 @@ import { FavoritosComponent } from './componentes/usuariosChildren/favoritos/fav
 import { DatosPersonalesComponent } from './componentes/usuariosChildren/datos-personales/datos-personales.component';
 import { HistoricoPedidosComponent } from './componentes/usuariosChildren/historico-pedidos/historico-pedidos.component';
 import { ProdComponent } from './componentes/prod/prod.component';
+import { PedidosComponent } from './componentes/pedidos/pedidos.component';
+import { ProductosAdminComponent } from './componentes/productos-admin/productos-admin.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { ProdComponent } from './componentes/prod/prod.component';
     FavoritosComponent,
     DatosPersonalesComponent,
     HistoricoPedidosComponent,
-    ProdComponent
+    ProdComponent,
+    PedidosComponent,
+    ProductosAdminComponent
   ],
   imports: [
     BrowserModule,

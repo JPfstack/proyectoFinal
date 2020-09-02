@@ -11,6 +11,8 @@ import { DatosPersonalesComponent } from './componentes/usuariosChildren/datos-p
 import { HistoricoPedidosComponent } from './componentes/usuariosChildren/historico-pedidos/historico-pedidos.component';
 import { FavoritosComponent } from './componentes/usuariosChildren/favoritos/favoritos.component';
 import { ProdComponent } from './componentes/prod/prod.component';
+import { ProductosAdminComponent } from './componentes/productos-admin/productos-admin.component';
+import { PedidosComponent } from './componentes/pedidos/pedidos.component';
 
 const routes: Routes = [
 
@@ -23,7 +25,12 @@ const routes: Routes = [
       { path: 'historico', component: HistoricoPedidosComponent },
       { path: 'favoritos', component: FavoritosComponent }]
   },
-  { path: 'admin', component: AdministradorComponent },
+  {
+    path: 'admin', component: AdministradorComponent, children:
+      [{ path: 'productosAdmin', component: ProductosAdminComponent },
+      { path: 'pedidos', component: PedidosComponent }]
+  },
+
   { path: 'login', component: LoginComponent },
   { path: 'productos', component: ProductosComponent },
   { path: 'carrito', component: CartComponent },
