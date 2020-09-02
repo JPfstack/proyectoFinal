@@ -15,7 +15,7 @@ export class ClientesService {
 
   constructor(private httpClient: HttpClient) {
     this.baseUrl = "http://localhost:3000/api/admin";
-    this.detalleUrl = "http://localhost:3000/api/clientes/5"; //la url esta incorrecta, hay que cambiarla
+    this.detalleUrl = "http://localhost:3000/api/clientes/11"; //la url esta incorrecta, hay que cambiarla
     this.newUrl = "http://localhost:3000/api/clientes";
   }
 

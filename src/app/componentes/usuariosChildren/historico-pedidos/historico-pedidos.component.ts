@@ -7,13 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoricoPedidosComponent implements OnInit {
 
-  star: boolean;
-  starOff: boolean;
-  starOn: boolean;
 
-  rate: number;
+
   constructor() {
-    this.star = true;
+
 
   }
 
@@ -21,9 +18,5 @@ export class HistoricoPedidosComponent implements OnInit {
   }
 
 
-  onStar() {
-    this.star = !this.star;
-
-  }
 }
 
