@@ -78,16 +78,6 @@ select option{
     border: 2px solid rgba(153, 205, 50);
 }
 
-.prod i {
-    color:black;
-    position: absolute;
-    left: 75%;
-    top: 5%;
-}
-
-.prod:hover {
-    border: 1px solid black;
-}
 
 .prod h3 {
     font-family: 'Martel', 'cursive';
@@ -107,29 +97,19 @@ select option{
     text-shadow: rgb(153, 205, 50) 2px 0px 0px;
 }
 
-
-#comprar {
+ button {
+     display: block;
     margin: 10px auto;
-    text-align: center;
-    width: 35%;
+    height: 40px;
+    width: 50%;
     font-family: 'Martel', 'cursive';
-    font-size: 10px;
+    font-size: 17px;
     border: 1px solid black;
     border-radius: 10px;
-    cursor: pointer;
 }
 
-#comprar:hover {
+button:hover {
     background-color: rgba(153, 205, 50, 0.205);
     transition: 0.3s;
-    cursor: pointer;
 }
 
-.star img {
-    width: 30px;
-    border: none;
-    position: absolute;
-    left: 70%;
-    top: 5%;
-
-}

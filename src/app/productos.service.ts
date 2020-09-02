@@ -12,8 +12,6 @@ export class ProductosService {
 
   constructor(private httpClient: HttpClient) {
     this.baseUrl = "http://localhost:3000/api/productos";
-
-
   }
 
   getAllProductos(): Promise<PRODUCTO[]> {
@@ -21,6 +19,6 @@ export class ProductosService {
   }
 
   getProductoById(productoId): Promise<PRODUCTO> {
-    return this.httpClient.get<PRODUCTO>(`${this.baseUrl}/productoId`).toPromise();
+    return this.httpClient.get<PRODUCTO>(`${this.baseUrl}/${productoId}`).toPromise();
   }
 }

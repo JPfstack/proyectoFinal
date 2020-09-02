@@ -12,8 +12,10 @@ export class LoginComponent implements OnInit {
 
 
   registro: FormGroup;
+  clienteId: number;
 
-  constructor(private clientesService: ClientesService) {
+  constructor(private clientesService: ClientesService,
+    private router: Router) {
 
     this.registro = new FormGroup({
       nombre: new FormControl(),
@@ -22,6 +24,7 @@ export class LoginComponent implements OnInit {
       telefono: new FormControl(),
       email: new FormControl()
     })
+
   }
 
   ngOnInit(): void {
@@ -33,7 +36,13 @@ export class LoginComponent implements OnInit {
     console.log(this.registro.value);
     const respuesta = await this.clientesService.registroCliente(this.registro.value);
     if (respuesta['sucess']) {
-      console.log(respuesta['sucess'])
+      setTimeout(() => {
+        this.clientesService.getDetalleCliente(this.clienteId)
+        console.log(this.clienteId);
+        this.router.navigate(['/users/datospersonales/' + this.clienteId])
+      }, 1000)
+
+
     }
     else {
       console.log(respuesta['error']);

@@ -19,15 +19,15 @@ const routes: Routes = [
   {
     path: 'users', component: UsuariosComponent, children:
 
-      [{ path: 'datospersonales', component: DatosPersonalesComponent },
-      { path: 'historico', component: HistoricoPedidosComponent },
-      { path: 'favoritos', component: FavoritosComponent }]
+      [{ path: 'datospersonales/:clienteId', component: DatosPersonalesComponent },
+      { path: 'historico/:clienteId', component: HistoricoPedidosComponent },
+      { path: 'favoritos/:clienteId', component: FavoritosComponent }]
   },
   { path: 'admin', component: AdministradorComponent },
   { path: 'login', component: LoginComponent },
   { path: 'productos', component: ProductosComponent },
   { path: 'carrito', component: CartComponent },
-  { path: 'prod', component: ProdComponent },
+  { path: 'productos/:productoId', component: ProdComponent },
   { path: '**', component: DetalleErrorComponent }
 ];
 
