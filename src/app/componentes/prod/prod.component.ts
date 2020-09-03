@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../../productos.service';
 import { PRODUCTO } from '../../../Models/productoModel';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -10,20 +11,34 @@ import { PRODUCTO } from '../../../Models/productoModel';
 })
 export class ProdComponent implements OnInit {
 
-  productos: PRODUCTO[];
+  producto: PRODUCTO;
+  productoId: number;
+  favorite: boolean;
 
-  constructor(private productosService: ProductosService) { }
+  constructor(private productosService: ProductosService,
+    private activatedRoute: ActivatedRoute) {
+
+    this.favorite = false;
+  }
+
+
 
   ngOnInit(): void {
-    this.productosService.getAllProductos()
+    this.activatedRoute.params.subscribe(params => {
+      this.productoId = params.productoId
+    })
+    this.productosService.getProductoById(this.productoId)
       .then(respuesta => {
-        console.log(respuesta);
-        this.productos = respuesta;
-      })
-      .catch(error => {
-        console.log(error);
-      })
+        this.producto = respuesta[0];
+        console.log(respuesta[0].nombre);
 
+      })
+      .catch(error => console.log(error))
+
+  }
+
+  onFavorite() {
+    this.favorite = !this.favorite;
   }
 
 }

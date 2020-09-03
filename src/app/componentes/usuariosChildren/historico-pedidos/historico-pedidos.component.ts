@@ -7,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoricoPedidosComponent implements OnInit {
 
+
+
+
   constructor() {
 
   }
 
   ngOnInit(): void {
   }
+
 
 }

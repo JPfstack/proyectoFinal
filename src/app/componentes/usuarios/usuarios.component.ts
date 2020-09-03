@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CLIENTE } from 'src/Models/clienteModel';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { RouterLink } from '@angular/router';
 })
 export class UsuariosComponent implements OnInit {
 
-
+  cliente: CLIENTE[];
 
   constructor() { }
 

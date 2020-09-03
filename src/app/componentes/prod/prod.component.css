@@ -15,7 +15,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
-    margin-top: 75px;
+    margin-top: 50px;
 }
 
 .carteles {
@@ -26,12 +26,14 @@
 
 .carteles h2 {
     font-family: 'Kalam', 'cursive';
+    text-transform: uppercase;
     font-size: 40px;
     text-align: center;
     padding-top: 25px;
 }
 
 main {
+    width: 100vw;
     display: flex;
     justify-content: space-around;
     background-color: rgba(255, 255, 255, 0.950);
@@ -46,22 +48,66 @@ main section {
     width: 45%;
 }
 
-main section h3, h4, h2{
+main section:first-child{
+    position: relative;
+}
+
+main section h3, h2{
     margin: 15px;
     text-align: center;
     font-family: 'Martel', 'cursive';
+    text-transform: uppercase;
 }
 
 .fotos {
-    display: flex ;
-    flex-wrap: nowrap;
+    width: 50%;
+    display: block;
+    margin: 0 auto;
 }
 
 main section img {
     width: 80%;
     border: 2px solid rgba(153, 205, 50);
     margin: 10px auto;
+}
+
+main section .star img {
+    width: 50px;
+    position: absolute;
+    left: 60%;
+  
+  }
+
+#precio {
+    margin: 10px auto;
+    text-align: center;
+    width: 35%;
+    font-family: 'Martel', 'cursive';
+    font-size: 20px;
+    color: black;
+    text-shadow: rgb(153, 205, 50) 2px 0px 0px;
+}
+
+#comprar {
+    display:flex;
+    justify-content: space-around;
+}
+
+#comprar button {
+    margin: 10px auto;
+   height: 40px;
+    width: 25%;
+    font-family: 'Martel', 'cursive';
+    font-size: 17px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#comprar button:hover {
+    background-color: rgba(153, 205, 50, 0.205);
+    transition: 0.3s;
 
 }
+
 
 

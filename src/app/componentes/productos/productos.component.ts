@@ -10,18 +10,14 @@ import { PRODUCTO } from '../../../Models/productoModel';
 })
 export class ProductosComponent implements OnInit {
 
-  rate: number;
-  favorite: boolean;
-  color: string;
-  fondo: any;
+
+
 
   productos: PRODUCTO[];
 
   constructor(private productosService: ProductosService) {
-    this.favorite = true;
-    this.fondo = {
-      backgroundColor: "",
-    }
+
+
   }
 
 
@@ -40,11 +36,4 @@ export class ProductosComponent implements OnInit {
 
 
 
-  onFavorite() {
-    if (!this.fondo.backgroundColor) {
-      this.fondo.backgroundColor = 'darkgoldenrod'
-    } else {
-      this.fondo.backgroundColor = null;
-    }
-  }
 }

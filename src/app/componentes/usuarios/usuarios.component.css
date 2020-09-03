@@ -10,7 +10,7 @@
      border-radius: 50%;
 
  }
-.container {
+.contenedor {
     background-image: url("./../../../assets/images/productos.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -21,7 +21,7 @@
     width: 100vw;
     height: 110px;
     background-color: rgba(153, 205, 50, 0.753);
-    margin-top: 75px;
+    margin-top: 50px;
 
 }
 
@@ -36,6 +36,7 @@
 #pestanas {
     display: flex;
     justify-content: space-around;
+    width: 100vw;
     padding: 20px 20px 5px 20px;
     background-color: rgb(68, 124, 68);
     

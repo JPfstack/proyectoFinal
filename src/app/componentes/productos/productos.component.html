@@ -27,14 +27,14 @@
         </div>
         <div class="productos">
             <div class="prod" *ngFor="let producto of productos">
-                <img (src)="producto.imagen" alt="">
-                <div class="star">
+                <img [src]="producto.imagen" alt="">
+                <!-- <div class="star">
                     <img [ngStyle]="fondo" (click)="onFavorite()" src="../../../assets/startrans.png" alt="">
-                </div>
+                </div> -->
                 <h3>{{producto.nombre}}</h3>
                 <div>
                     <p id="precio">{{producto.precio}}</p>
-                    <p id="comprar">Comprar</p>
+                    <button [routerLink]="['/productos',producto.id_prod]">Comprar</button>
                 </div>
             </div>
             <!--  <div class="prod">

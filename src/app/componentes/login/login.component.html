@@ -1,73 +1,76 @@
-<div class="container">
-    <h2>Bienvenido a iFruit</h2>
-    <main>
-        <section>
-            <h3>Login</h3>
-            <form action="">
-                <div>
-                    <label for="">Usuario</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label for="">Contraseña</label>
-                    <input type="password">
-                </div>
-                <p>Olvidé mi <a href="">contraseña</a></p>
-                <input class="boton" type="submit" value="Entrar">
-            </form>
-            <div id="imagenes">
-                <div>
-                    <img src="./../../../assets/images/fresas.jpg" alt="">
-                </div>
-                <div>
-                    <img src="./../../../assets/images/granada-300x300.jpg" alt="">
-                </div>
-                <div>
-                    <img src="./../../../assets/images/sandia-5.jpg" alt="">
-                </div>
-            </div>
+<div class="contenedor">
 
-        </section>
-        <div id="linea"></div>
-        <section>
-            <h3>¿Aún no está registrado?</h3>
-            <h4>Regístrese y disfrute de la mejor fruta de temporada</h4>
-            <form [formGroup]="registro" (ngSubmit)="onSubmit()">
-                <div>
-                    <label>Nombre</label>
-                    <input type="text" formControlName="nombre">
+    <div class="container">
+        <h2>Bienvenido a iFruit</h2>
+        <main>
+            <section>
+                <h3>Login</h3>
+                <form action="">
+                    <div>
+                        <label for="">eMail</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="">Contraseña</label>
+                        <input type="password">
+                    </div>
+                    <p>Olvidé mi <a href="">contraseña</a></p>
+                    <input class="boton" type="submit" value="Entrar">
+                </form>
+                <div id="imagenes">
+                    <div>
+                        <img src="./../../../assets/images/fresas1.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="./../../../assets/images/granada1.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="./../../../assets/images/sandia1.jpg" alt="">
+                    </div>
                 </div>
-                <div>
-                    <label>Apellidos</label>
-                    <input type="text" formControlName="apellidos">
-                </div>
-                <!--   <div>
-                    <label>Contraseña</label>
-                    <input type="password" formControlName="password">
-                </div> -->
-                <!--  <div>
-                    <label for="">Repite contraseña</label>
-                    <input type="password">
-                </div> -->
-                <div>
-                    <label>Dirección</label>
-                    <input type="text" formControlName="direccion">
-                </div>
-                <div>
-                    <label>Teléfono</label>
-                    <input type="text" formControlName="telefono">
-                </div>
-                <div>
-                    <label>eMail</label>
-                    <input type="email" formControlName="email">
-                </div>
-                <input type="checkbox"> Acepto política de privacidad
-                <br>
-                <input class="boton" type="submit" value="Registrarme">
 
-            </form>
-        </section>
-    </main>
+            </section>
+            <div id="linea"></div>
+            <section>
+                <h3>¿Aún no está registrado?</h3>
+                <h4>Regístrese y disfrute de la mejor fruta de temporada</h4>
+                <form [formGroup]="registro" (ngSubmit)="onSubmit()">
+                    <div>
+                        <label>Nombre</label>
+                        <input type="text" formControlName="nombre">
+                    </div>
+                    <div>
+                        <label>Apellidos</label>
+                        <input type="text" formControlName="apellidos">
+                    </div>
+                    <!--   <div>
+                        <label>Contraseña</label>
+                        <input type="password" formControlName="password">
+                    </div> -->
+                    <!--  <div>
+                        <label for="">Repite contraseña</label>
+                        <input type="password">
+                    </div> -->
+                    <div>
+                        <label>Dirección</label>
+                        <input type="text" formControlName="direccion">
+                    </div>
+                    <div>
+                        <label>Teléfono</label>
+                        <input type="text" formControlName="telefono">
+                    </div>
+                    <div>
+                        <label>eMail</label>
+                        <input type="email" formControlName="email">
+                    </div>
+                    <input type="checkbox"> Acepto política de privacidad
+                    <br>
+                    <input class="boton" type="submit" value="Registrarme">
+
+                </form>
+            </section>
+        </main>
 
 
+    </div>
 </div>
