@@ -1,4 +1,4 @@
-export class Pedido {
+export class PEDIDO {
 
     idPedido: number;
     cantidad: number;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PEDIDO } from '../../../Models/pedidoModel'
 
 @Component({
   selector: 'app-pedidos',
