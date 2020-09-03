@@ -9,8 +9,8 @@ export class HistoricoPedidosComponent implements OnInit {
 
 
 
-  constructor() {
 
+  constructor() {
 
   }
 
@@ -19,4 +19,3 @@ export class HistoricoPedidosComponent implements OnInit {
 
 
 }
-
