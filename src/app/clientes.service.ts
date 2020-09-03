@@ -12,11 +12,14 @@ export class ClientesService {
   baseUrl: string;
   detalleUrl: string;
   newUrl: string;
+  loginUrl: string;
 
   constructor(private httpClient: HttpClient) {
     this.baseUrl = "http://localhost:3000/api/admin";
     this.detalleUrl = "http://localhost:3000/api/clientes"; //la url esta incorrecta, hay que cambiarla
     this.newUrl = "http://localhost:3000/api/clientes";
+    this.loginUrl = "http://localhost:3000/api/clientes/login";
+
   }
 
   getAllClientes(): Promise<CLIENTE[]> {
@@ -29,5 +32,9 @@ export class ClientesService {
 
   registroCliente(formvalues): Promise<any> {
     return this.httpClient.post<any>(this.newUrl, formvalues).toPromise();
+  }
+
+  getByEmail(formvalues): Promise<CLIENTE> {
+    return this.httpClient.post<CLIENTE>(this.loginUrl, formvalues).toPromise();
   }
 }

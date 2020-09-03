@@ -5,14 +5,14 @@
         <main>
             <section>
                 <h3>Login</h3>
-                <form action="">
+                <form [formGroup]="login" (ngSubmit)="onLogin()">
                     <div>
                         <label for="">eMail</label>
-                        <input type="text">
+                        <input type="email" formControlName="email">
                     </div>
                     <div>
                         <label for="">Contraseña</label>
-                        <input type="password">
+                        <input type="password" formControlName="password">
                     </div>
                     <p>Olvidé mi <a href="">contraseña</a></p>
                     <input class="boton" type="submit" value="Entrar">
@@ -34,7 +34,7 @@
             <section>
                 <h3>¿Aún no está registrado?</h3>
                 <h4>Regístrese y disfrute de la mejor fruta de temporada</h4>
-                <form [formGroup]="registro" (ngSubmit)="onSubmit()">
+                <form [formGroup]="registro" (ngSubmit)="onRegistro()">
                     <div>
                         <label>Nombre</label>
                         <input type="text" formControlName="nombre">
@@ -43,10 +43,8 @@
                         <label>Apellidos</label>
                         <input type="text" formControlName="apellidos">
                     </div>
-                    <!--   <div>
-                        <label>Contraseña</label>
-                        <input type="password" formControlName="password">
-                    </div> -->
+                    <label>Contraseña</label>
+                    <input type="password" formControlName="password">
                     <!--  <div>
                         <label for="">Repite contraseña</label>
                         <input type="password">
@@ -69,6 +67,13 @@
 
                 </form>
             </section>
+
+            <div id="registrado" *ngIf="registrado">
+                <div>
+                    <img src="./../../../assets/images/registro.gif" alt="">
+                </div>
+                <h3 class="animate__animated animate__tada animate__infinite	infinite">REGISTRANDO...</h3>
+            </div>
         </main>
 
 
