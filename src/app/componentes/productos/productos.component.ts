@@ -10,18 +10,12 @@ import { PRODUCTO } from '../../../Models/productoModel';
 })
 export class ProductosComponent implements OnInit {
 
-
-
-
   productos: PRODUCTO[];
 
   constructor(private productosService: ProductosService) {
 
 
   }
-
-
-
   ngOnInit(): void {
     this.productosService.getAllProductos()
       .then(respuesta => {
