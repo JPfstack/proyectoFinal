@@ -18,6 +18,7 @@ import { HistoricoPedidosComponent } from './componentes/usuariosChildren/histor
 import { ProdComponent } from './componentes/prod/prod.component';
 import { PedidosComponent } from './componentes/pedidos/pedidos.component';
 import { ProductosAdminComponent } from './componentes/productos-admin/productos-admin.component';
+import { ListadoClientesComponent } from './componentes/listado-clientes/listado-clientes.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ProductosAdminComponent } from './componentes/productos-admin/productos
     HistoricoPedidosComponent,
     ProdComponent,
     PedidosComponent,
-    ProductosAdminComponent
+    ProductosAdminComponent,
+    ListadoClientesComponent
   ],
   imports: [
     BrowserModule,

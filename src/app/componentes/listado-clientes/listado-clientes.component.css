@@ -1,11 +1,7 @@
-.container{
-    width: 100%;
-
-}
 #pestanas {
     display: flex;
     justify-content: space-around;
-    padding: 70px 20px 5px 20px;
+    padding: 20px 20px 5px 20px;
     background-color: rgb(68, 124, 68);
 }
 

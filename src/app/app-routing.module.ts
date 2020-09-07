@@ -13,6 +13,7 @@ import { FavoritosComponent } from './componentes/usuariosChildren/favoritos/fav
 import { ProdComponent } from './componentes/prod/prod.component';
 import { ProductosAdminComponent } from './componentes/productos-admin/productos-admin.component';
 import { PedidosComponent } from './componentes/pedidos/pedidos.component';
+import { ListadoClientesComponent } from './componentes/listado-clientes/listado-clientes.component';
 
 const routes: Routes = [
 
@@ -28,7 +29,7 @@ const routes: Routes = [
   {
     path: 'admin', component: AdministradorComponent, children:
       [{ path: 'productosAdmin', component: ProductosAdminComponent },
-      { path: 'pedidos', component: PedidosComponent }]
+      { path: 'clientes', component: ListadoClientesComponent }]
   },
 
   { path: 'login', component: LoginComponent },
