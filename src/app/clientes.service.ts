@@ -13,12 +13,15 @@ export class ClientesService {
   detalleUrl: string;
   newUrl: string;
   loginUrl: string;
+  cliente: CLIENTE;
+  id_cliente: number;
 
   constructor(private httpClient: HttpClient) {
     this.baseUrl = "http://localhost:3000/api/admin";
     this.detalleUrl = "http://localhost:3000/api/clientes"; //la url esta incorrecta, hay que cambiarla
     this.newUrl = "http://localhost:3000/api/clientes";
     this.loginUrl = "http://localhost:3000/api/clientes/login";
+
 
   }
 

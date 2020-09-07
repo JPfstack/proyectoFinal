@@ -11,7 +11,7 @@ export class PedidosService {
 
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = "http://localhost:3000/api/admin";
+    this.baseUrl = "http://localhost:3000/api/adminpedidos";
   }
 
   //ESTA PETICION ME TRAE LOS PEDIDOS

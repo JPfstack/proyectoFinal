@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClientesService } from '../../../clientes.service';
 import { CLIENTE } from '../../../../Models/clienteModel';
 import { ActivatedRoute } from '@angular/router'
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -10,6 +11,11 @@ import { ActivatedRoute } from '@angular/router'
   styleUrls: ['./datos-personales.component.css']
 })
 export class DatosPersonalesComponent implements OnInit {
+
+
+
+
+
 
   boton: boolean;
   editar: boolean;
@@ -22,11 +28,14 @@ export class DatosPersonalesComponent implements OnInit {
     this.boton = true;
     this.editar = false;
     this.datos = true;
+
+
   }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      this.clienteId = params.clienteId
+      this.clienteId = params.clienteId;
+
       console.log(this.clienteId);
 
     })

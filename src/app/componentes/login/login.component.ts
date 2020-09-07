@@ -11,6 +11,7 @@ import { CLIENTE } from '../../../Models/clienteModel';
 })
 export class LoginComponent implements OnInit {
 
+  logeado: boolean;
   registrado: boolean;
   registro: FormGroup;
   cliente: CLIENTE;
@@ -30,6 +31,7 @@ export class LoginComponent implements OnInit {
     })
 
     this.registrado = false;
+    this.logeado = false;
 
     this.login = new FormGroup({
       email: new FormControl(),
@@ -42,28 +44,30 @@ export class LoginComponent implements OnInit {
 
 
   async onRegistro() {
-    this.registrado = true;
+    /*    this.registrado = true; */
     console.log(this.registro.value);
     const respuesta = await this.clientesService.registroCliente(this.registro.value);
-    if (respuesta['sucess']) {
+    console.log(respuesta);
 
-      /* this.clientesService.getByEmail(this.registro.value.email) */
+    setTimeout(() => { this.router.navigate(['/users/datospersonales/' + respuesta.id_cliente]) }, 3000)
 
-      setTimeout(() => { this.router.navigate(['/users/datospersonales/' + this.clienteId]) }, 3000)
-    }
-    else {
-      console.log(respuesta['error']);
-    }
+
   }
 
 
   async onLogin() {
+    /* this.logeado = true; */
     const respuestaLogin = await this.clientesService.getByEmail(this.login.value);
+    console.log(respuestaLogin.id_cliente)
     console.log(this.login.value);
-    console.log(respuestaLogin);
 
 
-
+    setTimeout(() => { this.router.navigate(['/users/datospersonales/' + respuestaLogin.id_cliente]) }, 3000)
 
   }
-};
+
+
+
+
+}
+
