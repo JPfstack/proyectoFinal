@@ -44,23 +44,21 @@ export class LoginComponent implements OnInit {
 
 
   async onRegistro() {
-    /*    this.registrado = true; */
+    this.registrado = true;
     console.log(this.registro.value);
     const respuesta = await this.clientesService.registroCliente(this.registro.value);
     console.log(respuesta);
 
     setTimeout(() => { this.router.navigate(['/users/datospersonales/' + respuesta.id_cliente]) }, 3000)
 
-
   }
 
 
   async onLogin() {
-    /* this.logeado = true; */
+    this.logeado = true;
     const respuestaLogin = await this.clientesService.getByEmail(this.login.value);
     console.log(respuestaLogin.id_cliente)
     console.log(this.login.value);
-
 
     setTimeout(() => { this.router.navigate(['/users/datospersonales/' + respuestaLogin.id_cliente]) }, 3000)
 
