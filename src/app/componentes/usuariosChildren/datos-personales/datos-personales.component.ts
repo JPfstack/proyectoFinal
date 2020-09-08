@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ClientesService } from '../../../clientes.service';
 import { CLIENTE } from '../../../../Models/clienteModel';
 import { ActivatedRoute } from '@angular/router'
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -13,7 +12,8 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 export class DatosPersonalesComponent implements OnInit {
 
 
-
+  //Output 
+  @Output() clienteLogin: EventEmitter<CLIENTE>;
 
 
 
@@ -23,25 +23,31 @@ export class DatosPersonalesComponent implements OnInit {
   clienteId: number;
   cliente: CLIENTE;
 
-  constructor(private clientesService: ClientesService,
+  constructor(
+    private clientesService: ClientesService,
     private activatedRoute: ActivatedRoute) {
+
     this.boton = true;
     this.editar = false;
     this.datos = true;
 
-
+    this.clienteLogin = new EventEmitter();
   }
 
   ngOnInit(): void {
+
     this.activatedRoute.params.subscribe(params => {
       this.clienteId = params.clienteId;
+
 
       console.log(this.clienteId);
 
     })
+
     this.clientesService.getDetalleCliente(this.clienteId)
       .then(respuesta => {
         this.cliente = respuesta;
+        this.clienteLogin.emit(respuesta);
         console.log(respuesta);
       })
       .catch(error => {

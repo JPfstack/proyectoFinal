@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ClientesService } from '../../clientes.service';
 import { Router } from '@angular/router';
 import { CLIENTE } from '../../../Models/clienteModel';
@@ -11,6 +11,7 @@ import { CLIENTE } from '../../../Models/clienteModel';
 })
 export class LoginComponent implements OnInit {
 
+  error: boolean;
   logeado: boolean;
   registrado: boolean;
   registro: FormGroup;
@@ -22,16 +23,17 @@ export class LoginComponent implements OnInit {
     private router: Router) {
 
     this.registro = new FormGroup({
-      nombre: new FormControl(),
-      apellidos: new FormControl(),
+      nombre: new FormControl("", [Validators.required]),
+      apellidos: new FormControl("", [Validators.required]),
       password: new FormControl(),
-      direccion: new FormControl(),
-      telefono: new FormControl(),
-      email: new FormControl()
+      direccion: new FormControl("", [Validators.required]),
+      telefono: new FormControl("", [Validators.required]),
+      email: new FormControl("", [Validators.required, Validators.email])
     })
 
     this.registrado = false;
     this.logeado = false;
+    this.error = false;
 
     this.login = new FormGroup({
       email: new FormControl(),
@@ -45,27 +47,32 @@ export class LoginComponent implements OnInit {
 
   async onRegistro() {
     this.registrado = true;
-    console.log(this.registro.value);
     const respuesta = await this.clientesService.registroCliente(this.registro.value);
-    console.log(respuesta);
 
     setTimeout(() => { this.router.navigate(['/users/datospersonales/' + respuesta.id_cliente]) }, 3000)
-
   }
 
 
   async onLogin() {
-    this.logeado = true;
     const respuestaLogin = await this.clientesService.getByEmail(this.login.value);
-    console.log(respuestaLogin.id_cliente)
-    console.log(this.login.value);
+    const urlCliente = respuestaLogin['cliente'].id_cliente;
+    console.log(respuestaLogin['token']);
 
-    setTimeout(() => { this.router.navigate(['/users/datospersonales/' + respuestaLogin.id_cliente]) }, 3000)
+    if (respuestaLogin['success']) {
+      this.logeado = true;
+      localStorage.setItem('token', respuestaLogin['token']);
+      setTimeout(() => { this.router.navigate(['/users/datospersonales/' + urlCliente]) }, 3000);
+    } else {
+      this.error = true;
+      setTimeout(() => { this.router.navigate(['/login']), this.error = false }, 3000)
 
+    }
   }
-
-
-
-
 }
+
+
+
+
+
+
 

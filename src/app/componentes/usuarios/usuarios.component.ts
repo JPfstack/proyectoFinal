@@ -11,18 +11,19 @@ import { ClientesService } from 'src/app/clientes.service';
 })
 export class UsuariosComponent implements OnInit {
 
-
+  clienteLogin: CLIENTE;
 
 
   constructor(
   ) {
 
+
   }
 
   ngOnInit(): void {
 
-
-
+    /* const idCliente = (localStorage.getItem('token')) */
+    console.log(this.clienteLogin);
 
   }
 
