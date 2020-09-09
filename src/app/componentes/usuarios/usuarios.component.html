@@ -7,18 +7,19 @@
 
         <div id="pestanas">
 
-            <a [routerLink]="['datospersonales']">
+            <a [routerLink]="['datospersonales', clienteLogin]">
                 <p>Mis datos personales</p>
             </a>
 
-            <a [routerLink]="['historico']">
+            <a [routerLink]=" ['historico', clienteLogin]">
                 <p>Mi histórico de pedidos</p>
             </a>
 
-            <a [routerLink]="['favoritos']">
+            <a [routerLink]="['favoritos', clienteLogin]">
                 <p>Mis productos favoritos</p>
             </a>
         </div>
+        <p>Cliente :{{clienteLogin}}</p>
     </div>
 </div>
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, ActivatedRoute } from '@angular/router';
 import { CLIENTE } from 'src/Models/clienteModel';
+import { ClientesService } from 'src/app/clientes.service';
 
 
 @Component({
@@ -10,12 +11,22 @@ import { CLIENTE } from 'src/Models/clienteModel';
 })
 export class UsuariosComponent implements OnInit {
 
-  cliente: CLIENTE[];
+  clienteLogin: CLIENTE;
 
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor(
+  ) {
 
 
   }
+
+  ngOnInit(): void {
+
+    /* const idCliente = (localStorage.getItem('token')) */
+    console.log(this.clienteLogin);
+
+  }
+
+
 }
+
