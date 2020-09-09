@@ -9,12 +9,13 @@
             <h4>eMail</h4>
         </section>
         <section *ngIf="datos">
-            <h4>{{cliente.nombre}}</h4>
-            <h4>{{cliente.apellidos}}</h4>
-            <h4>{{cliente.password}}</h4>
-            <h4>{{cliente.direccion}}</h4>
-            <h4>{{cliente.telefono}}</h4>
-            <h4>{{cliente.email}}</h4>
+            <h4>{{cliente?.id_cliente}}</h4>
+            <h4>{{cliente?.nombre}}</h4>
+            <h4>{{cliente?.apellidos}}</h4>
+            <h4>{{cliente?.password}}</h4>
+            <h4>{{cliente?.direccion}}</h4>
+            <h4>{{cliente?.telefono}}</h4>
+            <h4>{{cliente?.email}}</h4>
         </section>
 
         <section *ngIf="editar">

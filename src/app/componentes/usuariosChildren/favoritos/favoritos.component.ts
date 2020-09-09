@@ -11,28 +11,15 @@ import { ClientesService } from '../../../clientes.service';
 export class FavoritosComponent implements OnInit {
 
   clienteId: number;
-  cliente: CLIENTE;
 
 
-  constructor(private activatedRoute: ActivatedRoute,
-    private clientesService: ClientesService) { }
+  constructor(private clientesService: ClientesService) { }
 
-  ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params => {
-      this.clienteId = params.clienteId
-      console.log(this.clienteId);
+  async ngOnInit() {
+    const token = localStorage.getItem('token');
+    this.clienteId = await this.clientesService.getIdByToken(token)
 
-    })
-    this.clientesService.getDetalleCliente(this.clienteId)
-      .then(respuesta => {
-        this.cliente = respuesta;
-        console.log(respuesta);
-      })
-      .catch(error => {
-        console.log(error);
-      })
-
-
+    console.log(this.clienteId);
   }
 
 }

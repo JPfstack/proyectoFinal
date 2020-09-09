@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { CLIENTE } from '../Models/clienteModel';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import jwt_decode from 'jwt-decode';
+
+
 
 
 
@@ -9,6 +12,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ClientesService {
 
+  tokenUrl: string;
   baseUrl: string;
   detalleUrl: string;
   newUrl: string;
@@ -21,6 +25,7 @@ export class ClientesService {
     this.detalleUrl = "http://localhost:3000/api/clientes"; //la url esta incorrecta, hay que cambiarla
     this.newUrl = "http://localhost:3000/api/clientes";
     this.loginUrl = "http://localhost:3000/api/clientes/login";
+    this.tokenUrl = "http://localhost:3000/api/clientes/token";
 
 
   }
@@ -39,5 +44,12 @@ export class ClientesService {
 
   getByEmail(formvalues): Promise<CLIENTE> {
     return this.httpClient.post<CLIENTE>(this.loginUrl, formvalues).toPromise();
+  }
+
+  getIdByToken(token): any {
+    let decode = jwt_decode(token);
+
+    return decode
+
   }
 }
