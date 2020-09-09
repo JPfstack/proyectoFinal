@@ -12,6 +12,7 @@ import jwt_decode from 'jwt-decode';
 })
 export class ClientesService {
 
+  pedidosUrl: string;
   tokenUrl: string;
   baseUrl: string;
   detalleUrl: string;
@@ -26,6 +27,8 @@ export class ClientesService {
     this.newUrl = "http://localhost:3000/api/clientes";
     this.loginUrl = "http://localhost:3000/api/clientes/login";
     this.tokenUrl = "http://localhost:3000/api/clientes/token";
+    this.pedidosUrl = "http://localhost:3000/api/clientes/pedidos";
+
 
 
   }
@@ -46,10 +49,12 @@ export class ClientesService {
     return this.httpClient.post<CLIENTE>(this.loginUrl, formvalues).toPromise();
   }
 
+  getPedidosByIdCliente(pCliente): Promise<any> {
+    return this.httpClient.get<any>(`${this.pedidosUrl}/${pCliente}`).toPromise();
+  }
+
   getIdByToken(token): any {
     let decode = jwt_decode(token);
-
     return decode
-
   }
 }

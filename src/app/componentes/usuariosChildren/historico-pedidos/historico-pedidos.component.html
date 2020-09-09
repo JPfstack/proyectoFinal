@@ -2,110 +2,33 @@
 
     <main>
         <table>
-            <tr>
-                <th>Valoración</th>
+            <thead>
+
+                <!--     <th>Valoración</th> -->
                 <th>ID pedido</th>
-                <th>Fecha del pedido</th>
+                <th>Fecha de entrega</th>
                 <th>Descripción del pedido</th>
+                <th>Dirección de entrega</th>
+                <th>Cantidad</th>
                 <th>Precio total</th>
-                <th>Direccion entrega</th>
+                <th>Estado</th>
+            </thead>
 
-            </tr>
-            <tr>
+            <tbody>
+                <tr *ngFor="let pedido of listaPedidos">
+                    <td>{{pedido?.id_pedido}}</td>
+                    <td>{{pedido?.fecha_entrega}}</td>
+                    <td>{{pedido?.descripcion}}</td>
+                    <td>{{pedido?.direccion}}</td>
+                    <td>{{pedido?.cantidad}}</td>
+                    <td>{{pedido?.precio_total}}</td>
+                    <th>{{pedido?.estado}}</th>
+                </tr>
+            </tbody>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <div id="botones">
-                    <button>Pedir de nuevo</button>
-                </div>
-
-
-            </tr>
-
-            <tr>
-
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <div id="botones">
-                    <button>Pedir de nuevo</button>
-
-                </div>
-
-            </tr>
-            <tr>
-
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <div id="botones">
-                    <button>Pedir de nuevo</button>
-
-                </div>
-
-            </tr>
-            <tr>
-
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <div id="botones">
-                    <button>Pedir de nuevo</button>
-
-                </div>
-
-            </tr>
-            <tr>
-
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <div id="botones">
-                    <button>Pedir de nuevo</button>
-
-                </div>
-
-            </tr>
-            <tr>
-
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <div id="botones">
-                    <button>Pedir de nuevo</button>
-
-                </div>
-
-            </tr>
-            <tr>
-
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <div id="botones">
-                    <button>Pedir de nuevo</button>
-
-                </div>
-
-
-            </tr>
 
 
         </table>
+
     </main>
 </div>

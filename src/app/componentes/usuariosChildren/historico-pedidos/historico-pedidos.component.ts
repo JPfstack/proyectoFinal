@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CLIENTE } from '../../../../Models/clienteModel';
 import { ActivatedRoute } from '@angular/router';
 import { ClientesService } from '../../../clientes.service';
+import { PEDIDO } from '../../../../Models/pedidoModel';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-historico-pedidos',
@@ -10,7 +12,11 @@ import { ClientesService } from '../../../clientes.service';
 })
 export class HistoricoPedidosComponent implements OnInit {
 
-  clienteId: number;
+  clienteId: any;
+  clienteToken: any;
+  listaPedidos: PEDIDO[];
+  pedido: PEDIDO;
+
 
 
 
@@ -20,12 +26,18 @@ export class HistoricoPedidosComponent implements OnInit {
 
   async ngOnInit() {
     const token = localStorage.getItem('token');
+    this.clienteToken = await this.clientesService.getIdByToken(token);
+    this.clienteId = this.clienteToken.clienteId;
 
-    this.clienteId = await this.clientesService.getIdByToken(token)
 
-    console.log(this.clienteId);
+    this.listaPedidos = await this.clientesService.getPedidosByIdCliente(this.clienteId);
+
+
+    console.log(this.listaPedidos);
 
   }
 
-
 }
+
+
+
