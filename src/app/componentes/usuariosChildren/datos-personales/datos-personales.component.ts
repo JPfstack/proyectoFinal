@@ -16,7 +16,7 @@ export class DatosPersonalesComponent implements OnInit {
   @Output() clienteLogin: EventEmitter<CLIENTE>;
 
 
-
+  token: any;
   boton: boolean;
   editar: boolean;
   datos: boolean;
@@ -36,19 +36,19 @@ export class DatosPersonalesComponent implements OnInit {
 
   ngOnInit(): void {
 
+
+
     this.activatedRoute.params.subscribe(params => {
       this.clienteId = params.clienteId;
 
-
       console.log(this.clienteId);
-
     })
 
     this.clientesService.getDetalleCliente(this.clienteId)
       .then(respuesta => {
         this.cliente = respuesta;
-        this.clienteLogin.emit(respuesta);
-        console.log(respuesta);
+
+        console.log(respuesta.id_cliente);
       })
       .catch(error => {
         console.log(error);
@@ -56,6 +56,8 @@ export class DatosPersonalesComponent implements OnInit {
 
 
   }
+
+
 
 
   onEditarPerfil() {
