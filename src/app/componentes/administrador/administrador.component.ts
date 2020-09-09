@@ -11,7 +11,6 @@ import { PEDIDO } from '../../../Models/pedidoModel';
 })
 export class AdministradorComponent implements OnInit {
 
-  pedidos: PEDIDO[];
   clientes: CLIENTE[];
 
   constructor(private clientesService: ClientesService,
@@ -21,26 +20,6 @@ export class AdministradorComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.pedidosService.getAllPedidos()
-      .then(respuesta => {
-        console.log(respuesta);
-        this.pedidos = respuesta;
-      })
-      .catch(error => {
-        console.log(error);
-
-      });
-
-    this.pedidosService.getAllPedidosAdmin()
-      .then(respuesta => {
-        console.log(respuesta);
-        this.pedidos = respuesta;
-      })
-      .catch(error => {
-        console.log(error);
-
-      })
-
     /* this.clientesService.getAllClientes()
       .then(respuesta => {
         console.log(respuesta);
@@ -49,15 +28,6 @@ export class AdministradorComponent implements OnInit {
       .catch(error => {
         console.log(error);
       }) */
-  }
-
-  async onChange($event) {
-    if ($event.target.value === 'Pedidos Pendientes') {
-      this.pedidos = await this.pedidosService.getAllPedidosAdmin();
-    } else {
-
-      this.pedidos = await this.pedidosService.getAllPedidos();
-    }
   }
 
 }

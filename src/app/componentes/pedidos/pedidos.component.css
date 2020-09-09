@@ -1,0 +1,51 @@
+.container{
+    width: 100%;
+}
+
+.pedidos h1{
+    text-align: center;
+    font-family: 'Kalam', 'cursive';
+    padding-top: 50px;
+}
+
+.realizado select{
+    color: white;
+    font-size: 30px;
+    background-color:rgb(143, 201, 36);
+    width: 30%;
+    text-align: center;
+    position: relative;
+    left: 370px;
+}
+table {
+    margin: 50px auto;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: white;
+}
+
+th {
+    border: 1px solid black;
+    background-color: rgb(65, 128, 65);
+    padding: 5px;
+}
+td {
+    text-align: center;
+    border: 1px solid black;
+}
+
+button {
+    padding: 2px;
+    margin-left: 5px;
+}
+
+.table{
+    background-color: rgb(136, 177, 136);
+    align-content: center;
+    text-align: center;
+}
+
+.row {
+    text-decoration-style: none;
+    color:black;
+}

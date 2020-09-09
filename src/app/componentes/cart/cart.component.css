@@ -1,38 +1,51 @@
+
 .container{
     width: 100%;
-    padding: 0;
+    padding: 20px;
 }
 
-.container-cart{
+.row{
 margin-top: 70px;
     width: 50%;
-    padding: 20px;
+    padding: 10px;
+    position: relative;
+    left: 100px;
     
 }
 
-.container-cart img{
-    width: 30%;
+.col-sm-4{
+width: 50%;
+align-content: center;
 }
 
-.container-fluid h1{
+.row img{
+    width: 40%;
+}
+
+.container h1{
     text-align: center;
     align-content: center;
-    font-family: 'Kalam', 'Martel';
+    font-family: 'Kalam', 'cursive';
     color: orange;
 }
 
-.container-fluid h5{
+.container h5{
     font-family: 'Kamel', 'Martel';
-    color: orange;
 }
 
-#btn-eliminar{
+#btn-agregar-eliminar{
+padding-top: 20px;
    width: 30%;
-   background-color: red;
 }
 
-.btn-tramitar-pedido{
-    width: 30%;
-    align-content: center;
-    text-align: center;
+.btn-secondary{
+    margin-top: 10px;
+    width: 200px;
+}
+
+.btn-tramitar{
+    padding-top: 5px;
+    width: 50%;
+    position: relative;
+    left: 50px;
 }

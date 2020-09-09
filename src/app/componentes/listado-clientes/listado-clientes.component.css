@@ -1,71 +1,14 @@
-#pestanas {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px 20px 5px 20px;
-    background-color: rgb(68, 124, 68);
-}
-
-#pestanas a:first-child{
-    border-right: 2px solid silver;
-    border-bottom: 2px solid silver;
-    width: 30%;
-    margin-left: 10px;
-}
-
-#pestanas a:first-child:hover{
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
-    transition: 0.3s;
-}
-
-#pestanas a:last-child{
-    border-right: 2px solid silver;
-    border-bottom: 2px solid silver;
-    width: 30%;
-    margin-left: 10px;
-}
-
-#pestanas a:last-child:hover{
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
-    transition: 0.3s;
-}
-
-#pestanas a:nth-child(2){
-    border-right: 2px solid silver;
-    border-bottom: 2px solid silver;
-    width: 30%;
-    margin-left: 10px;
-}
-
-#pestanas a:nth-child(2):hover{
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
-    transition: 0.3s;
-}
-
-
-#pestanas a {
-    text-decoration: none;
-    color: silver;
-    font-size: 25px;
-
-}
-
-#pestanas a:hover {
-    color: black;
-    font-weight: bold;
-}
-
-#pestanas a:active {
-    color: black;
+.container{
+    width: 100%;
 }
 
 table {
     margin: 50px auto;
     padding: 10px;
     border: 1px solid black;
-    background-color: white;
+    width: 80%;
+    height: 40vh;
+    background-color:rgb(136, 177, 136);
 }
 
 th {
@@ -74,6 +17,7 @@ th {
     padding: 5px;
 }
 td {
+    align-content: center;
     text-align: center;
     border: 1px solid black;
 }

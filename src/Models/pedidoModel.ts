@@ -1,17 +1,23 @@
 export class PEDIDO {
 
-    idPedido: number;
+    id_pedido: number;
     cantidad: number;
-    fechaEntrega: string;
-    precioTotal: number;
-    idClientePedido: number;
+    fecha_entrega: string;
+    precio_total: number;
+    id_cliente: number;
+    direccion: string;
+    descripcion: string;
+    estado: string;
 
-    constructor(pIdPedido: number, pCantidad: number, pFechaEntrega: string, pPrecioTotal: number, pIdClientePedido: number) {
-        this.idPedido = pIdPedido;
+    constructor(pIdPedido: number, pCantidad: number, pFechaEntrega: string, pPrecioTotal: number, pIdClientePedido: number, pDireccion: string, pDescripcion: string, pEstado: string) {
+        this.id_pedido = pIdPedido;
         this.cantidad = pCantidad;
-        this.fechaEntrega = pFechaEntrega;
-        this.precioTotal = pPrecioTotal;
-        this.idClientePedido = pIdClientePedido;
+        this.fecha_entrega = pFechaEntrega;
+        this.precio_total = pPrecioTotal;
+        this.id_cliente = pIdClientePedido;
+        this.direccion = pDireccion;
+        this.descripcion = pDescripcion;
+        this.estado = pEstado;
     }
 
 }

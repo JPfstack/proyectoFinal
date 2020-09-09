@@ -28,7 +28,8 @@ const routes: Routes = [
   },
   {
     path: 'admin', component: AdministradorComponent, children:
-      [{ path: 'productosAdmin', component: ProductosAdminComponent },
+      [{ path: 'pedidos', component: PedidosComponent },
+      { path: 'productosAdmin', component: ProductosAdminComponent },
       { path: 'clientes', component: ListadoClientesComponent }]
   },
 
