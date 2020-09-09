@@ -10,6 +10,7 @@ import { ClientesService } from '../../../clientes.service';
 })
 export class FavoritosComponent implements OnInit {
 
+  clienteToken: any;
   clienteId: number;
 
 
@@ -17,9 +18,9 @@ export class FavoritosComponent implements OnInit {
 
   async ngOnInit() {
     const token = localStorage.getItem('token');
-    this.clienteId = await this.clientesService.getIdByToken(token)
+    this.clienteToken = await this.clientesService.getIdByToken(token)
 
-    console.log(this.clienteId);
+    console.log(this.clienteToken.clienteId);
   }
 
 }

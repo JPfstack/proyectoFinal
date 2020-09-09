@@ -7,18 +7,19 @@
         <main>
             <section>
                 <div class="star">
-                    <img *ngIf="favorite" (click)="onFavorite()" src="../../../assets/startrans.png" alt="">
+                    <img *ngIf="favorite" src="../../../assets/startrans.png" alt="">
                 </div>
                 <div class="fotos">
                     <img [src]="producto.imagen" alt="">
                 </div>
 
-                <h2>{{producto.nombre}}</h2>
-                <p id="precio">{{producto.precio}}</p>
-                <p id="precio">Temporada: {{producto.est}}</p>
+                <h2>{{producto?.nombre}}</h2>
+                <p id="precio">{{producto?.precio}}</p>
+                <p id="precio">Temporada: {{producto?.est}}</p>
                 <div id="comprar">
                     <button>Comprar</button>
-                    <button (click)="onFavorite()">Añadir a favoritos</button>
+                    <button (click)="onFavorite()">Añadir a
+                        favoritos</button>
                 </div>
             </section>
 

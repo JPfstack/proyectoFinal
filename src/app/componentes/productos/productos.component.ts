@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../../productos.service';
 import { PRODUCTO } from '../../../Models/productoModel';
+import { ClientesService } from 'src/app/clientes.service';
 
 
 @Component({
@@ -11,20 +12,23 @@ import { PRODUCTO } from '../../../Models/productoModel';
 export class ProductosComponent implements OnInit {
 
   productos: PRODUCTO[];
+  clienteToken: any;
 
-  constructor(private productosService: ProductosService) {
+  constructor(
+    private productosService: ProductosService,
+    private clientesService: ClientesService) {
 
 
   }
-  ngOnInit(): void {
-    this.productosService.getAllProductos()
-      .then(respuesta => {
-        console.log(respuesta);
-        this.productos = respuesta;
-      })
-      .catch(error => {
-        console.log(error);
-      })
+  async ngOnInit() {
+
+    this.productos = await this.productosService.getAllProductos();
+    console.log(this.productos);
+
+    const token = localStorage.getItem('token');
+    this.clienteToken = await this.clientesService.getIdByToken(token)
+
+    console.log(this.clienteToken.clienteId);
 
   }
 
