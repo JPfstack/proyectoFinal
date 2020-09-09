@@ -38,6 +38,16 @@ export class PedidosComponent implements OnInit {
       .catch(error => {
         console.log(error);
 
+      });
+
+    this.pedidosService.getAllPedidoRealizado()
+      .then(respuesta => {
+        console.log(respuesta);
+        this.pedidos = respuesta;
+      })
+      .catch(error => {
+        console.log(error);
+
       })
 
   }

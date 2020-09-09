@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class PedidosService {
 
   baseUrl: string;
-
+  pedidos: PEDIDO[];
 
   constructor(private httpClient: HttpClient) {
     this.baseUrl = "http://localhost:3000/api/pedidos";
@@ -23,4 +23,11 @@ export class PedidosService {
   getAllPedidosAdmin(): Promise<PEDIDO[]> {
     return this.httpClient.get<PEDIDO[]>(this.baseUrl).toPromise();
   }
+
+  //PETICION PARA LOS PEDIDOS REALIZADOS
+  getAllPedidoRealizado(): Promise<PEDIDO[]> {
+    return this.httpClient.get<PEDIDO[]>(this.baseUrl).toPromise();
+  }
+
+
 }
