@@ -52,13 +52,14 @@ export class PedidosComponent implements OnInit {
 
   }
   async onChange($event) {
-    if ($event.target.value === 'Pedidos Pendientes') {
-      console.log($event.target.value);
+    console.log($event.target.value);
 
-      this.pedidos = await this.pedidosService.getAllPedidosAdmin();
-    } else {
-
+    if ($event.target.value == 'todos') {
       this.pedidos = await this.pedidosService.getAllPedidos();
+    } else {
+      this.pedidos = await this.pedidosService.getAllPedidoRealizado();
+    } if ($event.target.value == 'pendientes') {
+      this.pedidos = await this.pedidosService.getAllPedidosAdmin();
     }
   }
 

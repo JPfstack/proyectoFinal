@@ -23,16 +23,8 @@ export class UsuariosComponent implements OnInit {
 
   ngOnInit() {
 
-
-
-
     const token = localStorage.getItem('token');
-
-
-
     this.clienteToken = this.clientesService.getIdByToken(token)
-
-
     console.log(this.clienteToken);
 
 
