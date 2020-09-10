@@ -10,13 +10,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Fresas</td>
-                <td>20Kg</td>
-                <td>2.50</td>
+            <tr *ngFor="let producto of productos">
+                <th scope="row">{{producto.id_prod}}</th>
+                <td>{{producto.nombre}}s</td>
+                <td>{{producto.disponibilidad}}</td>
+                <td>{{producto.precio}}</td>
             </tr>
-            <tr>
+            <!--  <tr>
                 <th scope="row">2</th>
                 <td>Naranjas</td>
                 <td>25Kg</td>
@@ -27,7 +27,7 @@
                 <td>Litchi</td>
                 <td>30Kg</td>
                 <td>2.20</td>
-            </tr>
+            </tr> -->
         </tbody>
     </table>
 </div>

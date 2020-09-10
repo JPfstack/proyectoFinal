@@ -2,7 +2,7 @@
     <div class="pedidos">
         <h1>Estos son tus pedidos</h1>
     </div>
-    <div class="realizado">
+    <div class="select">
         <select (change)="onChange($event)">
             <option value="todos">todos los pedidos</option>
             <option value="realizados">Pedidos Realizados</option>
@@ -31,7 +31,9 @@
                     <td>{{pedido.precio_total}}</td>
                     <td>{{pedido.direccion}}</td>
                     <td>{{pedido.descripcion}}</td>
-                    <td>{{pedido.estado}}</td>
+                    <td>{{pedido.estado}}
+                        <a class="btn btn-outline-secondary btn-sm" href="editar" role="button">Editar</a>
+                    </td>
                 </tr>
                 <!-- <tr>
                 <th scope="row">2</th>

@@ -8,7 +8,7 @@
     padding-top: 50px;
 }
 
-.realizado select{
+.select select{
     color: white;
     font-size: 30px;
     background-color:rgb(143, 201, 36);
@@ -25,13 +25,13 @@ table {
 }
 
 th {
-    border: 1px solid black;
+    
     background-color: rgb(65, 128, 65);
     padding: 5px;
 }
 td {
     text-align: center;
-    border: 1px solid black;
+    
 }
 
 button {
