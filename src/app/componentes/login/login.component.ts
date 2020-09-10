@@ -48,10 +48,11 @@ export class LoginComponent implements OnInit {
 
   async onRegistro() {
 
-    this.mensajeRegistro = true;
+    this.registrado = true;
+
     const respuesta = await this.clientesService.registroCliente(this.registro.value);
 
-    setTimeout(() => { this.registrado = true }, 3000)
+    setTimeout(() => { this.mensajeRegistro = true, this.registrado = false }, 4000);
   }
 
 
