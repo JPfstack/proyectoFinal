@@ -24,13 +24,13 @@ export class ProductosService {
     return this.httpClient.get<PRODUCTO>(`${this.baseUrl}/${productoId}`).toPromise();
   }
 
-  insertFavorito(clienteId, productoId): Promise<any> {
+  insertFavorito(fk_id_cliente, fk_id_producto): Promise<any> {
 
-    console.log(clienteId);
-    console.log(productoId);
+    console.log(fk_id_cliente);
+    console.log(fk_id_producto);
 
 
-    return this.httpClient.post<any>(this.favUrl, { clienteId, productoId }).toPromise();
+    return this.httpClient.post<any>(this.favUrl, { fk_id_cliente, fk_id_producto }).toPromise();
 
 
   }
