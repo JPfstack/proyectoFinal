@@ -5,21 +5,24 @@
 table {
     margin: 50px auto;
     padding: 10px;
-    border: 1px solid black;
     width: 80%;
     height: 40vh;
     background-color:rgb(136, 177, 136);
+border: white;
 }
 
 th {
-    border: 1px solid black;
+    text-align: center;
+    width: 20%;
     background-color: silver;
-    padding: 5px;
+    padding: 10px;
+    border: white;
 }
-td {
+    td {
     align-content: center;
     text-align: center;
-    border: 1px solid black;
+    border: white;
+
 }
 
 button {

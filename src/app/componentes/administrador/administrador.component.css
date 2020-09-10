@@ -1,18 +1,20 @@
+
 .container{
     width: 100%;
 }
 #pestanas {
-padding-top: 70px;
+    padding: 50px 10px 70px 50px;
     display: flex;
-    background-color: rgb(224, 247, 96);
-    align-content: center;
+    text-align: center;
 
 }
 
 #pestanas a:first-child{
-    border-right: 2px solid green;
-    border-bottom: 2px solid green;
+    border-right: 2px solid silver;
+    border-bottom: 2px solid silver;
+    width: 30%;
     margin-left: 10px;
+    background-color:rgb(136, 177, 136);
 
 }
 
@@ -21,12 +23,15 @@ padding-top: 70px;
     border-right: 2px solid white;
     border-bottom: 2px solid white;
     transition: 0.3s;
+    background-color:rgb(247, 247, 111);
 }
 
 #pestanas a:last-child{
-    border-right: 2px solid green;
-    border-bottom: 2px solid green;
+    border-right: 2px solid silver;
+    border-bottom: 2px solid silver;
+    width: 30%;
     margin-left: 10px;
+    background-color: rgb(136, 177, 136);
 }
 
 #pestanas a:last-child:hover{
@@ -34,25 +39,29 @@ padding-top: 70px;
     border-right: 2px solid white;
     border-bottom: 2px solid white;
     transition: 0.3s;
+    background-color:rgb(247, 247, 111)
 }
 
 #pestanas a:nth-child(2){
-    border-right: 2px solid green;
-    border-bottom: 2px solid green;
+    border-right: 2px solid silver;
+    border-bottom: 2px solid silver;
+    width: 30%;
     margin-left: 10px;
+    background-color:rgb(136, 177, 136);
 }
 
 #pestanas a:nth-child(2):hover{
-    background-color: rgb(143, 201, 36);
     border-right: 2px solid white;
     border-bottom: 2px solid white;
     transition: 0.3s;
+    background-color:rgb(247, 247, 111)
 }
+
 
 
 #pestanas a {
     text-decoration: none;
-    color: green;
+    color: white;
     font-size: 25px;
 
 }
