@@ -11,6 +11,7 @@ import { CLIENTE } from '../../../Models/clienteModel';
 })
 export class LoginComponent implements OnInit {
 
+  mensajeRegistro: boolean;
   error: boolean;
   logeado: boolean;
   registrado: boolean;
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
       telefono: new FormControl("", [Validators.required]),
       email: new FormControl("", [Validators.required, Validators.email])
     })
-
+    this.mensajeRegistro = false;
     this.registrado = false;
     this.logeado = false;
     this.error = false;
@@ -46,25 +47,27 @@ export class LoginComponent implements OnInit {
 
 
   async onRegistro() {
-    this.registrado = true;
+
+    this.mensajeRegistro = true;
     const respuesta = await this.clientesService.registroCliente(this.registro.value);
 
-    setTimeout(() => { this.router.navigate(['/users/datospersonales/' + respuesta.id_cliente]) }, 3000)
+    setTimeout(() => { this.registrado = true }, 3000)
   }
 
 
   async onLogin() {
     const respuestaLogin = await this.clientesService.getByEmail(this.login.value);
-    const urlCliente = respuestaLogin['cliente'].id_cliente;
-    console.log(respuestaLogin['token']);
+
 
     if (respuestaLogin['success']) {
+      const urlCliente = respuestaLogin['cliente'].id_cliente;
+      console.log(respuestaLogin['token']);
       this.logeado = true;
       localStorage.setItem('token', respuestaLogin['token']);
       setTimeout(() => { this.router.navigate(['/users/datospersonales/' + urlCliente]) }, 3000);
     } else {
       this.error = true;
-      setTimeout(() => { this.router.navigate(['/login']), this.error = false }, 3000)
+      setTimeout(() => { this.router.navigate(['/ifruit']), this.error = false }, 3000)
 
     }
   }

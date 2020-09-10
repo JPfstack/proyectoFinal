@@ -57,4 +57,13 @@ export class ClientesService {
     let decode = jwt_decode(token);
     return decode
   }
+
+  edicionCliente(formvalues): Promise<any> {
+    console.log(formvalues);
+
+    return this.httpClient.put<any>(this.detalleUrl, formvalues).toPromise();
+
+
+  }
+
 }

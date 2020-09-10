@@ -115,11 +115,33 @@ p {
     border: 2px solid  rgba(153, 205, 50);
     box-shadow: 0 0 500px yellowgreen;
     border-radius: 15px;
-   background-color: rgba(255, 255, 255, 0.945);
+    background-color: rgba(255, 255, 255, 0.945);
 }
 
 .error h3, p {
     color: yellowgreen;
     text-align: center;
     
+}
+
+.mensajeRegistro {
+    background-image: url("../../../assets/images/productos.jpg");
+    background-blend-mode: overlay;
+    background-color: rgba(255, 255, 255, 0.75);
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 50%;
+    height: 51vh;
+
+   
+}
+
+.mensajeRegistro h2 {
+    width: 50vw;
+    background-color: rgba(153, 205, 50, 0.705);
+   
+    text-align: center;
+    font-family: 'Kalam', 'cursive';
+    font-size: 40px;
 }

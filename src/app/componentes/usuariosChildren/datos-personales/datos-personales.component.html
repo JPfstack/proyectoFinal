@@ -16,31 +16,32 @@
         </section>
 
         <section *ngIf="editar">
-            <form>
+            <form [formGroup]="edicion" (ngSubmit)="onEdicion()">
                 <div>
-                    <input type="text" [(placeholder)]="cliente.nombre">
+                    <input type="text" [(placeholder)]="cliente.nombre" formControlName="nombre">
                 </div>
                 <div>
-                    <input type="text" [(placeholder)]="cliente.apellidos">
+                    <input type="text" [(placeholder)]="cliente.apellidos" formControlName="apellidos">
                 </div>
                 <div>
-                    <input type="password" [(placeholder)]="cliente.password">
-                </div>
-
-                <div>
-                    <input type="text" [(placeholder)]="cliente.direccion">
+                    <input type="text" [(placeholder)]="cliente.direccion" formControlName="direccion">
                 </div>
                 <div>
-                    <input type="phone" [(placeholder)]="cliente.telefono">
+                    <input type="phone" [(placeholder)]="cliente.telefono" formControlName="telefono">
                 </div>
                 <div>
-                    <input type="email" [(placeholder)]="cliente.email">
+                    <input type="email" [(placeholder)]="cliente.email" formControlName="email">
+                </div>
+                <div>
+                    <input type="text" [(placeholder)]="cliente.id_cliente" formControlName="id_cliente"
+                        [value]="cliente.id_cliente">
                 </div>
                 <br>
-                <button class="boton">Guardar cambios</button>
+                <input type="submit" class="boton" value="Guardar">
 
 
             </form>
+            {{edicion.value | json}}
         </section>
 
         <button class="boton" *ngIf="boton" (click)="onEditarPerfil()">Editar perfil</button>

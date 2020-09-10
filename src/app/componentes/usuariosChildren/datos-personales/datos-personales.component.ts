@@ -1,7 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ClientesService } from '../../../clientes.service';
 import { CLIENTE } from '../../../../Models/clienteModel';
 import { ActivatedRoute } from '@angular/router'
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -12,16 +13,13 @@ import { ActivatedRoute } from '@angular/router'
 export class DatosPersonalesComponent implements OnInit {
 
 
-  //Output 
-  @Output() clienteLogin: EventEmitter<CLIENTE>;
-
-
   token: any;
   boton: boolean;
   editar: boolean;
   datos: boolean;
   clienteId: number;
   cliente: CLIENTE;
+  edicion: FormGroup;
 
   constructor(
     private clientesService: ClientesService,
@@ -31,12 +29,19 @@ export class DatosPersonalesComponent implements OnInit {
     this.editar = false;
     this.datos = true;
 
-    this.clienteLogin = new EventEmitter();
+    this.edicion = new FormGroup({
+      nombre: new FormControl(),
+      apellidos: new FormControl(),
+      direccion: new FormControl(),
+      telefono: new FormControl(),
+      email: new FormControl(),
+      id_cliente: new FormControl()
+    })
+
+
   }
 
   ngOnInit(): void {
-
-
 
     this.activatedRoute.params.subscribe(params => {
       this.clienteId = params.clienteId;
@@ -48,25 +53,29 @@ export class DatosPersonalesComponent implements OnInit {
       .then(respuesta => {
         this.cliente = respuesta;
 
-        console.log(respuesta.id_cliente);
+        console.log(respuesta);
       })
       .catch(error => {
         console.log(error);
       })
 
 
-  }
+  };
 
 
+  async onEdicion() {
+    const respuestaEdit = await this.clientesService.edicionCliente(this.edicion.value);
 
+
+    console.log(respuestaEdit);
+    console.log(this.clienteId);
+  };
 
   onEditarPerfil() {
     if (this.boton) {
       this.editar = true;
       this.datos = false;
       this.boton = false;
-
     }
-
   }
-}
+};

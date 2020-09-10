@@ -6,15 +6,15 @@
 
 
         <div class="productos">
-            <div class="prod">
-                <img src="" alt="">
-                <h3>FRESAS</h3>
+            <div class="prod" *ngFor="let producto of productosFav">
+                <img [src]="producto.imagen" alt="">
+                <h3>{{producto?.nombre}}</h3>
                 <div>
-                    <p id="precio">5.25€</p>
+                    <p id="precio">{{producto?.precio}}</p>
                     <p id="comprar">Comprar</p>
                 </div>
             </div>
-            <div class="prod">
+            <!--  <div class="prod">
                 <img src="" alt="">
                 <h3>SANDIA</h3>
                 <div>
@@ -37,7 +37,7 @@
                     <p id="precio">6.75€</p>
                     <p id="comprar">Comprar</p>
                 </div>
-            </div>
+            </div> -->
         </div>
 
     </main>
