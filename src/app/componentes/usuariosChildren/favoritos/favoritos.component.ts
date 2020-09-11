@@ -18,6 +18,7 @@ export class FavoritosComponent implements OnInit {
   favorito: any;
   detallefavorito: any;
   productosFav: any;
+  star: boolean;
 
 
 
@@ -25,6 +26,7 @@ export class FavoritosComponent implements OnInit {
     private clientesService: ClientesService,
     private productosService: ProductosService) {
 
+    this.star = true;
     this.productosFav = new Array();
 
   }
@@ -42,23 +44,6 @@ export class FavoritosComponent implements OnInit {
 
 
     this.productosFav = this.productosFavoritos.filter(favorito => favorito.id_cliente == this.clienteToken.clienteId);
-    /*     console.log(productosFav);
-     */
-    /*  for (let favorito of this.productosFavoritos) {
- 
-       if (favorito.id_cliente == this.clienteToken.clienteId) {
-         const favoritoCliente = favorito.id_prod;
- 
- 
-         console.log(favorito);
-         console.log(favoritoCliente);
- 
- 
-       }
-     } */
-
-
-
 
   }
 
