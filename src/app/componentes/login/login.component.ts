@@ -66,6 +66,7 @@ export class LoginComponent implements OnInit {
       this.logeado = true;
       localStorage.setItem('token', respuestaLogin['token']);
       setTimeout(() => { this.router.navigate(['/users/datospersonales/' + urlCliente]) }, 3000);
+
     } else {
       this.error = true;
       setTimeout(() => { this.router.navigate(['/ifruit']), this.error = false }, 3000)
