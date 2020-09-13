@@ -17,7 +17,7 @@
     color: white;
 }
 a.nav-link{
-    color: black;
+    color: white;
 }
 nav img{
     width: 10%;
@@ -26,5 +26,60 @@ nav img{
     color: black;
 }
 
+footer{
+    width: 100vw;
+    background-color: rgb(23, 168, 23);
+    align-content: center;
+    text-decoration: none;
+}
 
+.contacto{
 
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.contacto p{
+   
+    width: 400px;
+    margin: 5px;
+}
+
+.footer {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.footer div:first-child{
+    display: flex;
+}
+
+.footer div:last-child{
+    display: flex;
+}
+
+.footer div:nth-child(2){
+    display: flex;
+}
+
+.footer i {
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px;
+    
+}
+.redesSociales{
+     display: flex;
+
+}
+
+.redesSociales a{
+    margin: 0 auto;
+    padding: 3px 20px 0px 20px;
+}
+
+.fa-sign-out{
+    margin: 5px 10px;
+    cursor: pointer;
+}

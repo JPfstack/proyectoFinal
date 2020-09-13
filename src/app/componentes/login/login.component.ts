@@ -58,6 +58,11 @@ export class LoginComponent implements OnInit {
 
   async onLogin() {
     const respuestaLogin = await this.clientesService.getByEmail(this.login.value);
+    if (respuestaLogin['success'] && respuestaLogin['cliente'].email === 'admin@gmail.com') {
+      this.logeado = true;
+      localStorage.setItem('token', respuestaLogin['token']);
+      return this.router.navigate(['/admin/pedidos']);
+    }
 
 
     if (respuestaLogin['success']) {

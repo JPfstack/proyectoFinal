@@ -7,6 +7,8 @@
             <a class="navbar-brand" href="#">
                 <img src="../assets/images/pineapple.png" alt="">
             </a>
+
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -29,7 +31,15 @@
                         <a class="nav-link" [routerLink]="['users/datospersonales', clienteToken.clienteId]">Mi
                             perfil</a>
                     </li>
+                    <li class="nav-item" *ngIf="admin">
+                        <a class="nav-link" [routerLink]="['admin/pedidos']">Mi
+                            perfil</a>
+                    </li>
+                    <li class="nav-item" *ngIf="login">
+                        <p>| Bienvenid@ {{detalleCliente?.nombre}}</p>
+                    </li>
                     <i *ngIf="login" class="fa fa-sign-out" aria-hidden="true" (click)="Exit()"></i>
+
 
 
                 </ul>
@@ -41,3 +51,26 @@
 
 
 <router-outlet></router-outlet>
+
+<footer>
+    <div class="contacto col-sm-4">
+        <div class="footer">
+            <div>
+                <i class="fa fa-globe" aria-hidden="true"></i>
+                <p>Calle Gran Via 13, oficina n- 2 (Madrid-Spain)</p>
+            </div>
+            <div>
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <p>Telefono:/+34 910658986 - 687254896</p>
+            </div>
+            <div>
+                <p>Copyright © 2020 - <a href="">Aviso Legal</a> - <a href="">cookies</a> </p>
+            </div>
+        </div>
+        <div class="redesSociales">
+            <a><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+            <a><i class="fa fa-envelope" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</footer>

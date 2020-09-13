@@ -10,9 +10,11 @@ import { RouterLink, Router } from '@angular/router';
 })
 export class AppComponent {
 
+  admin: boolean;
   registro: boolean;
   login: boolean;
   clienteToken: any;
+  detalleCliente: CLIENTE;
 
   constructor(
     private clientesService: ClientesService,
@@ -20,9 +22,10 @@ export class AppComponent {
 
     this.login = false;
     this.registro = true;
+    this.admin = false;
 
   }
-  ngOnInit() {
+  async ngOnInit() {
 
     const token = localStorage.getItem('token');
     this.clienteToken = this.clientesService.getIdByToken(token)
@@ -30,13 +33,18 @@ export class AppComponent {
     if (this.clienteToken) {
       this.login = true;
       this.registro = false;
-
+      this.detalleCliente = await this.clientesService.getDetalleCliente(this.clienteToken.clienteId);
+      console.log(this.detalleCliente);
     }
   }
 
   Exit() {
     localStorage.removeItem('token');
-    this.router.navigate(['/ifruit']);
+    setTimeout(() => {
+      this.router.navigate(['/ifruit']);
+
+    }, 2000);
+
     this.login = false;
     this.registro = true;
   }
