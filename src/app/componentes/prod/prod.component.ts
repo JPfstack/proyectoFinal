@@ -3,6 +3,8 @@ import { ProductosService } from '../../productos.service';
 import { PRODUCTO } from '../../../Models/productoModel';
 import { ActivatedRoute } from '@angular/router';
 import { ClientesService } from 'src/app/clientes.service';
+import { CartService } from 'src/app/cart.service';
+
 
 
 @Component({
@@ -16,15 +18,18 @@ export class ProdComponent implements OnInit {
   producto: PRODUCTO;
   productoId: number;
   favorite: boolean;
+  productoSelect: any;
+  prodNewCart: any;
 
   constructor(
     private productosService: ProductosService,
     private activatedRoute: ActivatedRoute,
-    private clientesService: ClientesService) {
+    private clientesService: ClientesService,
+    private cartService: CartService) {
 
     this.favorite = false;
+    this.prodNewCart = new Array()
   }
-
 
 
   async ngOnInit() {
@@ -52,11 +57,34 @@ export class ProdComponent implements OnInit {
 
     const respuesta = await this.productosService.insertFavorito(cliente, producto)
     console.log(respuesta);
-
-
-
-
-
   }
 
+  async onComprar(pAnadirCarrito, pRuta) {
+    this.prodNewCart = pAnadirCarrito;
+    let prodEnviado = this.productoSelect;
+
+    /*  if (prodEnviado) {
+       this.prodNewCart = true;
+     } else {
+       localStorage.setItem('prodNewCart', JSON.stringify(this.prodNewCart));
+       this.cartService.getAllProdCart();
+       setTimeout(() => {
+         this.productoSelect
+       }, 5000)
+     } */
+
+
+
+
+
+
+
+    /* this.productoSelect = !this.productoSelect;
+    const prodSelect = this.productoId;
+    const pedidoNew = this.clienteToken.clienteId;
+    console.log(prodSelect, pedidoNew);
+
+
+    await this.productosService.anadirCarrito(prodSelect); */
+  }
 }

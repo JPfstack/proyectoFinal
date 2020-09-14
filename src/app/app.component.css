@@ -26,37 +26,14 @@ nav img{
     color: black;
 }
 
-footer{
-    width: 100vw;
-    background-color: rgb(23, 168, 23);
-    align-content: center;
-    text-decoration: none;
-}
-
-.contacto{
-
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-}
-
-.contacto p{
-   
-    width: 400px;
-    margin: 5px;
-}
-
-.footer {
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.footer div:first-child{
-    display: flex;
-}
-
-.footer div:last-child{
-    display: flex;
+/*Footer*/
+.container-footer{
+    text-align: center;
+    padding: 15px;
+    background-color: rgb(197, 243, 33);
+    width: 100%;
+    height: 50px;
+    
 }
 
 .footer div:nth-child(2){
