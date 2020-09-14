@@ -9,6 +9,30 @@
     padding: 0;
 }
 
+.barranavegacion {
+    height: 60px;
+    width: 100vw;
+}
+
+.logo {
+    margin-left: 15px;
+}
+
+.menu {
+    display: flex;
+    width: 100%;
+
+}
+
+.menu li{
+    width: 100%;
+}
+
+.menu li a {
+    color: black;
+    padding: 0px;
+    margin: 0px;
+}
 .bg-dark{
     background-color: rgb(197, 243, 33) !important;
 }

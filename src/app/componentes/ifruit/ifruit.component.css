@@ -64,7 +64,11 @@ color: greenyellow;
 width: 90%;
 }
 
-.underline{
+#masvendidos {
+    text-decoration: underline;
+}
+
+/* .underline{
     position: relative;
     width: 100%;
     margin: 0 auto;
@@ -80,7 +84,7 @@ width: 90%;
         position: absolute;
         left: 450px;
         width: 55%;
-}
+} */
 .container-prod{
     padding: 5px;
     margin: 30px;
@@ -138,7 +142,7 @@ width: 90%;
 
     .redesSociales{
         display: block;
-        border: solid 1px black;
+      
   
     }
 
@@ -153,3 +157,11 @@ width: 90%;
         align-content: center;
         text-decoration: none;
     }
+
+.frutas img{
+    display: block;
+    width: 80%;
+    height: auto;
+    margin: 15px;
+
+} 

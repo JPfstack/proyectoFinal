@@ -15,43 +15,47 @@ import { ProductosService } from 'src/app/productos.service';
 export class CartComponent implements OnInit {
 
   carrito: CARRITO;
-  detalle: PRODUCTO;
-  totalProd: PRODUCTO[];
+  detalle: PRODUCTO[];
+  totalProd: any;
+  detalleProd: any;
+  arrProd: any;
 
   constructor(private cartService: CartService,
     private productosService: ProductosService) {
+
   }
 
   async ngOnInit() {
 
     const newProdCart = JSON.parse(localStorage.getItem('producto'));
-    console.log(newProdCart);
-
+    const productos = await this.productosService.getAllProductos();
+    /*   const arrProd = this.totalProd */
     for (let prod of newProdCart) {
-      this.detalle = await this.productosService.getProductoById(prod);
-      this.totalProd.push(this.detalle);
+
+      this.totalProd = productos.filter(producto => producto.id_prod == prod);
       console.log(this.totalProd);
-      let prod1, prod2, prod3
-      [prod1, prod2, prod3] = this.totalProd
-      console.log(prod1, prod2, prod3);
+
     }
 
+    console.log(productos);
+    console.log(this.totalProd);
 
 
 
 
 
+    /* for (let prod of newProdCart) {
+      this.detalle = await this.productosService.getProductoById(prod);
+      console.log(this.detalle);
+      const totalProd = new Array();
+      totalProd.push(this.detalle);
+
+      console.log(totalProd.push(this.detalle));
 
 
 
 
-
-
-
-
-
-
-
+    } */
 
   }
 

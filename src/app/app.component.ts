@@ -10,6 +10,7 @@ import { RouterLink, Router } from '@angular/router';
 })
 export class AppComponent {
 
+  salir: boolean;
   admin: boolean;
   registro: boolean;
   login: boolean;
@@ -23,6 +24,7 @@ export class AppComponent {
     this.login = false;
     this.registro = true;
     this.admin = false;
+    this.salir = false;
 
   }
   async ngOnInit() {
@@ -31,10 +33,15 @@ export class AppComponent {
     this.clienteToken = this.clientesService.getIdByToken(token)
     console.log(this.clienteToken);
     if (this.clienteToken) {
+      this.salir = true;
       this.login = true;
       this.registro = false;
       this.detalleCliente = await this.clientesService.getDetalleCliente(this.clienteToken.clienteId);
       console.log(this.detalleCliente);
+      if (this.detalleCliente.email === 'admin@gmail.com') {
+        this.login = false;
+        this.admin = true;
+      }
     }
   }
 
@@ -47,6 +54,8 @@ export class AppComponent {
 
     this.login = false;
     this.registro = true;
+    this.salir = false;
+    this.admin = false;
   }
 
 

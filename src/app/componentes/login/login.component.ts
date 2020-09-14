@@ -61,7 +61,10 @@ export class LoginComponent implements OnInit {
     if (respuestaLogin['success'] && respuestaLogin['cliente'].email === 'admin@gmail.com') {
       this.logeado = true;
       localStorage.setItem('token', respuestaLogin['token']);
-      return this.router.navigate(['/admin/pedidos']);
+      return setTimeout(() => {
+        this.router.navigate(['/admin/pedidos'])
+
+      }, 3000);
     }
 
 
