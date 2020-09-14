@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ProductosComponent } from '../productos/productos.component';
 import { PRODUCTO } from '../../../Models/productoModel';
 import { PEDIDO } from '../../../Models/pedidoModel';
+import { CARRITO } from '../../../Models/cartModel';
+import { CartService } from 'src/app/cart.service';
+import { ProductosService } from 'src/app/productos.service';
 
 
 @Component({
@@ -11,14 +14,47 @@ import { PEDIDO } from '../../../Models/pedidoModel';
 })
 export class CartComponent implements OnInit {
 
-  /*  producto: PRODUCTO;
-   pedido: PEDIDO;
-  */
-  constructor() {
+  carrito: CARRITO;
+  detalle: PRODUCTO;
+  totalProd: PRODUCTO[];
+
+  constructor(private cartService: CartService,
+    private productosService: ProductosService) {
+  }
+
+  async ngOnInit() {
+
+    const newProdCart = JSON.parse(localStorage.getItem('producto'));
+    console.log(newProdCart);
+
+    for (let prod of newProdCart) {
+      this.detalle = await this.productosService.getProductoById(prod);
+      this.totalProd.push(this.detalle);
+      console.log(this.totalProd);
+      let prod1, prod2, prod3
+      [prod1, prod2, prod3] = this.totalProd
+      console.log(prod1, prod2, prod3);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   }
 
-  ngOnInit(): void {
-  }
+
 
 }

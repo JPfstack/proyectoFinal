@@ -2,7 +2,19 @@
 
     <div class="row">
         <h1>Este es su carrito de Frutas:</h1>
-        <div class="col-sm-4">
+        <div class="col-sm-4" *ngFor="let producto of totalProd">
+            <img [src]=" producto?.imagen" alt="">
+            <h5>Cantidad: {{producto?.cantidad}}</h5>
+            <h5>Precio: {{producto?.precio}}</h5>
+            <button type="button" class="btn btn-outline-success">+</button>
+            <button type="button" class="btn btn-outline-success">-</button>
+            <div id="btn-agregar-eliminar">
+                <button type="button" class="btn btn-outline-success">Agregar</button>
+                <button type="button" class="btn btn-outline-success">Eliminar</button>
+
+            </div>
+        </div>
+        <!-- <div class="col-sm-4">
             <a href=""> <img src="../../../assets/images/manzana1.jpeg" alt=""> </a>
             <h5>Cantidad(unid): 5 manzanas</h5>
             <h5>Precio kg</h5>
@@ -11,7 +23,6 @@
             <div id="btn-agregar-eliminar">
                 <button type="button" class="btn btn-outline-success">Agregar</button>
                 <button type="button" class="btn btn-outline-success">Eliminar</button>
-
             </div>
         </div>
         <div class="col-sm-4">
@@ -23,29 +34,18 @@
             <div id="btn-agregar-eliminar">
                 <button type="button" class="btn btn-outline-success">Agregar</button>
                 <button type="button" class="btn btn-outline-success">Eliminar</button>
-                <a href="../productos"><button type="link" class="btn btn-secondary btn-sm-3">
-                        Seguir Comprando</button></a>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <a href=""> <img src="../../../assets/images/manzana1.jpeg" alt=""> </a>
-            <h5>Cantidad(unid): 5 manzanas</h5>
-            <h5>Precio kg</h5>
-            <button type="button" class="btn btn-outline-success">+</button>
-            <button type="button" class="btn btn-outline-success">-</button>
-            <div id="btn-agregar-eliminar">
-                <button type="button" class="btn btn-outline-success">Agregar</button>
-                <button type="button" class="btn btn-outline-success">Eliminar</button>
-
 
             </div>
+        </div> -->
+        <div class="irProductos">
+
         </div>
     </div>
     <div class="btn-tramitar">
         <button type="submit" class="btn btn-primary btn-sm-4 btn-block">Tramitar Pedido</button>
     </div>
 
-    <div class="row">
-        <img src="../../../assets/images/shopping-cart-filled-with-fruit-and-vegetables.jpg" alt="">
+    <div class="img2"><img src="../../../assets/images/shopping-cart-filled-with-fruit-and-vegetables.jpg" alt="">
+        <a href="../productos"><button type="link" class="btn btn-secondary btn-sm-3">
+                Seguir Comprando</button></a>
     </div>
-</div>

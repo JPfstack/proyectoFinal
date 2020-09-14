@@ -39,14 +39,11 @@
                     <li class="nav-item" *ngIf="login">
                         <p>| Bienvenid@ {{detalleCliente?.nombre}}</p>
                     </li>
-                    <li>
-                        <a href="http://localhost:4200/carrito"><img src="../assets/images/carro-de-la-compra.png"
-                                alt=""></a>
-                    </li>
+
                     <i *ngIf="login" class="fa fa-sign-out" aria-hidden="true" (click)="Exit()"></i>
-
-
-
+                    <li>
+                        <img src="../assets/images/supermercado.png" alt="" [routerLink]="['carrito']">
+                    </li>
                 </ul>
             </div>
         </nav>
