@@ -15,11 +15,15 @@ import { ProductosService } from 'src/app/productos.service';
 export class CartComponent implements OnInit {
 
   carrito: CARRITO;
-  detalle: PRODUCTO;
-  totalProd: PRODUCTO[];
+  detalle: PRODUCTO[];
+  totalProd: PRODUCTO;
+  arrCarrito: CARRITO[];
 
   constructor(private cartService: CartService,
     private productosService: ProductosService) {
+    this.detalle = new Array();
+
+    this.arrCarrito = new Array();
   }
 
   async ngOnInit() {
@@ -28,13 +32,15 @@ export class CartComponent implements OnInit {
     console.log(newProdCart);
 
     for (let prod of newProdCart) {
-      this.detalle = await this.productosService.getProductoById(prod);
-      this.totalProd.push(this.detalle);
-      console.log(this.totalProd);
-      let prod1, prod2, prod3
-      [prod1, prod2, prod3] = this.totalProd
-      console.log(prod1, prod2, prod3);
+      const producto = await this.productosService.getProductoById(prod);
+      this.detalle.push.apply(this.detalle, producto);
+      console.log(this.detalle);
     }
+    for (let prod of this.detalle) {
+      const carrito = new CARRITO(prod.id_prod, 1, 1, prod.imagen, prod.precio, 1);
+      this.arrCarrito.push(carrito);
+    }
+
 
 
 
