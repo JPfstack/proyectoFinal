@@ -7,6 +7,9 @@
 
         <div class="productos">
             <div class="prod" *ngFor="let producto of productosFav">
+                <div *ngIf="star" class="star">
+                    <img src="../../../assets/startrans.png" alt="">
+                </div>
                 <img [src]="producto.imagen" alt="">
                 <h3>{{producto?.nombre}}</h3>
                 <div>

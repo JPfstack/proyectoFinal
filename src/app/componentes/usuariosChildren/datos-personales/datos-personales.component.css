@@ -19,7 +19,7 @@
 }
 
 .contenedor main {
-    background-color: rgba(255, 255, 255, 0.950);
+    background-color: rgba(255, 255, 255, 0.85);
     display: flex;
     padding: 25px 0px;
     border: 2px solid black;

@@ -33,7 +33,7 @@
                     <input type="email" [(placeholder)]="cliente.email" formControlName="email">
                 </div>
                 <div>
-                    <input type="text" [(placeholder)]="cliente.id_cliente" formControlName="id_cliente"
+                    <input type="hidden" [(placeholder)]="cliente.id_cliente" formControlName="id_cliente"
                         [value]="cliente.id_cliente">
                 </div>
                 <br>
@@ -41,7 +41,6 @@
 
 
             </form>
-            {{edicion.value | json}}
         </section>
 
         <button class="boton" *ngIf="boton" (click)="onEditarPerfil()">Editar perfil</button>

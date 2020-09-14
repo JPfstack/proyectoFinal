@@ -17,7 +17,7 @@
     color: white;
 }
 a.nav-link{
-    color: black;
+    color: white;
 }
 nav img{
     width: 10%;
@@ -36,4 +36,27 @@ nav img{
     
 }
 
+.footer div:nth-child(2){
+    display: flex;
+}
 
+.footer i {
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px;
+    
+}
+.redesSociales{
+     display: flex;
+
+}
+
+.redesSociales a{
+    margin: 0 auto;
+    padding: 3px 20px 0px 20px;
+}
+
+.fa-sign-out{
+    margin: 5px 10px;
+    cursor: pointer;
+}

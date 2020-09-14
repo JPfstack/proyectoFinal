@@ -5,19 +5,18 @@
         </div>
 
         <div class="filtros">
-            <select name="" id="">
-                <option value="">Colores</option>
-                <option value="">Rojas</option>
-                <option value="">Amarillas</option>
-                <option value="">Naranjas</option>
-                <option value="">Otros</option>
+            <select name="" id="" (change)="onColor($event)">
+                <option value="todas">Colores</option>
+                <option value="rojas">Rojas</option>
+                <option value="amarillas">Amarillas</option>
+                <option value="naranjas">Naranjas</option>
+                <option value="otros">Otros</option>
             </select>
-            <select name="" id="">
-                <option value="">Estaciones</option>
-                <option value="">Primavera</option>
-                <option value="">Verano</option>
-                <option value="">Otoño</option>
-                <option value="">Invierno</option>
+            <select name="" id="" (change)="onEst($event)">
+                <option value="todas">Estaciones</option>
+                <option value="primavera-verano">Primavera - Verano</option>
+                <option value="otoño-invierno">Otoño - Invierno</option>
+                <option value="todo">Todo el año</option>
             </select>
             <select name="" id="">
                 <option value="">Ofertas</option>
@@ -27,11 +26,11 @@
         </div>
         <div class="productos">
             <div class="prod" *ngFor="let producto of productos">
-                <img [src]="producto.imagen" alt="">
+                <img [src]="producto?.imagen" alt="">
                 <!-- <div class="star">
                     <img [ngStyle]="fondo" (click)="onFavorite()" src="../../../assets/startrans.png" alt="">
                 </div> -->
-                <h3>{{producto.nombre}}</h3>
+                <h3>{{producto?.nombre}}</h3>
                 <div>
                     <p id="precio">{{producto.precio}}</p>
                     <button [routerLink]="['/productos',producto.id_prod]">Ver mas</button>

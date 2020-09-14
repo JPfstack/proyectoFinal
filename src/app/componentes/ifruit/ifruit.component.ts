@@ -10,6 +10,7 @@ export class IfruitComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

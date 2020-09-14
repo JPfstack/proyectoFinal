@@ -48,15 +48,21 @@ export class LoginComponent implements OnInit {
 
   async onRegistro() {
 
-    this.mensajeRegistro = true;
+    this.registrado = true;
+
     const respuesta = await this.clientesService.registroCliente(this.registro.value);
 
-    setTimeout(() => { this.registrado = true }, 3000)
+    setTimeout(() => { this.mensajeRegistro = true, this.registrado = false }, 4000);
   }
 
 
   async onLogin() {
     const respuestaLogin = await this.clientesService.getByEmail(this.login.value);
+    if (respuestaLogin['success'] && respuestaLogin['cliente'].email === 'admin@gmail.com') {
+      this.logeado = true;
+      localStorage.setItem('token', respuestaLogin['token']);
+      return this.router.navigate(['/admin/pedidos']);
+    }
 
 
     if (respuestaLogin['success']) {
@@ -65,6 +71,7 @@ export class LoginComponent implements OnInit {
       this.logeado = true;
       localStorage.setItem('token', respuestaLogin['token']);
       setTimeout(() => { this.router.navigate(['/users/datospersonales/' + urlCliente]) }, 3000);
+
     } else {
       this.error = true;
       setTimeout(() => { this.router.navigate(['/ifruit']), this.error = false }, 3000)

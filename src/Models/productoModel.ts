@@ -6,8 +6,9 @@ export class PRODUCTO {
     disponibilidad: string;
     est: string;
     imagen: string;
+    descripcion: string;
 
-    constructor(pId_prod: number, pNombre: string, pPrecio: number, pDisponibilidad: string, pEst: string, pImagen: string) {
+    constructor(pId_prod: number, pNombre: string, pPrecio: number, pDisponibilidad: string, pEst: string, pImagen: string, pDescripcion: string) {
 
 
 
@@ -17,6 +18,7 @@ export class PRODUCTO {
         this.disponibilidad = pDisponibilidad;
         this.est = pEst;
         this.imagen = pImagen;
+        this.descripcion = pDescripcion;
 
     }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductosService } from '../../productos.service';
 import { PRODUCTO } from '../../../Models/productoModel';
 import { ClientesService } from 'src/app/clientes.service';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -13,6 +14,7 @@ export class ProductosComponent implements OnInit {
 
   productos: PRODUCTO[];
   clienteToken: any;
+  todosProductos: PRODUCTO[];
 
   constructor(
     private productosService: ProductosService,
@@ -33,5 +35,19 @@ export class ProductosComponent implements OnInit {
   }
 
 
+  onColor() {
+
+  }
+
+  async onEst($event) {
+    if ($event.target.value === 'todas') {
+      this.productos = await this.productosService.getAllProductos();
+      console.log(this.todosProductos);
+    } else {
+      this.productos = (await this.productosService.getAllProductos()).filter(PRODUCTO => PRODUCTO.est == $event.target.value);
+      console.log(this.todosProductos);
+    }
+
+  }
 
 }

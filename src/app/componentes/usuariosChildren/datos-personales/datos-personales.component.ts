@@ -77,5 +77,13 @@ export class DatosPersonalesComponent implements OnInit {
       this.datos = false;
       this.boton = false;
     }
+    this.edicion = new FormGroup({
+      nombre: new FormControl(this.cliente.nombre),
+      apellidos: new FormControl(this.cliente.apellidos),
+      direccion: new FormControl(this.cliente.direccion),
+      telefono: new FormControl(this.cliente.telefono),
+      email: new FormControl(this.cliente.email),
+      id_cliente: new FormControl(this.cliente.id_cliente)
+    })
   }
 };
