@@ -35,9 +35,6 @@ export class ProductosComponent implements OnInit {
   }
 
 
-  onColor() {
-
-  }
 
   async onEst($event) {
     if ($event.target.value === 'todas') {
