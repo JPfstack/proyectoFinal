@@ -31,12 +31,17 @@
                         <a class="nav-link" [routerLink]="['users/datospersonales', clienteToken.clienteId]">Mi
                             perfil</a>
                     </li>
+
                     <li class="nav-item" *ngIf="admin">
                         <a class="nav-link" [routerLink]="['admin/pedidos']">Mi
                             perfil</a>
                     </li>
                     <li class="nav-item" *ngIf="login">
                         <p>| Bienvenid@ {{detalleCliente?.nombre}}</p>
+                    </li>
+                    <li>
+                        <a href="http://localhost:4200/carrito"><img src="../assets/images/carro-de-la-compra.png"
+                                alt=""></a>
                     </li>
                     <i *ngIf="login" class="fa fa-sign-out" aria-hidden="true" (click)="Exit()"></i>
 

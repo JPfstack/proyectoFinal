@@ -19,7 +19,6 @@ export class ProdComponent implements OnInit {
   productoId: number;
   favorite: boolean;
   productoSelect: any;
-  prodNewCart: any;
   carrito: any;
   result: any;
 
@@ -30,7 +29,6 @@ export class ProdComponent implements OnInit {
     private cartService: CartService) {
 
     this.favorite = false;
-    this.prodNewCart = new Array();
   }
 
 
