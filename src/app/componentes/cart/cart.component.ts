@@ -16,13 +16,14 @@ export class CartComponent implements OnInit {
 
   carrito: CARRITO;
   detalle: PRODUCTO[];
-  totalProd: any;
-  detalleProd: any;
-  arrProd: any;
+  totalProd: PRODUCTO;
+  arrCarrito: CARRITO[];
 
   constructor(private cartService: CartService,
     private productosService: ProductosService) {
+    this.detalle = new Array();
 
+    this.arrCarrito = new Array();
   }
 
   async ngOnInit() {
@@ -31,33 +32,22 @@ export class CartComponent implements OnInit {
     const productos = await this.productosService.getAllProductos();
     /*   const arrProd = this.totalProd */
     for (let prod of newProdCart) {
-
-      this.totalProd = productos.filter(producto => producto.id_prod == prod);
-      console.log(this.totalProd);
-
+      const producto = await this.productosService.getProductoById(prod);
+      this.detalle.push.apply(this.detalle, producto);
+      console.log(this.detalle);
+    }
+    for (let prod of this.detalle) {
+      const carrito = new CARRITO(prod.id_prod, 1, 1, prod.imagen, prod.precio, 1);
+      this.arrCarrito.push(carrito);
     }
 
-    console.log(productos);
-    console.log(this.totalProd);
-
-
-
-
-
-    /* for (let prod of newProdCart) {
-      this.detalle = await this.productosService.getProductoById(prod);
-      console.log(this.detalle);
-      const totalProd = new Array();
-      totalProd.push(this.detalle);
-
-      console.log(totalProd.push(this.detalle));
-
-
-
-
-    } */
-
   }
+
+
+
+
+
+
 
 
 

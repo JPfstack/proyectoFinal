@@ -2,9 +2,9 @@
 
     <div class="row">
         <h1>Este es su carrito de Frutas:</h1>
-        <div class="col-sm-4" *ngFor="let producto of totalProd">
+        <div class="col-sm-4" *ngFor="let producto of arrCarrito">
             <img [src]=" producto?.imagen" alt="">
-            <h5>Cantidad: </h5>
+            <h5>Cantidad:{{producto?.cantidad}}</h5>
             <h5>Precio: {{producto?.precio}}</h5>
             <button type="button" class="btn btn-outline-success">+</button>
             <button type="button" class="btn btn-outline-success">-</button>
