@@ -65,7 +65,7 @@ export class DatosPersonalesComponent implements OnInit {
 
   async onEdicion() {
     const respuestaEdit = await this.clientesService.edicionCliente(this.edicion.value);
-
+    this.ngOnInit();
 
     console.log(respuestaEdit);
     console.log(this.clienteId);

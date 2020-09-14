@@ -30,7 +30,7 @@ export class ProdComponent implements OnInit {
     private cartService: CartService) {
 
     this.favorite = false;
-    this.prodNewCart = new Array();
+
   }
 
 

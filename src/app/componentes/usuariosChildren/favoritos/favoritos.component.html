@@ -7,7 +7,7 @@
 
         <div class="productos">
             <div class="prod" *ngFor="let producto of productosFav">
-                <div *ngIf="star" class="star">
+                <div *ngIf="star" class="star" (click)="onDeleteFav(producto)">
                     <img src="../../../assets/startrans.png" alt="">
                 </div>
                 <img [src]="producto.imagen" alt="">
