@@ -19,7 +19,7 @@ export class ProdComponent implements OnInit {
   productoId: number;
   favorite: boolean;
   productoSelect: any;
-  prodNewCart: any;
+  prodNewCart: PRODUCTO[];
 
   constructor(
     private productosService: ProductosService,
@@ -59,32 +59,35 @@ export class ProdComponent implements OnInit {
     console.log(respuesta);
   }
 
-  async onComprar(pAnadirCarrito, pRuta) {
-    this.prodNewCart = pAnadirCarrito;
-    let prodEnviado = this.productoSelect;
+  async onComprar() {
 
-    /*  if (prodEnviado) {
-       this.prodNewCart = true;
-     } else {
-       localStorage.setItem('prodNewCart', JSON.stringify(this.prodNewCart));
-       this.cartService.getAllProdCart();
-       setTimeout(() => {
-         this.productoSelect
-       }, 5000)
-     } */
-
-
-
-
-
-
-
-    /* this.productoSelect = !this.productoSelect;
     const prodSelect = this.productoId;
-    const pedidoNew = this.clienteToken.clienteId;
-    console.log(prodSelect, pedidoNew);
+    const clientePedido = this.clienteToken.clienteId;
+    console.log(prodSelect, clientePedido);
 
 
-    await this.productosService.anadirCarrito(prodSelect); */
+    const prod_cart = await this.productoSelect.push(this.prodNewCart)
+    console.log(prod_cart);
+
+    await this.productosService.anadirCarrito(prodSelect);
+    /* 
+        this.prodNewCart = pAnadirCarrito;
+        let prodEnviado = this.productoSelect;
+    
+        if (prodEnviado) {
+          this.productoSelect = true;
+        } else {
+          localStorage.setItem('productoSelect', JSON.stringify(this.prodNewCart));
+          this.cartService.getAllProdCart();
+          setTimeout(() => {
+            this.productoSelect
+          }, 5000)
+        } */
+
+
+
+
+
+
   }
 }
