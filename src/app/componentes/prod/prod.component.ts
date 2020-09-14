@@ -20,6 +20,8 @@ export class ProdComponent implements OnInit {
   favorite: boolean;
   productoSelect: any;
   prodNewCart: any;
+  carrito: any;
+  result: any;
 
   constructor(
     private productosService: ProductosService,
@@ -28,7 +30,7 @@ export class ProdComponent implements OnInit {
     private cartService: CartService) {
 
     this.favorite = false;
-    this.prodNewCart = new Array()
+    this.prodNewCart = new Array();
   }
 
 
@@ -59,32 +61,13 @@ export class ProdComponent implements OnInit {
     console.log(respuesta);
   }
 
-  async onComprar(pAnadirCarrito, pRuta) {
-    this.prodNewCart = pAnadirCarrito;
-    let prodEnviado = this.productoSelect;
+  onComprar() {
 
-    /*  if (prodEnviado) {
-       this.prodNewCart = true;
-     } else {
-       localStorage.setItem('prodNewCart', JSON.stringify(this.prodNewCart));
-       this.cartService.getAllProdCart();
-       setTimeout(() => {
-         this.productoSelect
-       }, 5000)
-     } */
+    console.log(this.clienteToken.clienteId, this.productoId);
+
+    const resultado = this.cartService.addCarrito(this.productoId);
+    console.log(resultado);
 
 
-
-
-
-
-
-    /* this.productoSelect = !this.productoSelect;
-    const prodSelect = this.productoId;
-    const pedidoNew = this.clienteToken.clienteId;
-    console.log(prodSelect, pedidoNew);
-
-
-    await this.productosService.anadirCarrito(prodSelect); */
   }
 }
