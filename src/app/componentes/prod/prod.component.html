@@ -15,9 +15,9 @@
 
                 <h2>{{producto?.nombre}}</h2>
                 <p id="precio">{{producto?.precio}}</p>
-                <p id="precio">Temporada: {{producto?.est}}</p>
+                <p id="est">Temporada: {{producto?.est}}</p>
                 <div id="comprar">
-                    <button (click)="onComprar()">Comprar</button>
+                    <a href=""><button (click)="onComprar()">Comprar</button></a>
                     <button (click)="onFavorite()">Añadir a
                         favoritos</button>
                 </div>

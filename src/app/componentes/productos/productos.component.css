@@ -98,10 +98,11 @@ select option{
 }
 
 .carrito{
-    width: 50px;
+    width: 40px;
     position: absolute;
     left: 130px;
-    bottom: 20px ;
+    bottom: 45px ;
+    color: green;
 }
 
  button {

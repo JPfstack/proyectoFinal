@@ -1,7 +1,5 @@
-
 .container{
     width: 100%;
-    padding: 20px;
 }
 
 .row{
@@ -9,7 +7,6 @@ margin-top: 70px;
     width: 50%;
     padding: 10px;
     position: relative;
-    left: 100px;
     
 }
 
@@ -20,6 +17,12 @@ align-content: center;
 
 .row img{
     width: 40%;
+}
+.img2{
+    width: 5%;
+    position: absolute;
+    left: 720px;
+    bottom: 100px;
 }
 
 .container h1{
@@ -34,18 +37,22 @@ align-content: center;
 }
 
 #btn-agregar-eliminar{
-padding-top: 20px;
-   width: 30%;
+padding-top: 10px;
+width: 5px;
 }
 
 .btn-secondary{
     margin-top: 10px;
-    width: 200px;
+    width: 100px;
+    position: relative;
+    left: 400px;
+    bottom: 100px;
+    
 }
 
 .btn-tramitar{
     padding-top: 5px;
-    width: 50%;
+    width: 40%;
     position: relative;
-    left: 50px;
+    left: 10px;
 }

@@ -31,6 +31,7 @@
                         <a class="nav-link" [routerLink]="['users/datospersonales', clienteToken.clienteId]">Mi
                             perfil</a>
                     </li>
+
                     <li class="nav-item" *ngIf="admin">
                         <a class="nav-link" [routerLink]="['admin/pedidos']">Mi
                             perfil</a>
@@ -38,10 +39,11 @@
                     <li class="nav-item" *ngIf="login">
                         <p>| Bienvenid@ {{detalleCliente?.nombre}}</p>
                     </li>
+
                     <i *ngIf="login" class="fa fa-sign-out" aria-hidden="true" (click)="Exit()"></i>
-
-
-
+                    <li>
+                        <img src="../assets/images/supermercado.png" alt="" [routerLink]="['carrito']">
+                    </li>
                 </ul>
             </div>
         </nav>

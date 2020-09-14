@@ -33,18 +33,5 @@ export class CartService {
     return arrStorage;
 
   }
-  /*  getAllProdCart() {
-     if (this.prodLocalStorage == null) {
-       return this.arrProdCart;
-     } else {
-       this.arrProdCart.unshift(this.prodLocalStorage);
-       return this.arrProdCart;
-     }
-   }
- 
-   getLocalStorage() {
-     this.prodLocalStorage = JSON.parse(localStorage.getItem('prodLocalStorage'));
-     console.log('HOLA', this.prodLocalStorage);
- 
-   } */
+
 }

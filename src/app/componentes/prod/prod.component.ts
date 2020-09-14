@@ -19,7 +19,6 @@ export class ProdComponent implements OnInit {
   productoId: number;
   favorite: boolean;
   productoSelect: any;
-  prodNewCart: any;
   carrito: any;
   result: any;
 
@@ -68,6 +67,8 @@ export class ProdComponent implements OnInit {
     const resultado = this.cartService.addCarrito(this.productoId);
     console.log(resultado);
 
+    /*  const prod_cart = this.productoSelect.push(this.prodNewCart)
+     console.log(prod_cart); */
 
   }
 }
