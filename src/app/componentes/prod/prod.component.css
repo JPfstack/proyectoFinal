@@ -98,18 +98,14 @@ main section .star img {
     text-shadow: rgb(153, 205, 50) 2px 0px 0px;
 
 }
-#comprar {
-    display:flex;
-    justify-content: space-around;
-}
 
-#comprar button {
-    margin: 10px auto;
-    height: 40px;
-    width: 25%;
-    font-size: 17px;
+button {
+    display: block;
+   margin: 10px auto;
+   height: 40px;
+   width: 60%;
+   font-size: 17px;
 }
-
 
 
 

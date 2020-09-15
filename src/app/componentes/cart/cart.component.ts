@@ -5,6 +5,7 @@ import { PEDIDO } from '../../../Models/pedidoModel';
 import { CARRITO } from '../../../Models/cartModel';
 import { CartService } from 'src/app/cart.service';
 import { ProductosService } from 'src/app/productos.service';
+import { ClientesService } from '../../clientes.service';
 
 
 @Component({
@@ -19,30 +20,49 @@ export class CartComponent implements OnInit {
   totalProd: PRODUCTO;
   arrCarrito: CARRITO[];
   arrPedido: PEDIDO[];
-
+  clienteToken: any;
+  producto: PRODUCTO;
+  detalleCliente: any;
+  numProducto: number;
+  cantidad: number;
+  precio: number;
+  fecha: Date;
 
   constructor(private cartService: CartService,
-    private productosService: ProductosService) {
+    private productosService: ProductosService,
+    private clientesService: ClientesService) {
 
     this.detalle = new Array();
     this.arrCarrito = new Array();
     this.arrPedido = new Array();
+
+
   }
 
   async ngOnInit() {
+
+    const token = localStorage.getItem('token');
+    this.clienteToken = await this.clientesService.getIdByToken(token)
+    console.log(this.clienteToken.clienteId);
 
     const newProdCart = JSON.parse(localStorage.getItem('producto'));
     const productos = await this.productosService.getAllProductos();
     /*   const arrProd = this.totalProd */
     for (let prod of newProdCart) {
-      const producto = await this.productosService.getProductoById(prod);
-      this.detalle.push.apply(this.detalle, producto);
+      this.producto = await this.productosService.getProductoById(prod);
+      this.detalle.push.apply(this.detalle, this.producto);
       console.log(this.detalle);
     }
     for (let prod of this.detalle) {
-      const carrito = new CARRITO(prod.id_prod, 1, 1, prod.imagen, prod.precio, 1);
+      const carrito = new CARRITO(prod.id_prod, this.clienteToken.clienteId, prod.imagen, prod.precio, 1);
       this.arrCarrito.push(carrito);
+      console.log(this.arrCarrito);
+
     }
+
+
+
+
   }
 
   onEliminar(pIdProd) {
@@ -72,13 +92,40 @@ export class CartComponent implements OnInit {
 
 
     pProducto.cantidad = $event.target.value;
+    pProducto.precio = pProducto.precio * pProducto.cantidad;
     localStorage.setItem('carrito', JSON.stringify(this.arrCarrito));
     console.log(this.arrCarrito);
 
 
   }
-  onEnviar() {
-    /* const DatosPedido  */
+  async onEnviar() {
+    const pedidoCompleto = JSON.parse(localStorage.getItem('carrito'));
+    this.detalleCliente = await this.clientesService.getDetalleCliente(this.clienteToken.clienteId);
+
+    console.log(pedidoCompleto);
+    console.log(this.clienteToken);
+    console.log(this.detalleCliente.direccion);
+
+    for (let nombreProd of this.detalle) {
+      console.log(nombreProd.nombre);
+
+    }
+    for (let pedido of pedidoCompleto) {
+      this.numProducto = pedido.id_producto;
+      this.cantidad = pedido.cantidad;
+      this.precio = pedido.precio;
+      this.fecha = new Date();
+
+      let newPedido = new Array();
+      newPedido = [this.fecha, this.numProducto, this.clienteToken.clienteId, this.cantidad, this.precio];
+      console.log(newPedido);
+      console.log(pedido);
+      console.log(pedido.cantidad);
+
+    }
+
+
+
 
   }
 
