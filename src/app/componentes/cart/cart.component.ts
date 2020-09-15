@@ -5,6 +5,7 @@ import { PEDIDO } from '../../../Models/pedidoModel';
 import { CARRITO } from '../../../Models/cartModel';
 import { CartService } from 'src/app/cart.service';
 import { ProductosService } from 'src/app/productos.service';
+import { PRODPEDIDO } from 'src/Models/productoPedidoModel';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class CartComponent implements OnInit {
   totalProd: PRODUCTO;
   arrCarrito: CARRITO[];
   arrPedido: PEDIDO[];
+  precioTotal: number;
 
 
   constructor(private cartService: CartService,
@@ -27,6 +29,7 @@ export class CartComponent implements OnInit {
     this.detalle = new Array();
     this.arrCarrito = new Array();
     this.arrPedido = new Array();
+    this.precioTotal = 0;
   }
 
   async ngOnInit() {
@@ -43,6 +46,9 @@ export class CartComponent implements OnInit {
       const carrito = new CARRITO(prod.id_prod, 1, 1, prod.imagen, prod.precio, 1);
       this.arrCarrito.push(carrito);
     }
+
+    //precio total del carrito disponible
+    this.precioTotal = this.calcularTotalPrecio();
   }
 
   onEliminar(pIdProd) {
@@ -62,14 +68,13 @@ export class CartComponent implements OnInit {
     const precioTotal = pProducto.precio * pProducto.cantidad;
     pProducto.cantidad = $event.target.value;
 
+    this.precioTotal = this.calcularTotalPrecio();
 
     //prueba
-    const arrPedido = new CARRITO(pProducto.id_producto, pProducto.id_cliente, pProducto.id_pedido, pProducto.imagen, precioTotal, pProducto.cantidad);
+    /* const arrPedido = new CARRITO(pProducto.id_producto, pProducto.id_cliente, pProducto.id_pedido, pProducto.imagen, precioTotal, pProducto.cantidad);
     console.log(arrPedido, this.carrito);
     localStorage.setItem('pedido', JSON.stringify(this.arrPedido));
-
-
-
+ */
     /* 
         pProducto.cantidad = $event.target.value;
         localStorage.setItem('carrito', JSON.stringify(this.arrCarrito)); */
@@ -77,14 +82,42 @@ export class CartComponent implements OnInit {
 
 
   }
-  onEnviar() {
-    /* const DatosPedido  */
 
+  calcularTotalPrecio() {
+    let total = 0;
+    for (let item of this.arrCarrito) {
+      total += item.cantidad * item.precio;
+    }
+    return total;
+  }
+
+  calcularTotalCantidad() {
+    let total = 0;
+    for (let item of this.arrCarrito) {
+      total += item.cantidad;
+    }
+    return total;
+  }
+  async onEnviar() {
+    //id cliente en el localstorage
+    const id_cliente = JSON.parse(localStorage.getItem('id_cliente'));
+    const newPedido = new PEDIDO(0, this.calcularTotalCantidad(), new Date().toDateString(), this.calcularTotalPrecio(), id_cliente, "", "", "pendiente");
+
+    const pedidoNuevo = await this.cartService.newPedido(newPedido);
+    console.log(pedidoNuevo);
+    console.log("ël supuesto id");
+    console.log(pedidoNuevo.insertId);
+
+    for (let item of this.arrCarrito) {
+      const newProdPedido = new PRODPEDIDO(item.id_producto, pedidoNuevo.insertId, item.cantidad)
+      const prodPedidoNuevo = this.cartService.addProdPedido(newProdPedido);
+      console.log(prodPedidoNuevo);
+    }
   }
 
 }
 
-
+[]
 
 
 

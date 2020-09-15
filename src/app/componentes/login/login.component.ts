@@ -73,6 +73,9 @@ export class LoginComponent implements OnInit {
       console.log(respuestaLogin['token']);
       this.logeado = true;
       localStorage.setItem('token', respuestaLogin['token']);
+
+      //id del cliente disponible en el localstorage
+      localStorage.setItem('id_cliente', respuestaLogin['cliente'].id_cliente);
       setTimeout(() => { this.router.navigate(['/users/datospersonales/' + urlCliente]) }, 3000);
 
     } else {
