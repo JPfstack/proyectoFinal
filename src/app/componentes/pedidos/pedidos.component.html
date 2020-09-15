@@ -1,52 +1,56 @@
 <div class="container">
-    <div class="pedidos">
-        <h1>Estos son tus pedidos</h1>
+    <div id="titulo">
+        <div>
+            <h2>Estos son tus pedidos</h2>
+        </div>
+        <div class="select">
+            <select (change)="onChange($event)">
+                <option value="todos">todos los pedidos</option>
+                <option value="realizados">Pedidos Realizados</option>
+                <option value="pendientes">Pedidos Pendientes</option>
+            </select>
+        </div>
     </div>
-    <div class="select">
-        <select (change)="onChange($event)">
-            <option value="todos">todos los pedidos</option>
-            <option value="realizados">Pedidos Realizados</option>
-            <option value="pendientes">Pedidos Pendientes</option>
-        </select>
 
-        <table class="table">
-            <thead class="thead-light">
-                <tr>
-                    <th>Id Pedido</th>
-                    <th>Id Cliente</th>
-                    <th>Cantidad</th>
-                    <th>Fecha de entrega</th>
-                    <th>Precio Total</th>
-                    <th>Dirección</th>
-                    <th>Descripcion</th>
-                    <th>Estado</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let pedido of pedidos">
-                    <td>{{pedido.id_pedido}}</td>
-                    <td>{{pedido.id_cliente}}</td>
-                    <td>{{pedido.cantidad}}</td>
-                    <td>{{pedido.fecha_entrega}}</td>
-                    <td>{{pedido.precio_total}}</td>
-                    <td>{{pedido.direccion}}</td>
-                    <td>{{pedido.descripcion}}</td>
-                    <td>{{pedido.estado}} <br>
-                        <a class="btn btn-outline-secondary btn-sm" role="button" (click)="onPedido(pedido)">Cambiar
-                            estado</a>
-                    </td>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th>Id Pedido</th>
+                <th>Id Cliente</th>
+                <th>Cantidad</th>
+                <th>Fecha de entrega</th>
+                <th>Precio Total</th>
+                <th>Dirección</th>
+                <th>Descripcion</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pedido of pedidos">
+                <td>{{pedido.id_pedido}}</td>
+                <td>{{pedido.id_cliente}}</td>
+                <td>{{pedido.cantidad}}</td>
+                <td>{{pedido.fecha_entrega}}</td>
+                <td>{{pedido.precio_total}}</td>
+                <td>{{pedido.direccion}}</td>
+                <td>{{pedido.descripcion}}</td>
+                <td>{{pedido.estado}} <br>
+                    <a class="btn btn-outline-secondary btn-sm" role="button" (click)="onPedido(pedido)">Cambiar
+                        estado</a>
+                </td>
 
 
-                </tr>
+            </tr>
 
-                <!-- <tr>
+            <!-- <tr>
                 <th scope="row">2</th>
                 <td>2</td>
                 <td>30Kg</td>
                 <td>03-09-2020</td>
                 <td>22,00</td>
             </tr> -->
-            </tbody>
-        </table>
-    </div>
+        </tbody>
+    </table>
+
+
 </div>

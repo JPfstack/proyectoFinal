@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
       this.logeado = true;
       localStorage.setItem('token', respuestaLogin['token']);
       return setTimeout(() => {
-        this.router.navigate(['/admin/pedidos'])
+        this.router.navigate(['/admin/pedidos']), this.clientesService.isLogged();
 
       }, 3000);
     }
@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
 
     } else {
       this.error = true;
-      setTimeout(() => { this.router.navigate(['/ifruit']), this.error = false }, 3000)
+      setTimeout(() => { this.ngOnInit(), this.error = false }, 3000)
 
     }
   }

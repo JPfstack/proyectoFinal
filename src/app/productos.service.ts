@@ -52,4 +52,8 @@ export class ProductosService {
 
     return this.httpClient.delete<any>(`${this.idFavUrl}/${pId}`).toPromise();
   }
+
+  addNewProducto(formvalues): Promise<PRODUCTO> {
+    return this.httpClient.post<PRODUCTO>(this.baseUrl, formvalues).toPromise();
+  }
 }

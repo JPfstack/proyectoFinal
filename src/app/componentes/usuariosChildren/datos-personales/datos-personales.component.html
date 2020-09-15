@@ -37,13 +37,12 @@
                         [value]="cliente.id_cliente">
                 </div>
                 <br>
-                <input type="submit" class="boton" value="Guardar">
-
-
+                <input type="submit" class="btn btn-outline-success botonFormulario" value="Guardar">
             </form>
+            <button class="btn btn-outline-success botonFormulario" (click)="onVolver()">Volver</button>
         </section>
 
-        <button class="boton" *ngIf="boton" (click)="onEditarPerfil()">Editar perfil</button>
+        <button class="btn btn-outline-success boton" *ngIf="boton" (click)="onEditarPerfil()">Editar perfil</button>
 
 
 

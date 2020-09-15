@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CLIENTE } from 'src/Models/clienteModel';
 import { ClientesService } from './clientes.service';
-import { RouterLink, Router } from '@angular/router';
+import { RouterLink, Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -18,8 +18,9 @@ export class AppComponent {
   detalleCliente: CLIENTE;
 
   constructor(
-    private clientesService: ClientesService,
-    private router: Router) {
+    public clientesService: ClientesService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) {
 
     this.login = false;
     this.registro = true;

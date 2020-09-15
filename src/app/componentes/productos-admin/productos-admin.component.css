@@ -1,3 +1,30 @@
+.container h2 {
+font-family: 'Martel', 'cursive';
+}
+
+.container div {
+    display: flex;
+    justify-content: space-around;
+}
+
 table{
 background-color: rgb(136, 177, 136);
+margin-top: 10px;
 }
+
+form{
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    border: 2px solid  rgba(153, 205, 50);
+    text-align: center;
+}
+
+form div label {
+    width: 25%;
+    float: left;   
+    display:block;
+    margin: 0 auto;
+    text-align: left;
+}
+

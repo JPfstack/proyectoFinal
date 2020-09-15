@@ -63,10 +63,17 @@
     left: 85% ;
     width: 150px;
     height: 100px;
-    border-radius: 5px;
+
 }
 
-.boton:hover{
-    background-color: rgba(153, 205, 50, 0.5);
+.botonFormulario {
+    width: 100px;
+    height: 35px;
+    padding: 0px 0px 5px 3px;
 }
+
+button {
+    margin-left: 10px;
+}
+
 

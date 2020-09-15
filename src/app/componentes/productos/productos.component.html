@@ -33,7 +33,8 @@
                 <h3>{{producto?.nombre}}</h3>
                 <div>
                     <p id="precio">{{producto.precio}}</p>
-                    <button [routerLink]="['/productos',producto.id_prod]">Ver mas</button>
+                    <button class="btn btn-outline-success" [routerLink]="['/productos',producto.id_prod]">Ver
+                        mas</button>
                     <a href="http://localhost:4200/carrito"><img class="carrito"
                             src="../../../assets/images/supermercado.png" alt="Añadir al carrito"
                             title="Añadir al carrito"></a>

@@ -86,4 +86,11 @@ export class DatosPersonalesComponent implements OnInit {
       id_cliente: new FormControl(this.cliente.id_cliente)
     })
   }
+
+  onVolver() {
+
+    this.editar = false;
+    this.boton = true;
+    this.datos = true;
+  }
 };
