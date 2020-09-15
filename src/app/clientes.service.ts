@@ -62,8 +62,15 @@ export class ClientesService {
     console.log(formvalues);
 
     return this.httpClient.put<any>(this.detalleUrl, formvalues).toPromise();
-
-
   }
+
+  isLogged() {
+    if (localStorage.getItem('token')) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
 
 }

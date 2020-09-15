@@ -88,6 +88,16 @@ main section .star img {
     text-shadow: rgb(153, 205, 50) 2px 0px 0px;
 }
 
+#est {
+    margin: 10px auto;
+    text-align: center;
+    width: 50%;
+    font-family: 'Martel', 'cursive';
+    font-size: 20px;
+    color: black;
+    text-shadow: rgb(153, 205, 50) 2px 0px 0px;
+
+}
 #comprar {
     display:flex;
     justify-content: space-around;
@@ -95,19 +105,12 @@ main section .star img {
 
 #comprar button {
     margin: 10px auto;
-   height: 40px;
+    height: 40px;
     width: 25%;
-    font-family: 'Martel', 'cursive';
     font-size: 17px;
-    border: 1px solid black;
-    border-radius: 10px;
 }
 
-#comprar button:hover {
-    background-color: rgba(153, 205, 50, 0.205);
-    transition: 0.3s;
 
-}
 
 
 

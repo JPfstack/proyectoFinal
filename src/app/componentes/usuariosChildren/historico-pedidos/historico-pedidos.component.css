@@ -44,13 +44,6 @@ td {
 button {
     padding: 5px;
     margin: 5px;
-    font-family: 'Martel', 'cursive';
-    border: 1px solid black;
-    border-radius: 10px;
-}
 
-button:hover {
-    background-color: rgba(153, 205, 50, 0.205);
-    transition: 0.3s;
 }
 

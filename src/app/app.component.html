@@ -3,9 +3,9 @@
 <header class="container-fluid bg-dark fixed-top">
     <div class="container">
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">
-                <img src="../assets/images/pineapple.png" alt="">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark barranavegacion">
+            <a class="navbar-brand logo" href="#">
+                <img src="../assets/images/pineapple.png" alt="ifruit">
             </a>
 
 
@@ -14,9 +14,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto menu">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/ifruit">Inicio <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/productos">Productos</a>
@@ -33,14 +33,13 @@
                     </li>
 
                     <li class="nav-item" *ngIf="admin">
-                        <a class="nav-link" [routerLink]="['admin/pedidos']">Mi
-                            perfil</a>
+                        <a class="nav-link" [routerLink]="['admin/pedidos']">Admin</a>
                     </li>
                     <li class="nav-item" *ngIf="login">
                         <p>| Bienvenid@ {{detalleCliente?.nombre}}</p>
                     </li>
 
-                    <i *ngIf="login" class="fa fa-sign-out" aria-hidden="true" (click)="Exit()"></i>
+                    <i *ngIf="salir" class="fa fa-sign-out" aria-hidden="true" (click)="Exit()"></i>
                     <li>
                         <img src="../assets/images/supermercado.png" alt="" [routerLink]="['carrito']">
                     </li>

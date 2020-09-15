@@ -7,14 +7,14 @@
 
         <div class="productos">
             <div class="prod" *ngFor="let producto of productosFav">
-                <div *ngIf="star" class="star">
+                <div *ngIf="star" class="star" (click)="onDeleteFav(producto)">
                     <img src="../../../assets/startrans.png" alt="">
                 </div>
                 <img [src]="producto.imagen" alt="">
                 <h3>{{producto?.nombre}}</h3>
                 <div>
                     <p id="precio">{{producto?.precio}}</p>
-                    <p id="comprar">Comprar</p>
+                    <button class="btn btn-outline-success" id="comprar">Comprar</button>
                 </div>
             </div>
             <!--  <div class="prod">

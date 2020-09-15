@@ -72,21 +72,14 @@
 }
 
 
-#comprar {
+button {
+    display: block;
     margin: 10px auto;
     text-align: center;
     width: 35%;
-    font-family: 'Martel', 'cursive';
-    font-size: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
+ 
 }
 
-#comprar:hover {
-    background-color: rgba(153, 205, 50, 0.205);
-    transition: 0.3s;
-    cursor: pointer;
-}
 
 .star img {
     width: 50px;

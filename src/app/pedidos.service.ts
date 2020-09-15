@@ -40,4 +40,9 @@ export class PedidosService {
        }))
      })
    }*/
+
+  changeToRealizado(pEstado): Promise<PEDIDO> {
+    return this.httpClient.put<PEDIDO>(this.urlRealizados, pEstado).toPromise();
+  }
+
 } 

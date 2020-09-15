@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PEDIDO } from '../../../Models/pedidoModel';
 import { PedidosService } from '../../pedidos.service';
 
-
 @Component({
   selector: 'app-pedidos',
   templateUrl: './pedidos.component.html',
@@ -14,21 +13,12 @@ export class PedidosComponent implements OnInit {
 
   pedidos: PEDIDO[];
 
+
   constructor(private pedidosService: PedidosService) {
 
   }
 
   ngOnInit(): void {
-
-    this.pedidosService.getAllPedidos()
-      .then(respuesta => {
-        console.log(respuesta);
-        this.pedidos = respuesta;
-      })
-      .catch(error => {
-        console.log(error);
-
-      });
 
     this.pedidosService.getAllPedidosAdmin()
       .then(respuesta => {
@@ -48,7 +38,17 @@ export class PedidosComponent implements OnInit {
       .catch(error => {
         console.log(error);
 
+      });
+
+    this.pedidosService.getAllPedidos()
+      .then(respuesta => {
+        console.log(respuesta);
+        this.pedidos = respuesta;
       })
+      .catch(error => {
+        console.log(error);
+
+      });
 
   }
   async onChange($event) {
@@ -62,5 +62,17 @@ export class PedidosComponent implements OnInit {
       this.pedidos = await this.pedidosService.getAllPedidosAdmin();
     }
   }
+
+
+
+  async onPedido(pEstado) {
+    console.log(pEstado);
+    if (pEstado.estado === "pendiente") {
+      const resultado = await this.pedidosService.changeToRealizado(pEstado);
+      console.log(resultado);
+      this.ngOnInit();
+    }
+  };
+
 
 }

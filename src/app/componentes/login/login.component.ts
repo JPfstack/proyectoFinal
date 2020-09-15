@@ -61,7 +61,10 @@ export class LoginComponent implements OnInit {
     if (respuestaLogin['success'] && respuestaLogin['cliente'].email === 'admin@gmail.com') {
       this.logeado = true;
       localStorage.setItem('token', respuestaLogin['token']);
-      return this.router.navigate(['/admin/pedidos']);
+      return setTimeout(() => {
+        this.router.navigate(['/admin/pedidos']), this.clientesService.isLogged();
+
+      }, 3000);
     }
 
 
@@ -74,7 +77,7 @@ export class LoginComponent implements OnInit {
 
     } else {
       this.error = true;
-      setTimeout(() => { this.router.navigate(['/ifruit']), this.error = false }, 3000)
+      setTimeout(() => { this.ngOnInit(), this.error = false }, 3000)
 
     }
   }

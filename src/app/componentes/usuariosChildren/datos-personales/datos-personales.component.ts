@@ -65,7 +65,7 @@ export class DatosPersonalesComponent implements OnInit {
 
   async onEdicion() {
     const respuestaEdit = await this.clientesService.edicionCliente(this.edicion.value);
-
+    this.ngOnInit();
 
     console.log(respuestaEdit);
     console.log(this.clienteId);
@@ -85,5 +85,12 @@ export class DatosPersonalesComponent implements OnInit {
       email: new FormControl(this.cliente.email),
       id_cliente: new FormControl(this.cliente.id_cliente)
     })
+  }
+
+  onVolver() {
+
+    this.editar = false;
+    this.boton = true;
+    this.datos = true;
   }
 };

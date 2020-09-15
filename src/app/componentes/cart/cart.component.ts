@@ -32,8 +32,8 @@ export class CartComponent implements OnInit {
   async ngOnInit() {
 
     const newProdCart = JSON.parse(localStorage.getItem('producto'));
-    console.log(newProdCart);
-
+    const productos = await this.productosService.getAllProductos();
+    /*   const arrProd = this.totalProd */
     for (let prod of newProdCart) {
       const producto = await this.productosService.getProductoById(prod);
       this.detalle.push.apply(this.detalle, producto);

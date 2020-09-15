@@ -45,6 +45,27 @@ export class FavoritosComponent implements OnInit {
 
     this.productosFav = this.productosFavoritos.filter(favorito => favorito.id_cliente == this.clienteToken.clienteId);
 
-  }
+    console.log(this.productosFav);
+
+
+  };
+
+  async onDeleteFav(pProducto) {
+    const cliente = this.clienteToken.clienteId;
+    console.log(cliente);
+    const producto = pProducto.id_prod;
+    console.log(producto);
+
+    const prod = await this.productosService.getIdFav(this.clienteToken.clienteId, producto)
+    console.log(prod[0].id, prod);
+
+    const respuesta = await this.productosService.removeFav(prod[0].id);
+    console.log(respuesta);
+
+    this.ngOnInit();
+
+  };
+
+
 
 }

@@ -76,10 +76,6 @@ label{
     margin: 10px;
 }
 
-.boton:hover{
-    background-color: rgba(153, 205, 50, 0.5);
-}
-
 p {
     width: 73.5%;
     text-align: right;

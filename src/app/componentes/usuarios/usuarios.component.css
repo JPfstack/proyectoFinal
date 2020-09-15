@@ -34,12 +34,10 @@
 
 
 #pestanas {
+    padding: 0px 10px 70px 50px;
     display: flex;
-    justify-content: space-around;
-    width: 100vw;
-    padding: 20px 20px 5px 20px;
-    background-color: rgb(68, 124, 68);
-    
+    text-align: center;
+    margin-top: 10px;
 }
 
 #pestanas a:first-child{
@@ -47,12 +45,16 @@
     border-bottom: 2px solid silver;
     width: 30%;
     margin-left: 10px;
+    background-color:rgb(136, 177, 136);
+
 }
 
 #pestanas a:first-child:hover{
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
     transition: 0.3s;
+    background-color:rgb(247, 247, 111);
+
 }
 
 #pestanas a:last-child{
@@ -60,12 +62,14 @@
     border-bottom: 2px solid silver;
     width: 30%;
     margin-left: 10px;
+    background-color: rgb(136, 177, 136);
 }
 
 #pestanas a:last-child:hover{
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
     transition: 0.3s;
+    background-color:rgb(247, 247, 111)
 }
 
 #pestanas a:nth-child(2){
@@ -73,39 +77,37 @@
     border-bottom: 2px solid silver;
     width: 30%;
     margin-left: 10px;
+    background-color:rgb(136, 177, 136);
 }
 
 #pestanas a:nth-child(2):hover{
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
     transition: 0.3s;
+    background-color:rgb(247, 247, 111);
 }
-
 
 #pestanas a {
     text-decoration: none;
-    color: silver;
+    color: white;
     font-size: 25px;
 
 }
 
 #pestanas a:hover {
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
-#pestanas a:focus {
+/* #pestanas a:focus {
     color: black;
     border-right: 2px solid black;
     border-bottom: 2px solid black;
     font-weight: bold;
-}
+} */
 
 #pestanas a:active {
-    color: black;
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
-    font-weight: bold;
+    color: white;
 }
 
 .contenedor main {
