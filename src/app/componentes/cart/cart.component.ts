@@ -18,12 +18,15 @@ export class CartComponent implements OnInit {
   detalle: PRODUCTO[];
   totalProd: PRODUCTO;
   arrCarrito: CARRITO[];
+  arrPedido: PEDIDO[];
+
 
   constructor(private cartService: CartService,
     private productosService: ProductosService) {
-    this.detalle = new Array();
 
+    this.detalle = new Array();
     this.arrCarrito = new Array();
+    this.arrPedido = new Array();
   }
 
   async ngOnInit() {
@@ -40,27 +43,50 @@ export class CartComponent implements OnInit {
       const carrito = new CARRITO(prod.id_prod, 1, 1, prod.imagen, prod.precio, 1);
       this.arrCarrito.push(carrito);
     }
+  }
 
+  onEliminar(pIdProd) {
+    const idProd = pIdProd.toString();
+    const deleteProducto = JSON.parse(localStorage.getItem('producto'));
+    const prodDelete = deleteProducto.indexOf(idProd);
+    console.log(deleteProducto, prodDelete);
 
+    deleteProducto.splice(prodDelete, 1)
+    console.log(deleteProducto);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    localStorage.setItem('producto', JSON.stringify(deleteProducto));
 
   }
 
+  onChange($event, pProducto) {
+    const precioTotal = pProducto.precio * pProducto.cantidad;
+    pProducto.cantidad = $event.target.value;
 
+
+    //prueba
+    const arrPedido = new CARRITO(pProducto.id_producto, pProducto.id_cliente, pProducto.id_pedido, pProducto.imagen, precioTotal, pProducto.cantidad);
+    console.log(arrPedido, this.carrito);
+    localStorage.setItem('pedido', JSON.stringify(this.arrPedido));
+
+
+
+    /* 
+        pProducto.cantidad = $event.target.value;
+        localStorage.setItem('carrito', JSON.stringify(this.arrCarrito)); */
+    /* console.log(arrCarrito); */
+
+
+  }
+  onEnviar() {
+    /* const DatosPedido  */
+
+  }
 
 }
+
+
+
+
+
+
+

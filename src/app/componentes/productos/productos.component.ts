@@ -3,6 +3,7 @@ import { ProductosService } from '../../productos.service';
 import { PRODUCTO } from '../../../Models/productoModel';
 import { ClientesService } from 'src/app/clientes.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { CartService } from 'src/app/cart.service';
 
 
 @Component({
@@ -15,10 +16,12 @@ export class ProductosComponent implements OnInit {
   productos: PRODUCTO[];
   clienteToken: any;
   todosProductos: PRODUCTO[];
+  productoId: number;
 
   constructor(
     private productosService: ProductosService,
-    private clientesService: ClientesService) {
+    private clientesService: ClientesService,
+    private cartService: CartService) {
 
 
   }
@@ -46,5 +49,12 @@ export class ProductosComponent implements OnInit {
     }
 
   }
+
+  /* onCarrito() {
+    console.log(this.clienteToken.clienteId, this.productoId);
+
+    const resultado = this.cartService.addCarrito(this.productoId);
+    console.log(resultado);
+  } */
 
 }

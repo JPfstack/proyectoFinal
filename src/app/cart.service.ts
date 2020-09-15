@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { PEDIDO } from 'src/Models/pedidoModel';
 import { PRODUCTO } from 'src/Models/productoModel';
 import { CARRITO } from '../Models/cartModel';
 
@@ -11,9 +13,11 @@ export class CartService {
   /*  arrProdCart: CARRITO[];
    prodLocalStorage: CARRITO; */
   carrito: any;
+  newPeUrl: string;
 
+  constructor(private httpClient: HttpClient) {
+    this.newPeUrl = "http://localhost:3000/api/pedidos/nuevo";
 
-  constructor() {
     this.carrito = new Array();
 
     /*     this.arrProdCart = [
@@ -24,7 +28,7 @@ export class CartService {
 
 
   addCarrito(productoId) {
-    var arrStorage = [];
+    let arrStorage = [];
     let stringStorage = localStorage.getItem('producto');
     arrStorage = (stringStorage) ? JSON.parse(stringStorage) : [];
     arrStorage.push(productoId);
@@ -34,4 +38,9 @@ export class CartService {
 
   }
 
+  newPedido(): Promise<PEDIDO[]> {
+    return this.httpClient.post<PEDIDO[]>(this.newPeUrl, PEDIDO).toPromise();
+  }
+
 }
+

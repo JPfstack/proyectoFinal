@@ -40,5 +40,6 @@ export class ProductosService {
     console.log(fk_id_producto);
 
     return this.httpClient.post<any>(this.cartUrl, { fk_id_producto }).toPromise();
+
   }
 }
