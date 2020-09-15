@@ -59,21 +59,21 @@ export class CartComponent implements OnInit {
   }
 
   onChange($event, pProducto) {
-    const precioTotal = pProducto.precio * pProducto.cantidad;
-    pProducto.cantidad = $event.target.value;
+    /* const precioTotal = pProducto.precio * pProducto.cantidad;
+    pProducto.cantidad = $event.target.value; */
 
 
     //prueba
-    const arrPedido = new CARRITO(pProducto.id_producto, pProducto.id_cliente, pProducto.id_pedido, pProducto.imagen, precioTotal, pProducto.cantidad);
-    console.log(arrPedido, this.carrito);
-    localStorage.setItem('pedido', JSON.stringify(this.arrPedido));
+    /*  const arrPedido = new CARRITO(pProducto.id_producto, pProducto.id_cliente, pProducto.id_pedido, pProducto.imagen, precioTotal, pProducto.cantidad);
+     console.log(arrPedido, this.carrito);
+     localStorage.setItem('pedido', JSON.stringify(this.arrPedido)); */
 
 
 
-    /* 
-        pProducto.cantidad = $event.target.value;
-        localStorage.setItem('carrito', JSON.stringify(this.arrCarrito)); */
-    /* console.log(arrCarrito); */
+
+    pProducto.cantidad = $event.target.value;
+    localStorage.setItem('carrito', JSON.stringify(this.arrCarrito));
+    console.log(this.arrCarrito);
 
 
   }
