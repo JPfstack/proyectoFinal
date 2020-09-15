@@ -31,10 +31,14 @@
                     <td>{{pedido.precio_total}}</td>
                     <td>{{pedido.direccion}}</td>
                     <td>{{pedido.descripcion}}</td>
-                    <td>{{pedido.estado}}
-                        <a class="btn btn-outline-secondary btn-sm" href="editar" role="button">Editar</a>
+                    <td>{{pedido.estado}} <br>
+                        <a class="btn btn-outline-secondary btn-sm" role="button" (click)="onPedido(pedido)">Cambiar
+                            estado</a>
                     </td>
+
+
                 </tr>
+
                 <!-- <tr>
                 <th scope="row">2</th>
                 <td>2</td>

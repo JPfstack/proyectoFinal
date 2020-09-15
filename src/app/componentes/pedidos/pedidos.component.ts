@@ -63,4 +63,15 @@ export class PedidosComponent implements OnInit {
     }
   }
 
+
+
+  async onPedido(pEstado) {
+    console.log(pEstado);
+    if (pEstado.estado === "pendiente") {
+      const resultado = await this.pedidosService.changeToRealizado(pEstado);
+      console.log(resultado);
+      this.ngOnInit();
+    }
+
+  }
 }
