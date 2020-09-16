@@ -27,6 +27,7 @@ export class CartComponent implements OnInit {
   cantidad: number;
   precio: number;
   fecha: Date;
+  newPedido: PEDIDO;
 
   constructor(private cartService: CartService,
     private productosService: ProductosService,
@@ -107,26 +108,31 @@ export class CartComponent implements OnInit {
     console.log(this.detalleCliente.direccion);
 
     for (let nombreProd of this.detalle) {
-      console.log(nombreProd.nombre);
+      const nombreProducto = nombreProd.nombre;
 
     }
     for (let pedido of pedidoCompleto) {
       this.numProducto = pedido.id_producto;
       this.cantidad = pedido.cantidad;
       this.precio = pedido.precio;
-      this.fecha = new Date();
+      let precioTotal = 0;
+      precioTotal += pedido.precio;
+      console.log(precioTotal);
 
-      let newPedido = new Array();
-      newPedido = [this.fecha, this.numProducto, this.clienteToken.clienteId, this.cantidad, this.precio];
-      console.log(newPedido);
-      console.log(pedido);
-      console.log(pedido.cantidad);
+      /*    this.fecha = new Date();
+   
+   
+         const newPedido = new PEDIDO[this.fecha, this.numProducto, this.clienteToken.clienteId, this.cantidad, this.precio];
+         console.log(newPedido);
+         console.log(pedido);
+         console.log(pedido.cantidad);
+   
+       } */
+
+
+
 
     }
-
-
-
-
   }
 
 }
