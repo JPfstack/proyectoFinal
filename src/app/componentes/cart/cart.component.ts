@@ -109,6 +109,7 @@ export class CartComponent implements OnInit {
     }
     return total;
   }
+
   async onEnviar() {
     //id cliente en el localstorage
     const id_cliente = JSON.parse(localStorage.getItem('id_cliente'));
