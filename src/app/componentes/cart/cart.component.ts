@@ -6,6 +6,8 @@ import { CARRITO } from '../../../Models/cartModel';
 import { CartService } from 'src/app/cart.service';
 import { ProductosService } from 'src/app/productos.service';
 import { PRODPEDIDO } from 'src/Models/productoPedidoModel';
+import { ClientesService } from 'src/app/clientes.service';
+
 
 
 @Component({
@@ -24,7 +26,8 @@ export class CartComponent implements OnInit {
 
 
   constructor(private cartService: CartService,
-    private productosService: ProductosService) {
+    private productosService: ProductosService,
+    private clientesService: ClientesService) {
 
     this.detalle = new Array();
     this.arrCarrito = new Array();
@@ -101,7 +104,10 @@ export class CartComponent implements OnInit {
   async onEnviar() {
     //id cliente en el localstorage
     const id_cliente = JSON.parse(localStorage.getItem('id_cliente'));
-    const newPedido = new PEDIDO(0, this.calcularTotalCantidad(), new Date().toDateString(), this.calcularTotalPrecio(), id_cliente, "", "", "pendiente");
+    const direccion = await this.clientesService.getDetalleCliente(id_cliente);
+    console.log(direccion.direccion);
+
+    const newPedido = new PEDIDO(0, this.calcularTotalCantidad(), new Date().toDateString(), this.calcularTotalPrecio(), id_cliente, "", direccion.direccion, "pendiente");
 
     const pedidoNuevo = await this.cartService.newPedido(newPedido);
     console.log(pedidoNuevo);
