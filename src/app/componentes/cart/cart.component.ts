@@ -7,7 +7,7 @@ import { CartService } from 'src/app/cart.service';
 import { ProductosService } from 'src/app/productos.service';
 import { PRODPEDIDO } from 'src/Models/productoPedidoModel';
 import { ClientesService } from 'src/app/clientes.service';
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,16 +25,26 @@ export class CartComponent implements OnInit {
   precioTotal: number;
   clienteToken: any;
   producto: PRODUCTO;
+  nombreProd: string;
+  cantidadProd: number;
+  descripcion: string;
+  disponibilidad: number;
+  prod: PRODUCTO;
+  vacio: boolean;
+  pedidoOK: boolean;
 
 
   constructor(private cartService: CartService,
     private productosService: ProductosService,
-    private clientesService: ClientesService) {
+    private clientesService: ClientesService,
+    private router: Router) {
 
     this.detalle = new Array();
     this.arrCarrito = new Array();
     this.arrPedido = new Array();
     this.precioTotal = 0;
+    this.vacio = false;
+    this.pedidoOK = false;
   }
 
   async ngOnInit() {
@@ -44,22 +54,28 @@ export class CartComponent implements OnInit {
     console.log(this.clienteToken.clienteId);
 
     const newProdCart = JSON.parse(localStorage.getItem('producto'));
-    const productos = await this.productosService.getAllProductos();
-    /*   const arrProd = this.totalProd */
-    for (let prod of newProdCart) {
-      this.producto = await this.productosService.getProductoById(prod);
-      this.detalle.push.apply(this.detalle, this.producto);
-      console.log(this.detalle);
-    }
-    for (let prod of this.detalle) {
-      const carrito = new CARRITO(prod.id_prod, this.clienteToken.clienteId, prod.imagen, prod.precio, 1);
-      this.arrCarrito.push(carrito);
-      console.log(this.arrCarrito);
+    if (newProdCart) {
+      this.vacio = false;
+      const productos = await this.productosService.getAllProductos();
+      /*   const arrProd = this.totalProd */
+      for (let prod of newProdCart) {
+        this.producto = await this.productosService.getProductoById(prod);
+        this.detalle.push.apply(this.detalle, this.producto);
+        console.log(this.detalle);
+      }
+      for (let prod of this.detalle) {
+        const carrito = new CARRITO(prod.id_prod, this.clienteToken.clienteId, prod.imagen, prod.precio, 1);
+        this.arrCarrito.push(carrito);
+        console.log(this.arrCarrito);
 
+      }
+
+      //precio total del carrito disponible
+      this.precioTotal = this.calcularTotalPrecio();
+    } else {
+      this.vacio = true;
     }
 
-    //precio total del carrito disponible
-    this.precioTotal = this.calcularTotalPrecio();
   }
 
   onEliminar(pIdProd) {
@@ -75,24 +91,23 @@ export class CartComponent implements OnInit {
 
   }
 
-  onChange($event, pProducto) {
+  async onChange($event, pProducto) {
     const precioTotal = pProducto.precio * pProducto.cantidad;
     pProducto.cantidad = $event.target.value;
+    console.log(pProducto.id_producto);
 
-    this.precioTotal = this.calcularTotalPrecio();
+    this.prod = await this.productosService.getProductoById(pProducto.id_producto);
+    this.disponibilidad = parseInt(this.prod[0].disponibilidad);
 
-    //prueba
-    /* const arrPedido = new CARRITO(pProducto.id_producto, pProducto.id_cliente, pProducto.id_pedido, pProducto.imagen, precioTotal, pProducto.cantidad);
-    console.log(arrPedido, this.carrito);
-    localStorage.setItem('pedido', JSON.stringify(this.arrPedido));
- */
-    /* 
-        pProducto.cantidad = $event.target.value;
-        localStorage.setItem('carrito', JSON.stringify(this.arrCarrito)); */
-    /* console.log(arrCarrito); */
+    if (pProducto.cantidad > this.disponibilidad) {
+      alert(`Únicamente contamos con ${this.disponibilidad}Kg de ${this.prod[0].nombre}, por favor reduzca la cantidad solicitada.`);
 
-
-  }
+    } else {
+      this.precioTotal = this.calcularTotalPrecio();
+      pProducto.cantidad = $event.target.value;
+      localStorage.setItem('carrito', JSON.stringify(this.arrCarrito));
+    }
+  };
 
   calcularTotalPrecio() {
     let total = 0;
@@ -100,7 +115,7 @@ export class CartComponent implements OnInit {
       total += item.cantidad * item.precio;
     }
     return total;
-  }
+  };
 
   calcularTotalCantidad() {
     let total = 0;
@@ -108,7 +123,7 @@ export class CartComponent implements OnInit {
       total += item.cantidad;
     }
     return total;
-  }
+  };
 
   async onEnviar() {
     //id cliente en el localstorage
@@ -116,23 +131,28 @@ export class CartComponent implements OnInit {
     const direccion = await this.clientesService.getDetalleCliente(id_cliente);
     console.log(direccion.direccion);
 
-    const newPedido = new PEDIDO(0, this.calcularTotalCantidad(), new Date().toDateString(), this.calcularTotalPrecio(), id_cliente, "", direccion.direccion, "pendiente");
+    console.log(this.detalle);
 
-    const pedidoNuevo = await this.cartService.newPedido(newPedido);
-    console.log(pedidoNuevo);
-    console.log("ël supuesto id");
-    console.log(pedidoNuevo.insertId);
+    const resultado = await this.cartService.newPedido(JSON.parse(localStorage.getItem('carrito')));
+    console.log(resultado);
 
-    for (let item of this.arrCarrito) {
-      const newProdPedido = new PRODPEDIDO(item.id_producto, pedidoNuevo.insertId, item.cantidad)
-      const prodPedidoNuevo = this.cartService.addProdPedido(newProdPedido);
-      console.log(prodPedidoNuevo);
-    }
-  }
+    const newDisp = await this.productosService.updateDisp(JSON.parse(localStorage.getItem('carrito')));
+    console.log(newDisp);
+
+    localStorage.removeItem('producto');
+    localStorage.removeItem('carrito');
+
+    this.pedidoOK = true;
+    setTimeout(() => {
+      this.router.navigate(['/ifruit'])
+
+
+    }, 3000);
+  };
 
 }
 
-[]
+
 
 
 

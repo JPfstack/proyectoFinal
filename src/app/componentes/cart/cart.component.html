@@ -1,20 +1,24 @@
 <div class="container">
 
-    <div class="img2">
-        <a href="../productos"><button type="link" class="btn btn-secondary btn-sm-3">
-                Seguir Comprando</button></a>
-    </div>
-    <h3>Este es su carrito de Frutas:</h3>
-    <div class="row">
 
-        <div class="col-sm-4" *ngFor="let producto of arrCarrito">
+
+
+    <div class="titulo">
+        <h3>Este es su carrito de Frutas:</h3>
+        <h3 *ngIf="vacio">Su carrito está vacío, puede ver nuestros productos en nuestra página de <a
+                [routerLink]="['/productos']">Productos</a></h3>
+    </div>
+
+    <div *ngIf="!vacio" class="row">
+
+        <div class="col-sm-4 prod" *ngFor="let producto of arrCarrito">
             <img [src]=" producto?.imagen" alt="">
             <h5>Cantidad:{{producto?.cantidad}}
-                <input type="number" (change)="onChange($event, producto)" min="0.25" max="20" step="0.25">
+                <input type="number" (change)="onChange($event, producto)" min="0.25" max="50" step="0.25">
             </h5>
             <h5>€/Kg: {{producto?.precio}}</h5>
-            <h5 id="precio"> Precio: {{producto?.precio * producto?.cantidad}}</h5>
-            <div id="btn-agregar-eliminar">
+            <h5 id="precio"> Precio: {{producto?.precio * producto?.cantidad | number: '1.1-2'}}</h5>
+            <div id="btn-agregar-eliminar botones">
                 <button type="button" class="btn btn-outline-success"
                     (click)="onEliminar(producto.id_producto)">Eliminar</button>
 
@@ -43,12 +47,19 @@
 
             </div>
         </div> -->
-        <div class="irProductos">
 
-        </div>
     </div>
+
+
     <div class="btn-tramitar">
-        <h5 class="total">Total a pagar<input type="text">{{precioTotal}}</h5>
+        <h5 class="total">Total a pagar: {{precioTotal | number: '1.1-2'}}€</h5>
         <button type="submit" class="btn btn-primary btn-sm-4 btn-block" (click)="onEnviar()">Tramitar Pedido</button>
+        <button [routerLink]="['/productos']" class="btn btn-outline-success boton">Seguir Comprando</button>
+
+    </div>
+
+    <div class="pedidoOK" *ngIf="pedidoOK">
+        <h3>Enhorabuena, ha realizado su pedido con éxito</h3>
+        <p>redirigiendo...</p>
     </div>
 </div>

@@ -6,36 +6,44 @@ body {
 
 .container{
     width: 100%;
-    background-image: url("../../../assets/images/shopping-cart-filled-with-fruit-and-vegetables.jpg");
+    background-image: url("../../../assets/images/carrito.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  
 }
 
+.titulo {
+    width: 100%;
+}
 .row{
-    margin-top: 40px;
-    width: 50%;
-    padding: 5px;
-    position: relative;
+    width: 60%;
+    padding: 10px;
+
 }
 
 .col-sm-4{
 width: 50%;
+text-align: center;
 align-content: center;
+margin-bottom: 10px;
+
 }
 
-.total input{
+.total{
 width: 50px;
+color: black;
+text-shadow: rgb(153, 205, 50) 2px 0px 0px;
 }
 
 .row img{
-    width: 45%;
-}
+    width: 50%;
+    border-radius: 50%;
+    border: 2px solid rgba(153, 205, 50);
+    margin-bottom: 5px;
 
-.img2{
-    width: 5%;
-    position: absolute;
-    left: 650px;
-    top: 150px;
 }
 
 .container h3{
@@ -47,29 +55,55 @@ width: 50px;
 
 .container h5{
     font-family: 'Kamel', 'Martel';
+    color: black;
+    text-shadow: rgb(153, 205, 50) 2px 0px 0px;
 }
 
 #btn-agregar-eliminar{
 padding-top: 10px;
 width: 5px;
+margin: 0 auto;
 }
 
-.btn-secondary{
-    margin-top: 10px;
-    width: 100px;
-    position: relative;
-    left: 400px;
-    bottom: 100px;
-    
+.boton{
+    display: block;
+    margin: 20px auto;
+    width: 130px;
 }
 
 .btn-tramitar{
-    padding-top: 5px,0,5px,0;
-    width: 40%;
-    position: relative;
-    left: 5px;
+    border: 2px solid rgba(153, 205, 50);
+    padding: 15px;
+    width: 15%;
+    height: 220px;
+    background-color: rgba(255, 255, 255, 0.85);
 }
+
 .btn-tramitar h5{
-    display: inline;
-    color: green;
+    width: 100%;
+    text-align: center;
+    display: block;
+    color: black;
+    text-shadow: rgb(153, 205, 50) 2px 0px 0px;
 }
+
+.pedidoOK {
+display: block;
+position: absolute;
+font-family: 'Kalam', 'cursive';
+top: 100px;
+left:650px;
+width: 300px;  
+height: 300px;
+border: 2px solid  rgba(153, 205, 50); 
+box-shadow: 0 0 500px yellowgreen;
+border-radius: 15px;
+background-color: rgba(255, 255, 255, 0.945);
+}
+    
+.pedidoOK h3, p {
+text-align: center;
+font-family: 'Martel', 'cursive';
+color: black;
+text-shadow: rgb(153, 205, 50) 2px 0px 0px;
+ }
