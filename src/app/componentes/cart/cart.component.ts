@@ -23,6 +23,8 @@ export class CartComponent implements OnInit {
   arrCarrito: CARRITO[];
   arrPedido: PEDIDO[];
   precioTotal: number;
+  clienteToken: any;
+  producto: PRODUCTO;
 
 
   constructor(private cartService: CartService,
@@ -37,17 +39,23 @@ export class CartComponent implements OnInit {
 
   async ngOnInit() {
 
+    const token = localStorage.getItem('token');
+    this.clienteToken = await this.clientesService.getIdByToken(token)
+    console.log(this.clienteToken.clienteId);
+
     const newProdCart = JSON.parse(localStorage.getItem('producto'));
     const productos = await this.productosService.getAllProductos();
     /*   const arrProd = this.totalProd */
     for (let prod of newProdCart) {
-      const producto = await this.productosService.getProductoById(prod);
-      this.detalle.push.apply(this.detalle, producto);
+      this.producto = await this.productosService.getProductoById(prod);
+      this.detalle.push.apply(this.detalle, this.producto);
       console.log(this.detalle);
     }
     for (let prod of this.detalle) {
-      const carrito = new CARRITO(prod.id_prod, 1, 1, prod.imagen, prod.precio, 1);
+      const carrito = new CARRITO(prod.id_prod, this.clienteToken.clienteId, prod.imagen, prod.precio, 1);
       this.arrCarrito.push(carrito);
+      console.log(this.arrCarrito);
+
     }
 
     //precio total del carrito disponible

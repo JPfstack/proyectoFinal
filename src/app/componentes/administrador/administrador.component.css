@@ -67,11 +67,29 @@
 
 }
 
-#pestanas a:hover {
+/* #pestanas a:hover {
     color: white;
     font-weight: bold;
 }
 
 #pestanas a:active {
     color: white;
-}
+} */
+
+#pestanas a:focus {
+    color: black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    font-weight: bold;
+    background-color:rgb(247, 247, 111);
+
+} 
+
+#pestanas a:active {
+    color: black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    font-weight: bold;
+    background-color:rgb(247, 247, 111);
+
+} 

@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div class="img2"><img src="../../../assets/images/shopping-cart-filled-with-fruit-and-vegetables.jpg" alt="">
+    <div class="img2">
         <a href="../productos"><button type="link" class="btn btn-secondary btn-sm-3">
                 Seguir Comprando</button></a>
     </div>
@@ -10,9 +10,9 @@
         <div class="col-sm-4" *ngFor="let producto of arrCarrito">
             <img [src]=" producto?.imagen" alt="">
             <h5>Cantidad:{{producto?.cantidad}}
-                <input type="range" (input)="onChange($event, producto)" min="1" max="10" step="0.25"
-                    [value]="producto.cantidad">
+                <input type="number" (change)="onChange($event, producto)" min="0.25" max="20" step="0.25">
             </h5>
+            <h5>€/Kg: {{producto?.precio}}</h5>
             <h5 id="precio"> Precio: {{producto?.precio * producto?.cantidad}}</h5>
             <div id="btn-agregar-eliminar">
                 <button type="button" class="btn btn-outline-success"

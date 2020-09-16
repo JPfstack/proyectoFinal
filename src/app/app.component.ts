@@ -49,14 +49,15 @@ export class AppComponent {
   Exit() {
     localStorage.removeItem('token');
     setTimeout(() => {
-      this.router.navigate(['/ifruit']);
-
+      this.router.navigate(['/ifruit'])
     }, 2000);
 
     this.login = false;
     this.registro = true;
     this.salir = false;
     this.admin = false;
+
+
   }
 
 
