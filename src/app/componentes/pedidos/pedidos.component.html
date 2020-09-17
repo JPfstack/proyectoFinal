@@ -27,15 +27,15 @@
         </thead>
         <tbody>
             <tr *ngFor="let pedido of pedidos">
-                <td>{{pedido.id_pedido}}</td>
-                <td>{{pedido.id_cliente}}</td>
-                <td>{{pedido.cantidad}}</td>
-                <td>{{pedido.fecha_entrega}}</td>
-                <td>{{pedido.precio_total}}</td>
-                <td>{{pedido.direccion}}</td>
-                <td>{{pedido.descripcion}}</td>
-                <td>{{pedido.estado}} <br>
-                    <a class="btn btn-outline-secondary btn-sm" role="button" (click)="onPedido(pedido)">Cambiar
+                <td class={{pedido.estado}}>{{pedido.id_pedido}}</td>
+                <td class={{pedido.estado}}>{{pedido.id_cliente}}</td>
+                <td class={{pedido.estado}}>{{pedido.cantidad}}</td>
+                <td class={{pedido.estado}}>{{pedido.fecha_entrega}}</td>
+                <td class={{pedido.estado}}>{{pedido.precio_total}}</td>
+                <td class={{pedido.estado}}>{{pedido.direccion}}</td>
+                <td class={{pedido.estado}}>{{pedido.descripcion}}</td>
+                <td class={{pedido.estado}}>{{pedido.estado}} <br>
+                    <a class="btn btn-success btn-sm" role="button" (click)="onPedido(pedido)">Cambiar
                         estado</a>
                 </td>
 

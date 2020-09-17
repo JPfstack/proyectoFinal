@@ -17,6 +17,7 @@ export class ProductosComponent implements OnInit {
   clienteToken: any;
   todosProductos: PRODUCTO[];
   productoId: number;
+  disp: number;
 
   constructor(
     private productosService: ProductosService,
@@ -29,6 +30,12 @@ export class ProductosComponent implements OnInit {
 
     this.productos = await this.productosService.getAllProductos();
     console.log(this.productos);
+    let disp;
+    for (let prod of this.productos) {
+      disp = parseFloat(prod.disponibilidad);
+      console.log(disp);
+
+    }
 
     const token = localStorage.getItem('token');
     this.clienteToken = await this.clientesService.getIdByToken(token)
@@ -40,7 +47,7 @@ export class ProductosComponent implements OnInit {
 
 
   async onEst($event) {
-    if ($event.target.value === 'todas') {
+    if ($event.target.value === 'estaciones') {
       this.productos = await this.productosService.getAllProductos();
       console.log(this.todosProductos);
     } else {
@@ -50,6 +57,16 @@ export class ProductosComponent implements OnInit {
 
   }
 
+  async onOferta($event) {
+    if ($event.target.value === 'todas') {
+      this.productos = await this.productosService.getAllProductos();
+    }
+    else if ($event.target.value === 'ofertas') {
+      this.productos = (await this.productosService.getAllProductos()).filter(PRODUCTO => parseInt(PRODUCTO.disponibilidad) < 10);
+    } else if ($event.target.value === 'otoño-invierno') {
+      this.productos = (await this.productosService.getAllProductos()).filter(PRODUCTO => PRODUCTO.est == $event.target.value);
+    }
+  }
   /* onCarrito() {
     console.log(this.clienteToken.clienteId, this.productoId);
 

@@ -43,7 +43,7 @@ button {
 }
 
 .table{
-    background-color: rgb(136, 177, 136);
+    background-color: rgb(149, 172, 149);
     align-content: center;
     text-align: center;
 }
@@ -51,4 +51,8 @@ button {
 .row {
     text-decoration-style: none;
     color:black;
+}
+
+.pendiente{
+    background-color: rgb(246, 162, 147);
 }

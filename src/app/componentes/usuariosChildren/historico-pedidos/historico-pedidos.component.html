@@ -23,7 +23,7 @@
                     <td>{{pedido?.cantidad}}</td>
                     <td>{{pedido?.precio_total}}</td>
                     <th>{{pedido?.estado}}</th>
-                    <button class="btn btn-outline-success">Pedir de nuevo</button>
+                    <button (click)="pedirNuevoPed(pedido)" class="btn btn-outline-success">Pedir de nuevo</button>
                 </tr>
             </tbody>
 

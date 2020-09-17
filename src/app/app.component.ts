@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CLIENTE } from 'src/Models/clienteModel';
 import { ClientesService } from './clientes.service';
 import { RouterLink, Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-root',
@@ -9,6 +11,8 @@ import { RouterLink, Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  clientes$: Observable<CLIENTE>;
 
   salir: boolean;
   admin: boolean;
@@ -30,24 +34,34 @@ export class AppComponent {
   }
   async ngOnInit() {
 
-    const token = localStorage.getItem('token');
-    this.clienteToken = this.clientesService.getIdByToken(token)
-    console.log(this.clienteToken);
-    if (this.clienteToken) {
-      this.salir = true;
-      this.login = true;
-      this.registro = false;
-      this.detalleCliente = await this.clientesService.getDetalleCliente(this.clienteToken.clienteId);
-      console.log(this.detalleCliente);
-      if (this.detalleCliente.email === 'admin@gmail.com') {
-        this.login = false;
-        this.admin = true;
-      }
-    }
+    this.clientesService.getClientes$().subscribe(async clientes => {
+
+      const token = localStorage.getItem('token');
+      this.clienteToken = this.clientesService.getIdByToken(token);
+
+      if (this.clienteToken) {
+        this.salir = true;
+        this.login = true;
+        this.registro = false;
+        this.detalleCliente = await this.clientesService.getDetalleCliente(this.clienteToken.clienteId);
+        console.log(this.detalleCliente);
+
+        if (this.detalleCliente.email === 'admin@gmail.com') {
+          this.login = false;
+          this.admin = true;
+        }
+
+      };
+    })
+
+
+
   }
 
   Exit() {
     localStorage.removeItem('token');
+    localStorage.removeItem('producto');
+    localStorage.removeItem('id_cliente');
     setTimeout(() => {
       this.router.navigate(['/ifruit'])
     }, 2000);

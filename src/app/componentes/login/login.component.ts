@@ -61,14 +61,18 @@ export class LoginComponent implements OnInit {
     if (respuestaLogin['success'] && respuestaLogin['cliente'].email === 'admin@gmail.com') {
       this.logeado = true;
       localStorage.setItem('token', respuestaLogin['token']);
+      this.clientesService.clienteLogin(respuestaLogin['cliente']);
+
       return setTimeout(() => {
-        this.router.navigate(['/admin/pedidos']), this.clientesService.isLogged();
+        this.router.navigate(['/admin/pedidos'])
 
       }, 3000);
+
     }
 
 
     if (respuestaLogin['success']) {
+
       const urlCliente = respuestaLogin['cliente'].id_cliente;
       console.log(respuestaLogin['token']);
       this.logeado = true;
@@ -76,7 +80,10 @@ export class LoginComponent implements OnInit {
 
       //id del cliente disponible en el localstorage
       localStorage.setItem('id_cliente', respuestaLogin['cliente'].id_cliente);
-      setTimeout(() => { this.router.navigate(['/users/datospersonales/' + urlCliente]) }, 3000);
+
+      this.clientesService.clienteLogin(respuestaLogin['cliente']);
+
+      setTimeout(function () { this.router.navigate(['/users/datospersonales/' + urlCliente]) }.bind(this), 3000);
 
     } else {
       this.error = true;

@@ -17,7 +17,7 @@
                 <p id="precio">{{producto?.precio}}</p>
                 <p id="est">Temporada: {{producto?.est}}</p>
                 <div id="comprar">
-                    <a href="http://localhost:4200/carrito"><button class="btn btn-outline-success"
+                    <a [routerLink]="['/carrito']"><button class="btn btn-outline-success"
                             (click)="onComprar()">Comprar</button></a>
                     <button class="btn btn-outline-success" (click)="onFavorite()">Añadir a favoritos</button>
                 </div>

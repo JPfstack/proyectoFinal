@@ -16,6 +16,19 @@
 
 .logo {
     margin-left: 15px;
+    display: flex;
+   align-items: center;
+
+    padding: 5px;
+}
+
+.logo h2 {
+   font-family: "Kalam", "cursive" ;
+   font-size: 40px;
+        padding: 10px 0px 3px 0px;
+        color: rgb(206, 134, 2);
+        text-shadow:white 2px 0px 0px;
+        
 }
 
 .menu {

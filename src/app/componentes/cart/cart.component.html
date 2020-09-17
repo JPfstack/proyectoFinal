@@ -4,25 +4,59 @@
 
 
     <div class="titulo">
-        <h3>Este es su carrito de Frutas:</h3>
-        <h3 *ngIf="vacio">Su carrito está vacío, puede ver nuestros productos en nuestra página de <a
-                [routerLink]="['/productos']">Productos</a></h3>
+
+        <div class="vacio" *ngIf="vacio">
+            <h3 id="primerh3">¡Su carrito está vacío!</h3>
+            <h3>Puede ver nuestros productos en nuestra página de
+                <a [routerLink]="['/productos']">Productos</a></h3>
+
+            <h3>Hoy le recomendamos...</h3>
+            <div id="imagenes">
+
+                <div>
+                    <img [routerLink]="['/productos/2']" src="./../../../assets/images/fresas1.jpg" alt="">
+                </div>
+                <div>
+                    <img [routerLink]="['/productos/18']" src="./../../../assets/images/lima.jpg" alt="">
+                </div>
+                <div>
+                    <img [routerLink]="['/productos/7']" src="./../../../assets/images/melon1.jpeg" alt="">
+                </div>
+                <div>
+                    <img [routerLink]="['/productos/13']" src="./../../../assets/images/platanos.jpg" alt="">
+                </div>
+                <div>
+                    <img [routerLink]="['/productos/1']" src="./../../../assets/images/sandia1.jpg" alt="">
+                </div>
+                <div>
+                    <img [routerLink]="['/productos/23']" src="./../../../assets/images/aguacate.jpg" alt="">
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
     <div *ngIf="!vacio" class="row">
+        <h3 id="primerh3">Este es su carrito de Frutas:</h3>
 
         <div class="col-sm-4 prod" *ngFor="let producto of arrCarrito">
+
             <img [src]=" producto?.imagen" alt="">
             <h5>Cantidad:{{producto?.cantidad}}
-                <input type="number" (change)="onChange($event, producto)" min="0.25" max="50" step="0.25">
+                <input type="number" (input)="onChange($event, producto)" min="0.25" [max]="this.disponibilidad"
+                    step="0.25">
             </h5>
             <h5>€/Kg: {{producto?.precio}}</h5>
             <h5 id="precio"> Precio: {{producto?.precio * producto?.cantidad | number: '1.1-2'}}</h5>
             <div id="btn-agregar-eliminar botones">
-                <button type="button" class="btn btn-outline-success"
-                    (click)="onEliminar(producto.id_producto)">Eliminar</button>
+                <a [routerLink]="['/carrito']"> <button type="button" class="btn btn-outline-success"
+                        (click)="onEliminar(producto.id_producto)">Eliminar</button>
+                </a>
+
 
             </div>
+
         </div>
         <!-- <div class="col-sm-4">
             <a href=""> <img src="../../../assets/images/manzana1.jpeg" alt=""> </a>
@@ -52,7 +86,7 @@
 
 
     <div class="btn-tramitar">
-        <h5 class="total">Total a pagar: {{precioTotal | number: '1.1-2'}}€</h5>
+        <h5 class="total">Total a pagar: <span>{{precioTotal | number: '1.1-2'}}€</span></h5>
         <button type="submit" class="btn btn-primary btn-sm-4 btn-block" (click)="onEnviar()">Tramitar Pedido</button>
         <button [routerLink]="['/productos']" class="btn btn-outline-success boton">Seguir Comprando</button>
 
@@ -62,4 +96,6 @@
         <h3>Enhorabuena, ha realizado su pedido con éxito</h3>
         <p>redirigiendo...</p>
     </div>
+
+
 </div>

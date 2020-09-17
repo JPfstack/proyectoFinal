@@ -3,7 +3,7 @@ import { CLIENTE } from '../../../../Models/clienteModel';
 import { ActivatedRoute } from '@angular/router';
 import { ClientesService } from '../../../clientes.service';
 import { PEDIDO } from '../../../../Models/pedidoModel';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { CartService } from '../../../cart.service';
 
 @Component({
   selector: 'app-historico-pedidos',
@@ -20,7 +20,10 @@ export class HistoricoPedidosComponent implements OnInit {
 
 
 
-  constructor(private clientesService: ClientesService) {
+  constructor(
+    private clientesService: ClientesService,
+    private cartService: CartService
+  ) {
 
   }
 
@@ -37,6 +40,16 @@ export class HistoricoPedidosComponent implements OnInit {
 
   }
 
+
+  async pedirNuevoPed(pPedido) {
+    console.log(pPedido);
+    const nuevo = await this.cartService.newPedido(pPedido);
+    console.log(nuevo);
+
+
+
+
+  }
 }
 
 

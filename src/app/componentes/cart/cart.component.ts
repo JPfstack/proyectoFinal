@@ -32,6 +32,7 @@ export class CartComponent implements OnInit {
   prod: PRODUCTO;
   vacio: boolean;
   pedidoOK: boolean;
+  maxima: boolean;
 
 
   constructor(private cartService: CartService,
@@ -45,6 +46,7 @@ export class CartComponent implements OnInit {
     this.precioTotal = 0;
     this.vacio = false;
     this.pedidoOK = false;
+    this.maxima = false;
   }
 
   async ngOnInit() {
@@ -54,7 +56,8 @@ export class CartComponent implements OnInit {
     console.log(this.clienteToken.clienteId);
 
     const newProdCart = JSON.parse(localStorage.getItem('producto'));
-    if (newProdCart) {
+    if (newProdCart && newProdCart.length != 0) {
+
       this.vacio = false;
       const productos = await this.productosService.getAllProductos();
       /*   const arrProd = this.totalProd */
@@ -72,15 +75,19 @@ export class CartComponent implements OnInit {
 
       //precio total del carrito disponible
       this.precioTotal = this.calcularTotalPrecio();
+
     } else {
       this.vacio = true;
+
     }
 
   }
 
   onEliminar(pIdProd) {
-    const idProd = pIdProd.toString();
     const deleteProducto = JSON.parse(localStorage.getItem('producto'));
+
+    const idProd = pIdProd.toString();
+
     const prodDelete = deleteProducto.indexOf(idProd);
     console.log(deleteProducto, prodDelete);
 
@@ -89,7 +96,11 @@ export class CartComponent implements OnInit {
 
     localStorage.setItem('producto', JSON.stringify(deleteProducto));
 
+
+
   }
+
+
 
   async onChange($event, pProducto) {
     const precioTotal = pProducto.precio * pProducto.cantidad;
@@ -99,15 +110,13 @@ export class CartComponent implements OnInit {
     this.prod = await this.productosService.getProductoById(pProducto.id_producto);
     this.disponibilidad = parseInt(this.prod[0].disponibilidad);
 
-    if (pProducto.cantidad > this.disponibilidad) {
-      alert(`Únicamente contamos con ${this.disponibilidad}Kg de ${this.prod[0].nombre}, por favor reduzca la cantidad solicitada.`);
 
-    } else {
-      this.precioTotal = this.calcularTotalPrecio();
-      pProducto.cantidad = $event.target.value;
-      localStorage.setItem('carrito', JSON.stringify(this.arrCarrito));
-    }
+    this.precioTotal = this.calcularTotalPrecio();
+    pProducto.cantidad = $event.target.value;
+    localStorage.setItem('carrito', JSON.stringify(this.arrCarrito));
+
   };
+
 
   calcularTotalPrecio() {
     let total = 0;
