@@ -149,7 +149,7 @@ export class CartComponent implements OnInit {
 
     this.pedidoOK = true;
     setTimeout(() => {
-      this.router.navigate(['/ifruit'])
+      this.router.navigate(['/users/historico/' + id_cliente])
 
 
     }, 3000);
