@@ -8,6 +8,7 @@ import { ProductosService } from 'src/app/productos.service';
 import { PRODPEDIDO } from 'src/Models/productoPedidoModel';
 import { ClientesService } from 'src/app/clientes.service';
 import { Router } from '@angular/router';
+import { DatosPersonalesComponent } from '../usuariosChildren/datos-personales/datos-personales.component';
 
 
 @Component({
@@ -95,8 +96,6 @@ export class CartComponent implements OnInit {
     console.log(deleteProducto);
 
     localStorage.setItem('producto', JSON.stringify(deleteProducto));
-
-
 
   }
 

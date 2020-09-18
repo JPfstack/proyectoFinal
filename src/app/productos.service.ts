@@ -12,6 +12,7 @@ export class ProductosService {
   cartUrl: string;
   idFavUrl: string;
   updateUrl: string;
+  updPrecio: string;
 
 
   constructor(private httpClient: HttpClient) {
@@ -20,7 +21,7 @@ export class ProductosService {
     this.cartUrl = "http://localhost:3000/api/productos/anadir";
     this.idFavUrl = "http://localhost:3000/api/productos/favoritos/id"
     this.updateUrl = "http://localhost:3000/api/productos/edit"
-
+    this.updPrecio = "http://localhost:3000/api/productos/editprecio"
 
   };
 
@@ -63,5 +64,9 @@ export class ProductosService {
 
   updateDisp(pCarrito): Promise<any> {
     return this.httpClient.put<any>(this.updateUrl, pCarrito).toPromise();
+  }
+
+  updatePrecio(formvalues): Promise<any> {
+    return this.httpClient.put<any>(this.updPrecio, formvalues).toPromise();
   }
 }

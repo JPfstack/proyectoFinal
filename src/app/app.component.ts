@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CLIENTE } from 'src/Models/clienteModel';
 import { ClientesService } from './clientes.service';
 import { RouterLink, Router, ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { interval, Observable } from 'rxjs';
 
 
 @Component({
@@ -31,6 +31,7 @@ export class AppComponent {
     this.admin = false;
     this.salir = false;
 
+
   }
   async ngOnInit() {
 
@@ -40,6 +41,7 @@ export class AppComponent {
       this.clienteToken = this.clientesService.getIdByToken(token);
 
       if (this.clienteToken) {
+
         this.salir = true;
         this.login = true;
         this.registro = false;
@@ -65,6 +67,8 @@ export class AppComponent {
     setTimeout(() => {
       this.router.navigate(['/ifruit'])
     }, 2000);
+
+
 
     this.login = false;
     this.registro = true;
