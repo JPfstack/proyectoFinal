@@ -24,6 +24,10 @@
     border: 2px solid black;
     position: relative;
 }
+.boton{
+    position: absolute;
+    left: 68.5%;
+}
 
 table {
     margin: 50px auto;

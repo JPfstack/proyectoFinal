@@ -68,29 +68,49 @@ width: 90%;
     text-decoration: underline;
 }
 
-/* .underline{
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    color: green;
-    font-weight: bold;
-    margin-bottom: 20px;
-    bottom: 10px;
-    right: 170px;
+/*SECCION DE IMAGENES DE PRODUCTOS MAS VENDIDOS*/
 
+* { box-sizing: border-box; }
+
+.container-slides {
+    width: 100%;
 }
-.underline hr{
-    border-color: green;
-        position: absolute;
-        left: 450px;
-        width: 55%;
-} */
-.container-prod{
+
+.carousel-cell {
+  width: 20%;
+  height: 235px;
+  padding: 5px;
+  margin-right: 2px;
+  counter-increment: gallery-cell;
+}
+.carousel-cell img{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* cell number */
+ .carousel-cell:before {
+  display: flex;
+  text-align: center;
+  line-height: 100px;
+  font-size: 80px;
+  color: white;
+}
+ 
+/*FIN DE CAROUSEL*/
+
+.cont-prod{
+    width: 100%;
+    border: 1px solid black;
     padding: 5px;
     margin: 30px;
 }
-.container-prod h1{
+.cont-prod h1{
+    padding-top: 25px;
     text-align: center;
+    align-content: center;
 }
 .container-prod a{
     cursor: pointer;
@@ -99,7 +119,8 @@ width: 90%;
 }
 
 .container-prod img{
-    width: 80%;
+    width: 60%;
+    padding:5px;
     border: green 2px solid;
 
 }

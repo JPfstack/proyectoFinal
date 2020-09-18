@@ -115,7 +115,7 @@ export class CartComponent implements OnInit {
     const direccion = await this.clientesService.getDetalleCliente(id_cliente);
     console.log(direccion.direccion);
 
-    const newPedido = new PEDIDO(0, this.calcularTotalCantidad(), new Date().toDateString(), this.calcularTotalPrecio(), id_cliente, "", direccion.direccion, "pendiente");
+    /* const newPedido = new PEDIDO(0, this.calcularTotalCantidad(), new Date().toDateString(), this.calcularTotalPrecio(), id_cliente, direccion.direccion, "", "pendiente");
 
     const pedidoNuevo = await this.cartService.newPedido(newPedido);
     console.log(pedidoNuevo);
@@ -126,14 +126,7 @@ export class CartComponent implements OnInit {
       const newProdPedido = new PRODPEDIDO(item.id_producto, pedidoNuevo.insertId, item.cantidad)
       const prodPedidoNuevo = this.cartService.addProdPedido(newProdPedido);
       console.log(prodPedidoNuevo);
-    }
+    }*/
   }
 
 }
-
-[]
-
-
-
-
-

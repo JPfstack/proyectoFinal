@@ -44,6 +44,7 @@ export class CartService {
 
   newPedido(pPedido): Promise<any> {
     return this.httpClient.post<any>(this.newPeUrl, pPedido).toPromise();
+
   }
 
   addProdPedido(pProdPedido): Promise<any> {

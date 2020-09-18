@@ -14,7 +14,8 @@
                 <h3>{{producto?.nombre}}</h3>
                 <div>
                     <p id="precio">{{producto?.precio}}</p>
-                    <button class="btn btn-outline-success" id="comprar">Comprar</button>
+                    <button class="btn btn-outline-success" id="comprar" type="submit"
+                        (click)="comprar(producto)">Comprar</button>
                 </div>
             </div>
             <!--  <div class="prod">
