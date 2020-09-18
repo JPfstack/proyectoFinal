@@ -5,31 +5,22 @@
         </div>
 
         <div class="filtros">
-            <select name="" id="">
-                <option value="todas">Colores</option>
-                <option value="rojas">Rojas</option>
-                <option value="amarillas">Amarillas</option>
-                <option value="naranjas">Naranjas</option>
-                <option value="otros">Otros</option>
-            </select>
-            <select name="" id="" (change)="onEst($event)">
-                <option value="todas">Estaciones</option>
+            <select (change)="onEst($event)">
+                <option value="estaciones">Estaciones</option>
                 <option value="primavera-verano">Primavera - Verano</option>
                 <option value="otoño-invierno">Otoño - Invierno</option>
-                <option value="todo">Todo el año</option>
+                <option value="todo el año">Todo el año</option>
             </select>
-            <select name="" id="">
-                <option value="">Ofertas</option>
-                <option value="">De temporada</option>
-                <option value="">Ofertas especiales</option>
+            <select (change)="onOferta($event)">
+                <option value="todas">Ofertas</option>
+                <option value="otoño-invierno">De temporada</option>
+                <option value="ofertas">Últimas unidades</option>
             </select>
         </div>
         <div class="productos">
             <div class="prod" *ngFor="let producto of productos">
-                <img [src]="producto?.imagen" alt="">
-                <!-- <div class="star">
-                    <img [ngStyle]="fondo" (click)="onFavorite()" src="../../../assets/startrans.png" alt="">
-                </div> -->
+                <img [src]="producto?.imagen">
+
                 <h3>{{producto?.nombre}}</h3>
                 <div>
                     <p id="precio">{{producto.precio}}</p>

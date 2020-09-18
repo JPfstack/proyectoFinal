@@ -51,6 +51,8 @@ export class PedidosComponent implements OnInit {
       });
 
   }
+
+
   async onChange($event) {
     console.log($event.target.value);
 

@@ -1,61 +1,61 @@
 <!-- Inicio del header, Menu de Navegacion -->
 
-<body>
-    <header class="container-fluid bg-dark fixed-top">
-        <div class="container">
+<header class="container-fluid bg-dark fixed-top">
+    <div class="container">
 
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark barranavegacion">
-                <a class="navbar-brand logo" href="#">
-                    <img src="../assets/images/logo-frutasMuchas.png" alt="ifruit">
-                </a>
-
-
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto menu">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/ifruit">Inicio <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/productos">Productos</a>
-                        </li>
-                        <li class="nav-item" *ngIf="registro">
-                            <a class="nav-link" href="/login">Registrate</a>
-                        </li>
-                        <li class="nav-item" *ngIf="login">
-                            <a class="nav-link" [routerLink]="['users/datospersonales', clienteToken.clienteId]">Mi
-                                perfil</a>
-                        </li>
-
-                        <li class="nav-item" *ngIf="admin">
-                            <a class="nav-link" [routerLink]="['admin/pedidos']">Admin</a>
-                        </li>
-                        <li class="nav-item" *ngIf="login">
-                            <p>| Bienvenid@ {{detalleCliente?.nombre}}</p>
-                        </li>
-
-                        <i *ngIf="salir" class="fa fa-sign-out" aria-hidden="true" (click)="Exit()"></i>
-                        <li>
-                            <img src="../assets/images/supermercado.png" alt="" [routerLink]="['carrito']">
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-
-    </header>
-
-    <router-outlet></router-outlet>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark barranavegacion">
+            <a class="navbar-brand logo" href="#">
+                <img src="../assets/images/pineapple.png" alt="ifruit">
+                <h2>iFruit</h2>
+            </a>
 
 
-    <footer>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto menu">
+                    <li class="nav-item active">
+                        <a class="nav-link" [routerLink]="['/ifruit']">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/productos']">Productos</a>
+                    </li>
+                    <li class="nav-item" *ngIf="registro">
+                        <a class="nav-link" href="/login">Registrate</a>
+                    </li>
+                    <li class="nav-item" *ngIf="login">
+                        <a class="nav-link" [routerLink]="['/users/datospersonales', clienteToken.clienteId]">Mi
+                            perfil</a>
+                    </li>
 
-        <div class="container-footer">
-            <p>Copyright © 2020 - <a href="">Aviso Legal</a> - <a href="">cookies</a> </p>
-        </div>
-    </footer>
+                    <li class="nav-item" *ngIf="admin">
+                        <a class="nav-link" [routerLink]="['/admin/pedidos']">Admin</a>
+                    </li>
+                    <li class="nav-item" *ngIf="login">
+                        <p>| Bienvenid@ {{detalleCliente?.nombre}}</p>
+                    </li>
 
-</body>
+                    <i *ngIf="salir" class="fa fa-sign-out" aria-hidden="true" (click)="Exit()"></i>
+                    <li *ngIf="login">
+                        <img src="../assets/images/supermercado.png" alt="" [routerLink]="['carrito']">
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+</header>
+
+<router-outlet></router-outlet>
+<footer>
+
+
+
+
+
+    <div class="container-footer">
+        <p>Copyright © 2020 - <a href="">Aviso Legal</a> - <a href="">cookies</a> </p>
+    </div>
+</footer>

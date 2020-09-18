@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { CLIENTE } from '../Models/clienteModel';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import jwt_decode from 'jwt-decode';
+import { Observable } from 'rxjs';
+import { Subject } from 'rxjs';
+
 
 
 
@@ -11,6 +14,8 @@ import jwt_decode from 'jwt-decode';
   providedIn: 'root'
 })
 export class ClientesService {
+
+  private clientes$ = new Subject<CLIENTE>();
 
   pedidosUrl: string;
   tokenUrl: string;
@@ -47,6 +52,8 @@ export class ClientesService {
 
   getByEmail(formvalues): Promise<CLIENTE> {
     return this.httpClient.post<CLIENTE>(this.loginUrl, formvalues).toPromise();
+
+
   }
 
   getPedidosByIdCliente(pCliente): Promise<any> {
@@ -64,13 +71,13 @@ export class ClientesService {
     return this.httpClient.put<any>(this.detalleUrl, formvalues).toPromise();
   }
 
-  isLogged() {
-    if (localStorage.getItem('token')) {
-      return true;
-    } else {
-      return false;
-    }
-  };
+  clienteLogin(pCliente) {
+    this.clientes$.next(pCliente);
+  }
+
+  getClientes$(): Observable<CLIENTE> {
+    return this.clientes$.asObservable();
+  }
 
 
 }
