@@ -39,20 +39,7 @@ export class HistoricoPedidosComponent implements OnInit {
     console.log(this.listaPedidos);
 
   }
-  /* async pedirNuevoPed(pPedido) {
-    await this.cartService.newPedido(pPedido)
-  } */
 
-
-  async pedirNuevoPed(pPedido) {
-    console.log(pPedido);
-    const nuevo = await this.cartService.newPedido(pPedido);
-    console.log(nuevo);
-
-
-
-
-  }
 }
 
 

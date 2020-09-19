@@ -92,9 +92,6 @@ export class ProductosAdminComponent implements OnInit {
     this.newProd = false;
     this.editar = true;
 
-
-
-
     this.editarProducto = new FormGroup({
       nombre: new FormControl(pProducto.nombre),
       precio: new FormControl(pProducto.precio),

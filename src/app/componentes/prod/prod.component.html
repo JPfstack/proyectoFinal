@@ -14,11 +14,10 @@
                 </div>
 
                 <h2>{{producto?.nombre}}</h2>
-                <p id="precio">{{producto?.precio}}</p>
+                <p id="precio">{{producto?.precio}} €/Kg</p>
                 <p id="est">Temporada: {{producto?.est}}</p>
                 <div id="comprar">
-                    <a [routerLink]="['/carrito']"><button class="btn btn-outline-success"
-                            (click)="onComprar()">Comprar</button></a>
+                    <a><button class="btn btn-outline-success" (click)="onComprar()">Comprar</button></a>
                     <button class="btn btn-outline-success" (click)="onFavorite()">Añadir a favoritos</button>
                 </div>
             </section>

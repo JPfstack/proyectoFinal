@@ -8,8 +8,27 @@ font-family: 'Martel', 'cursive';
 }
 
 table{
-background-color: rgb(136, 177, 136);
-margin-top: 10px;
+    margin: 10px auto;
+    padding: 10px;
+    width: 100%;
+    height: 40vh;
+    background-color: rgb(149, 172, 149);
+    border: white;
+}
+
+th{
+    text-align: center;
+    width: 20%;
+    background-color: silver;
+    padding: 10px;
+    border: white;
+}
+
+td {
+    align-content: center;
+    text-align: center;
+
+
 }
 
 form{

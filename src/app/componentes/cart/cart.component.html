@@ -10,7 +10,7 @@
             <h3>Puede ver nuestros productos en nuestra página de
                 <a [routerLink]="['/productos']">Productos</a></h3>
 
-            <h3>Hoy le recomendamos...</h3>
+            <h3>O puede elegir algunos de nuestros recomendados de hoy...</h3>
             <div id="imagenes">
 
                 <div>
@@ -26,7 +26,7 @@
                     <img [routerLink]="['/productos/13']" src="./../../../assets/images/platanos.jpg" alt="">
                 </div>
                 <div>
-                    <img [routerLink]="['/productos/1']" src="./../../../assets/images/sandia1.jpg" alt="">
+                    <img [routerLink]="['/productos/33']" src="./../../../assets/images/coco.jpg" alt="">
                 </div>
                 <div>
                     <img [routerLink]="['/productos/23']" src="./../../../assets/images/aguacate.jpg" alt="">
@@ -43,12 +43,12 @@
         <div class="col-sm-4 prod" *ngFor="let producto of arrCarrito">
 
             <img [src]=" producto?.imagen" alt="">
-            <h5>Cantidad:{{producto?.cantidad}}
+            <h5>Cantidad: {{producto?.cantidad | number: '1.2'}} Kg
                 <input type="number" (input)="onChange($event, producto)" min="0.25" [max]="this.disponibilidad"
                     step="0.25">
             </h5>
             <h5>€/Kg: {{producto?.precio}}</h5>
-            <h5 id="precio"> Precio: {{producto?.precio * producto?.cantidad | number: '1.1-2'}}</h5>
+            <h5 id="precio"> Precio: {{producto?.precio * producto?.cantidad | number: '1.1-2'}} €</h5>
             <div id="btn-agregar-eliminar botones">
                 <a [routerLink]="['/carrito']"> <button type="button" class="btn btn-outline-success"
                         (click)="onEliminar(producto.id_producto)">Eliminar</button>

@@ -4,7 +4,7 @@ import { PRODUCTO } from '../../../Models/productoModel';
 import { ActivatedRoute } from '@angular/router';
 import { ClientesService } from 'src/app/clientes.service';
 import { CartService } from 'src/app/cart.service';
-
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -26,7 +26,8 @@ export class ProdComponent implements OnInit {
     private productosService: ProductosService,
     private activatedRoute: ActivatedRoute,
     private clientesService: ClientesService,
-    private cartService: CartService) {
+    private cartService: CartService,
+    private router: Router) {
 
     this.favorite = false;
 
@@ -51,21 +52,33 @@ export class ProdComponent implements OnInit {
   }
 
   async onFavorite() {
-    this.favorite = !this.favorite;
-    const producto = this.productoId;
-    const cliente = this.clienteToken.clienteId;
-    console.log(cliente, producto);
+    if (this.clienteToken) {
+      this.favorite = !this.favorite;
+      const producto = this.productoId;
+      const cliente = this.clienteToken.clienteId;
+      console.log(cliente, producto);
 
-    const respuesta = await this.productosService.insertFavorito(cliente, producto)
-    console.log(respuesta);
+      const respuesta = await this.productosService.insertFavorito(cliente, producto)
+      console.log(respuesta);
+    } else {
+      this.router.navigate(['/login']);
+    }
+
   }
 
   onComprar() {
+    if (this.clienteToken) {
+      console.log(this.clienteToken.clienteId, this.productoId);
 
-    console.log(this.clienteToken.clienteId, this.productoId);
+      const resultado = this.cartService.addCarrito(this.productoId);
+      console.log(resultado);
+      this.router.navigate(['/carrito']);
 
-    const resultado = this.cartService.addCarrito(this.productoId);
-    console.log(resultado);
+    } else {
+      this.router.navigate(['/login'])
+
+    }
+
 
     /*  const prod_cart = this.productoSelect.push(this.prodNewCart)
      console.log(prod_cart); */

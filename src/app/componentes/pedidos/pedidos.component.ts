@@ -20,15 +20,7 @@ export class PedidosComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.pedidosService.getAllPedidosAdmin()
-      .then(respuesta => {
-        console.log(respuesta);
-        this.pedidos = respuesta;
-      })
-      .catch(error => {
-        console.log(error);
 
-      });
 
     this.pedidosService.getAllPedidoRealizado()
       .then(respuesta => {
@@ -41,6 +33,15 @@ export class PedidosComponent implements OnInit {
       });
 
     this.pedidosService.getAllPedidos()
+      .then(respuesta => {
+        console.log(respuesta);
+        this.pedidos = respuesta;
+      })
+      .catch(error => {
+        console.log(error);
+
+      });
+    this.pedidosService.getAllPedidosAdmin()
       .then(respuesta => {
         console.log(respuesta);
         this.pedidos = respuesta;

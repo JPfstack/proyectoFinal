@@ -18,11 +18,14 @@ export class ProductosComponent implements OnInit {
   todosProductos: PRODUCTO[];
   productoId: number;
   disp: number;
+  texto: boolean;
 
   constructor(
     private productosService: ProductosService,
     private clientesService: ClientesService,
     private cartService: CartService) {
+
+    this.texto = false;
 
 
   }
@@ -60,11 +63,14 @@ export class ProductosComponent implements OnInit {
   async onOferta($event) {
     if ($event.target.value === 'todas') {
       this.productos = await this.productosService.getAllProductos();
+      this.texto = false;
     }
     else if ($event.target.value === 'ofertas') {
       this.productos = (await this.productosService.getAllProductos()).filter(PRODUCTO => parseInt(PRODUCTO.disponibilidad) < 10);
+      this.texto = false;
     } else if ($event.target.value === 'otoño-invierno') {
       this.productos = (await this.productosService.getAllProductos()).filter(PRODUCTO => PRODUCTO.est == $event.target.value);
+      this.texto = true;
     }
   }
   /* onCarrito() {

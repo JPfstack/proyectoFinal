@@ -113,4 +113,17 @@ button {
     font-size: 17px;
 }
 
+.texto {
+    width:80%;
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Martel', 'cursive';
+}
 
+.texto p {
+    width: 80%;
+    margin: 0 auto;
+}
+.texto h3 {
+margin-bottom: 15px;
+}
