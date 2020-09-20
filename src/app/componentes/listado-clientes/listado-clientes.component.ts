@@ -10,8 +10,11 @@ import { ClientesService } from 'src/app/clientes.service';
 export class ListadoClientesComponent implements OnInit {
 
   clientes: CLIENTE[];
+  listaPedidos: any;
+  pedidos: boolean;
 
   constructor(private clientesService: ClientesService) {
+    this.pedidos = true;
 
   }
 
@@ -24,6 +27,19 @@ export class ListadoClientesComponent implements OnInit {
       .catch(error => {
         console.log(error);
       });
+  }
+
+  async onDetalleCliente(pCliente) {
+    this.pedidos = false;
+    this.listaPedidos = await this.clientesService.getPedidosByIdCliente(pCliente.id_cliente);
+
+
+    console.log(this.listaPedidos);
+
+  };
+
+  onVolver() {
+    this.pedidos = true;
   }
 
 }

@@ -30,7 +30,7 @@
                 <td class={{pedido.estado}}>{{pedido.id_pedido}}</td>
                 <td class={{pedido.estado}}>{{pedido.id_cliente}}</td>
                 <td class={{pedido.estado}}>{{pedido.cantidad}}</td>
-                <td class={{pedido.estado}}>{{pedido.fecha_entrega}}</td>
+                <td class={{pedido.estado}}>{{pedido.fecha_entrega | date: 'd/M/y' }}</td>
                 <td class={{pedido.estado}}>{{pedido.precio_total}}</td>
                 <td class={{pedido.estado}}>{{pedido.direccion}}</td>
                 <td class={{pedido.estado}}>{{pedido.descripcion}}</td>

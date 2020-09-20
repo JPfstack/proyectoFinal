@@ -81,6 +81,7 @@ p {
     width: 73.5%;
     text-align: right;
     font-size:x-small;
+    border: 1px solid black;
 }
 
 .registrado {
@@ -155,7 +156,7 @@ p {
 .login img {
     width: 500px;
     position: absolute;
-left: -500px;
+    left: -500px;
     box-shadow: 0 0 500px yellowgreen;
 }
 

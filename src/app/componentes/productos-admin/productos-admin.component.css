@@ -4,7 +4,7 @@ font-family: 'Martel', 'cursive';
 
 .container div {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 table{
@@ -50,3 +50,4 @@ form div label {
 button {
     margin-left: 10px;
 }
+

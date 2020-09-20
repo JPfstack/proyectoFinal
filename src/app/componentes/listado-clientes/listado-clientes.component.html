@@ -1,6 +1,11 @@
 <div class="container">
-    <h2>Listado de clientes</h2>
-    <table class="table">
+    <div class="texto">
+        <h2>Listado de clientes</h2>
+        <button *ngIf="!pedidos" class="btn btn-outline-success" (click)="onVolver()">Volver</button>
+
+    </div>
+
+    <table class="table" *ngIf="pedidos">
         <thead class="thead-light">
             <tr>
                 <th scope="">ID cliente</th>
@@ -9,6 +14,7 @@
                 <th>Teléfono</th>
                 <th>Dirección</th>
                 <th>eMail</th>
+                <th>Pedidos</th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +25,7 @@
                 <td>{{cliente.telefono}}</td>
                 <td>{{cliente.direccion}}</td>
                 <td>{{cliente.email}}</td>
+                <td><button class="btn btn-success" (click)="onDetalleCliente(cliente)">Ver pedidos</button></td>
                 <!--  <div id="botones">
                     <button>Realizado</button>
                     <button>Eliminar</button>
@@ -26,82 +33,35 @@
             </tr>
         </tbody>
 
+    </table>
+    <table class="table" *ngIf="!pedidos">
+        <thead>
 
+            <!--     <th>Valoración</th> -->
+            <th>ID cliente</th>
+            <th>ID pedido</th>
+            <th>Fecha de pedido</th>
+            <th>Descripción</th>
+            <th>Dirección</th>
+            <th>Peso</th>
+            <th>Precio total</th>
+            <th>Estado</th>
+        </thead>
 
-        <!--  <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <div id="botones">
-                <button>Realizado</button>
-                <button>Eliminar</button>
-            </div>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <div id="botones">
-                <button>Realizado</button>
-                <button>Eliminar</button>
-            </div>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <div id="botones">
-                <button>Realizado</button>
-                <button>Eliminar</button>
-            </div>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <div id="botones">
-                <button>Realizado</button>
-                <button>Eliminar</button>
-            </div>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <div id="botones">
-                <button>Realizado</button>
-                <button>Eliminar</button>
-            </div>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <div id="botones">
-                <button>Realizado</button>
-                <button>Eliminar</button>
-            </div>
+        <tbody>
 
-        </tr>
- -->
+            <tr *ngFor="let detallePedido of listaPedidos">
+                <td>{{detallePedido?.id_cliente}}</td>
+                <td>{{detallePedido?.id_pedido}}</td>
+                <td>{{detallePedido?.fecha_entrega | date: 'd/M/y' }}</td>
+                <td>{{detallePedido?.descripcion}}</td>
+                <td>{{detallePedido?.direccion}}</td>
+                <td>{{detallePedido?.cantidad}}</td>
+                <td>{{detallePedido?.precio_total}}</td>
+                <td>{{detallePedido?.estado}}</td>
+            </tr>
+        </tbody>
+
 
     </table>
 

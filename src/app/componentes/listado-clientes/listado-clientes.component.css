@@ -34,3 +34,12 @@ button {
     padding: 2px;
     margin-left: 5px;
 }
+
+.texto {
+    display: flex;
+    justify-content: space-between;
+}
+
+.texto button {
+    width: 100px;
+}

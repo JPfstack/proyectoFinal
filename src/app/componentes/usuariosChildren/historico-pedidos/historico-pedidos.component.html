@@ -2,17 +2,18 @@
 
     <main>
         <div class="boton">
-            <a [routerLink]="['/productos']"><button class="btn btn-outline-success">Realizar nuevo pedido</button></a>
+            <a [routerLink]="['/productos']">
+                <button class="btn btn-outline-success">Realizar nuevo pedido</button>
+            </a>
         </div>
         <table>
             <thead>
 
-                <!--     <th>Valoración</th> -->
                 <th>ID pedido</th>
-                <th>Fecha de entrega</th>
+                <th>Fecha de pedido</th>
                 <th>Descripción del pedido</th>
                 <th>Dirección de entrega</th>
-                <th>Cantidad</th>
+                <th>Peso</th>
                 <th>Precio total</th>
                 <th>Estado</th>
             </thead>
@@ -20,7 +21,7 @@
             <tbody>
                 <tr *ngFor="let pedido of listaPedidos">
                     <td>{{pedido?.id_pedido}}</td>
-                    <td>{{pedido?.fecha_entrega}}</td>
+                    <td>{{pedido?.fecha_entrega |date: 'dd/MM/y' }}</td>
                     <td>{{pedido?.descripcion}}</td>
                     <td>{{pedido?.direccion}}</td>
                     <td>{{pedido?.cantidad}}</td>
