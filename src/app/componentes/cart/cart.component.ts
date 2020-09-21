@@ -96,7 +96,6 @@ export class CartComponent implements OnInit {
     console.log(deleteProducto);
 
     localStorage.setItem('producto', JSON.stringify(deleteProducto));
-
   }
 
   async onChange($event, pProducto) {

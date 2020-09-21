@@ -8,6 +8,13 @@
     margin: 0;
     padding: 0;
 }
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 .body{
     width: 100%;
     min-height: 100%;
@@ -15,15 +22,14 @@
 
 .barranavegacion {
     height: 60px;
-    width: 100vw;
-}
+  width: 100vw;
+ }
 
 .logo {
     margin-left: 40px;
     display: flex;
    align-items: center;
    width: 350px;
-
     padding: 5px;
 }
 
@@ -38,34 +44,46 @@
 
 .menu {
     display: flex;
-    width: 100%;
 
 }
 
 .menu li{
-    width: 100%;
+    width: 120px;
+    margin: 5px 30px 0 20px;
+ 
 }
 
 .menu li a {
     color:black;
     text-shadow: white 1px 0px 0px;
     font-size: 20px;
-    padding: 0px;
-    margin: 0px;
     background-color:white;
     text-align: center;
-    width: 100px;
     border-radius: 10px;
+    border: white 2px solid;
+    width: 100%;
 }
+
 .menu li a:hover{
     background-color: orange;
     border-radius: 10p;
     border: white 2px solid;
-    width: 100px;
+    width: 100%;
     text-align: center;
     transition: 0.5s;
     color: white;
 }
+
+#cart img{
+    width: 40px;
+}
+
+.menu a i {
+    color:black;
+    padding-top: 5px;
+    padding-right: 10px;
+}
+
 .bg-dark{
     background-color: rgb(197, 243, 33) !important;
 }
@@ -88,7 +106,6 @@ nav img{
 .container-footer{
     clear: both;
     position: relative;
-    margin-top: 100px;
     text-align: center;
     padding: 15px;
     background-color: rgb(197, 243, 33);

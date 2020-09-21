@@ -1,64 +1,75 @@
 <main>
-    <div class="container">
-        <div class="carteles">
-            <h2>Productos</h2>
+
+    <div class="carteles">
+        <h2>Productos</h2>
+    </div>
+
+    <div class="filtros">
+        <select (change)="onEst($event)">
+            <option value="estaciones">Estaciones</option>
+            <option value="primavera-verano">Primavera - Verano</option>
+            <option value="otoño-invierno">Otoño - Invierno</option>
+            <option value="tropical">Tropicales</option>
+            <option value="todo el año">Todo el año</option>
+
+
+        </select>
+        <select (change)="onOferta($event)">
+            <option value="todas">Ofertas</option>
+            <option value="otoño-invierno">De temporada</option>
+            <option value="ofertas">Ofertas especiales</option>
+        </select>
+    </div>
+
+    <div class="productos">
+
+
+
+        <div class="prod" *ngFor="let producto of productos">
+            <div *ngIf="ofertas" class="star">
+                <img src="../../../assets/images/oferta.gif" alt="">
+            </div>
+            <img [src]="producto?.imagen">
+
+            <h3>{{producto?.nombre}}</h3>
+            <div>
+                <p id="precio">{{producto.precio}} €/Kg</p>
+                <button class="btn btn-outline-success" [routerLink]="['/productos',producto.id_prod]">Comprar</button>
+
+            </div>
+        </div>
+        <div class="texto" *ngIf="texto">
+            <h3>Desde iFruit, recomendamos el consumo de frutas de temporada por los diversos beneficios que
+                obtendremos
+                tanto para nuestro bolsillo como para el medio ambiente.</h3>
+            <p>* Se contribuye a la sostenibilidad del sistema alimentario porque reduce el consumo energético y
+                genera
+                menos emisiones de dióxido de carbono, ya que no es necesario transportarla desde otras zonas de
+                cultivo
+                más alejadas.</p>
+            <p>* Ayuda a respetar el ciclo natural de producción siendo más ecológico y respetuoso con el medio
+                ambiente.
+            </p>
+            <p>* También tendrá un mejor sabor porque no sido cultivada en un invernadero, donde las frutas pierden
+                parte
+                de su sabor.</p>
+            <p>* Al comprar fruta de temporada procedente de tu área estás colaborando con el comercio local y por
+                lo
+                tanto generando riqueza en tu entorno más próximo.</p>
+            <p>* Todos estos motivos repercuten en que la fruta de temporada tenga un precio más atractivo, por lo
+                que
+                además de cuidar del medio ambiente también estarás cuidando de tu bolsillo</p>
         </div>
 
-        <div class="filtros">
-            <select (change)="onEst($event)">
-                <option value="estaciones">Estaciones</option>
-                <option value="primavera-verano">Primavera - Verano</option>
-                <option value="otoño-invierno">Otoño - Invierno</option>
-                <option value="tropical">Tropicales</option>
-                <option value="todo el año">Todo el año</option>
-
-
-            </select>
-            <select (change)="onOferta($event)">
-                <option value="todas">Ofertas</option>
-                <option value="otoño-invierno">De temporada</option>
-                <option value="ofertas">Ofertas especiales</option>
-            </select>
+        <div class="ofertas" *ngIf="ofertas">
+            <h3>Por la compra de más de 2Kg en esta selección de frutas le regalamos 1Kg adicional de la fruta que
+                desees.</h3>
+            <div class="star">
+                <img src="../../../assets/images/oferta.gif" alt="">
+            </div>
         </div>
 
-        <div class="productos">
-
-
-
-            <div class="prod" *ngFor="let producto of productos">
-                <img [src]="producto?.imagen">
-
-                <h3>{{producto?.nombre}}</h3>
-                <div>
-                    <p id="precio">{{producto.precio}} €/Kg</p>
-                    <button class="btn btn-outline-success"
-                        [routerLink]="['/productos',producto.id_prod]">Comprar</button>
-
-                </div>
-            </div>
-            <div class="texto" *ngIf="texto">
-                <h3>Desde iFruit, recomendamos el consumo de frutas de temporada por los diversos beneficios que
-                    obtendremos
-                    tanto para nuestro bolsillo como para el medio ambiente.</h3>
-                <p>* Se contribuye a la sostenibilidad del sistema alimentario porque reduce el consumo energético y
-                    genera
-                    menos emisiones de dióxido de carbono, ya que no es necesario transportarla desde otras zonas de
-                    cultivo
-                    más alejadas.</p>
-                <p>* Ayuda a respetar el ciclo natural de producción siendo más ecológico y respetuoso con el medio
-                    ambiente.
-                </p>
-                <p>* También tendrá un mejor sabor porque no sido cultivada en un invernadero, donde las frutas pierden
-                    parte
-                    de su sabor.</p>
-                <p>* Al comprar fruta de temporada procedente de tu área estás colaborando con el comercio local y por
-                    lo
-                    tanto generando riqueza en tu entorno más próximo.</p>
-                <p>* Todos estos motivos repercuten en que la fruta de temporada tenga un precio más atractivo, por lo
-                    que
-                    además de cuidar del medio ambiente también estarás cuidando de tu bolsillo</p>
-            </div>
-            <!--  <div class="prod">
+        <!--  <div class="prod">
                 <img src="../../../assets/images/sandia-5.jpg" alt="">
                 <div class="star">
                     <img [ngStyle]="fondo" (click)="onFavorite()" src="../../../assets/startrans.png" alt="">
@@ -143,7 +154,7 @@
                 </div>
             </div> -->
 
-        </div>
-
     </div>
+
+
 </main>

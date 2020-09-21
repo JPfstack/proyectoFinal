@@ -41,7 +41,7 @@ main {
     display: flex;
     justify-content: space-around;
     width: 100vw;
-    height: 60vh;
+    height: 70vh;
     background-color: rgba(255, 255, 255, 0.950);
     position: relative;
 }
@@ -78,10 +78,10 @@ label{
 }
 
 p {
-    width: 73.5%;
+    width: 100%;
     text-align: right;
     font-size:x-small;
-    border: 1px solid black;
+    padding: 0 0 0 240px;
 }
 
 .registrado {
@@ -131,7 +131,7 @@ p {
     top: 0px;
     right: 0px;
     width: 50%;
-    height: 51vh;
+    height: 70vh;
     transition: 0.5s;
 
    

@@ -24,6 +24,7 @@
     padding: 25px 0px;
     border: 2px solid black;
     position: relative;
+    height: 65vh;
 }
 
 .contenedor main section form {

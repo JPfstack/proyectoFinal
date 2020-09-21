@@ -17,8 +17,8 @@
         <tbody>
             <tr *ngFor="let producto of productos">
                 <td scope="row">{{producto.id_prod}}</td>
-                <td>{{producto.nombre}}s</td>
-                <td>{{producto.disponibilidad}}</td>
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.disponibilidad | number: '2.2'}}</td>
                 <td>{{producto.precio}}</td>
                 <td><button class="btn btn-success" (click)="onEditarProducto(producto)">Editar</button></td>
 

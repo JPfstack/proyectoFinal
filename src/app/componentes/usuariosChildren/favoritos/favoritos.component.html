@@ -13,7 +13,7 @@
                 <img [src]="producto.imagen" alt="">
                 <h3>{{producto?.nombre}}</h3>
                 <div>
-                    <p id="precio">{{producto?.precio}}</p>
+                    <p id="precio">{{producto?.precio}}€/Kg</p>
                     <button class="btn btn-outline-success" id="comprar" type="submit"
                         (click)="comprar(producto)">Comprar</button>
                 </div>

@@ -64,9 +64,6 @@ export class AppComponent {
     localStorage.removeItem('token');
     localStorage.removeItem('producto');
     localStorage.removeItem('id_cliente');
-    setTimeout(() => {
-      this.router.navigate(['/ifruit'])
-    }, 2000);
 
 
 

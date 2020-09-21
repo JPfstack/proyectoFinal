@@ -101,7 +101,7 @@ position: absolute;
 font-family: 'Kalam', 'cursive';
 top: 100px;
 left:650px;
-width: 300px;  
+width: 400px;  
 height: 300px;
 border: 2px solid  rgba(153, 205, 50); 
 box-shadow: 0 0 500px yellowgreen;
@@ -112,9 +112,17 @@ background-color: rgba(255, 255, 255, 0.95);
 .pedidoOK h3, p {
 text-align: center;
 font-family: 'Martel', 'cursive';
-padding-top: 50px;
+padding-top: 30px;
 color: black;
 text-shadow: rgb(153, 205, 50) 2px 0px 0px;
+ }
+
+ .pedidoOK span {
+    color:black;
+    padding: 3px;
+    background-color: yellowgreen;
+    border-radius: 5px;
+    font-weight: bold;
  }
 
  #imagenes {

@@ -8,6 +8,8 @@ main {
     background-image: url("../../../assets/images/productos.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    width: 100%;
+
 
 }
 
@@ -19,7 +21,7 @@ main {
  }
 
 .carteles {
-    width: 100vw;
+    width: 100%;
     height: 100px;
     margin-top: 50px;
     background-color: rgba(153, 205, 50, 0.753);
@@ -34,7 +36,7 @@ main {
 }
 
 .filtros {
-    width: 100vw;
+    width: 100%;
       display: flex;
       justify-content: space-around;
       background-color: rgba(153, 205, 50, 0.753);
@@ -62,8 +64,7 @@ select option{
     display: flex;
     flex-wrap: wrap;
     background-color: rgba(255, 255, 255, 0.950);
-    width: 100vw;
-    padding: 20px;
+    width: 100%;
 }
 
 .prod {
@@ -126,4 +127,24 @@ button {
 }
 .texto h3 {
 margin-bottom: 15px;
+font-size: 20px;;
 }
+
+.ofertas {
+    width:100%;
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Martel', 'cursive';
+}
+
+.ofertas h3 {
+margin-bottom: 15px;
+font-size: 20px;
+color: orangered;
+}
+
+.star img {
+    width: 50px;
+    position: absolute;
+  left: 75%;  
+  }

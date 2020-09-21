@@ -1,26 +1,25 @@
 <div class="contenedor">
 
-    <div class="container">
-        <div class="carteles">
-            <h2>Mi Perfil</h2>
-        </div>
+    <div class="carteles">
+        <h2>Mi Perfil</h2>
+    </div>
 
-        <div id="pestanas">
+    <div id="pestanas">
 
-            <a [routerLink]="['datospersonales', clienteToken.clienteId]">
-                <p>Mis datos personales</p>
-            </a>
+        <a [routerLink]="['datospersonales', clienteToken.clienteId]">
+            <p>Mis datos personales</p>
+        </a>
 
-            <a [routerLink]=" ['historico', clienteToken.clienteId]">
-                <p>Mi histórico de pedidos</p>
-            </a>
+        <a [routerLink]=" ['historico', clienteToken.clienteId]">
+            <p>Mi histórico de pedidos</p>
+        </a>
 
-            <a [routerLink]="['favoritos', clienteToken.clienteId]">
-                <p>Mis productos favoritos</p>
-            </a>
-        </div>
+        <a [routerLink]="['favoritos', clienteToken.clienteId]">
+            <p>Mis productos favoritos</p>
+        </a>
     </div>
 </div>
+
 
 
 <router-outlet></router-outlet>
