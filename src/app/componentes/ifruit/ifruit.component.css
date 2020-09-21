@@ -29,30 +29,36 @@ opacity: 93%;
 .info-row h1{
     padding-top: 30px;
     color: orange;
+    text-shadow: white 1px 0px 0px;
     font-family: 'Kalam', 'cursive';
     font-size: 85px;
 }
 
 .info-row #text{
     color: orange;
+    text-shadow: white 1px 0px 0px;
 }
 
 .container-info{
 padding: 40px;
 font-family: 'Martel', 'cursive';
 background-color: rgba(255, 255, 255, 0.95);
+opacity: 97%;
 }
 
 .container-info h1{
     font-family: 'Martel', 'cursive';
     color: greenyellow;
+    text-shadow: black 1px 0px 0px;
+    padding: 10px;
 }
 .container-info h2{
 color: greenyellow;
+
 }
 
-.container-info h3{
-    font-family: 'Kalam','cursive';
+.container-info h4{
+    font-family: 'kalam','cursive';
 }
 
 .container-info p{
@@ -60,12 +66,22 @@ color: greenyellow;
     font-size: 18px;
 }
 
+
 .container-info img{
 width: 90%;
+
+
 }
 
-#masvendidos {
-    text-decoration: underline;
+.verMas{
+    width: 150px;
+    color: white;
+}
+
+.verMas:hover{
+    background-color: white;
+    color: orangered;
+    border: white
 }
 
 /*SECCION DE IMAGENES DE PRODUCTOS MAS VENDIDOS*/
@@ -89,6 +105,10 @@ width: 90%;
     margin: 0 auto;
     border-radius: 10px;
 }
+.carousel-cell:hover{
+    background-color: rgb(236, 253, 211);
+    border: 3px solid rgb(236, 253, 211);
+}
 
 /* cell number */
  .carousel-cell:before {
@@ -103,7 +123,6 @@ width: 90%;
 
 .cont-prod{
     width: 100%;
-    border: 1px solid black;
     padding: 5px;
     margin: 30px;
 }
@@ -136,13 +155,24 @@ width: 90%;
 }
 
 .container-sobreNosotros img{
+    padding-top: 50px;
     width: 80%;
     height: 80vh;
     border-radius: 1px solid green;
     align-content: center;
 }
+.btnpedido{
+    color: white;
+    border-radius: 5px;
+}
 
-.container-sobreNosotros h1{
+.btnpedido:hover{
+    background-color: white;
+    color: green;
+
+}
+
+.container-sobreNosotros h2{
     font-family: 'Martel', 'cursive';
     color: greenyellow;
 }
