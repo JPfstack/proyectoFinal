@@ -19,8 +19,8 @@ export class CartService {
   prodPedUrl: string;
 
   constructor(private httpClient: HttpClient) {
-    this.newPeUrl = "http://localhost:3000/api/pedidos/nuevo";
-    this.prodPedUrl = "http://localhost:3000/api/pedidos/nuevoPedido";
+    this.newPeUrl = "https://ifruit.herokuapp.com/api/pedidos/nuevo";
+    this.prodPedUrl = "https://ifruit.herokuapp.com/api/pedidos/nuevoPedido";
 
     this.carrito = new Array();
 

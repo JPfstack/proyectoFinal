@@ -27,12 +27,12 @@ export class ClientesService {
   id_cliente: number;
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = "http://localhost:3000/api/admin";
-    this.detalleUrl = "http://localhost:3000/api/clientes"; //la url esta incorrecta, hay que cambiarla
-    this.newUrl = "http://localhost:3000/api/clientes";
-    this.loginUrl = "http://localhost:3000/api/clientes/login";
-    this.tokenUrl = "http://localhost:3000/api/clientes/token";
-    this.pedidosUrl = "http://localhost:3000/api/clientes/pedidos";
+    this.baseUrl = "https://ifruit.herokuapp.com/api/admin";
+    this.detalleUrl = "https://ifruit.herokuapp.com/clientes"; //la url esta incorrecta, hay que cambiarla
+    this.newUrl = "https://ifruit.herokuapp.com/api/clientes";
+    this.loginUrl = "https://ifruit.herokuapp.com/api/clientes/login";
+    this.tokenUrl = "https://ifruit.herokuapp.com/api/clientes/token";
+    this.pedidosUrl = "https://ifruit.herokuapp.com/api/clientes/pedidos";
 
 
 

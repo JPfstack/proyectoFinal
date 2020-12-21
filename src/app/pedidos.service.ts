@@ -13,9 +13,9 @@ export class PedidosService {
   pedidos: PEDIDO[];
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = "http://localhost:3000/api/pedidos";
-    this.urlPendientes = "http://localhost:3000/api/pedidos/pendientes";
-    this.urlRealizados = "http://localhost:3000/api/pedidos/realizados";
+    this.baseUrl = "https://ifruit.herokuapp.com/api/pedidos";
+    this.urlPendientes = "https://ifruit.herokuapp.com/api/pedidos/pendientes";
+    this.urlRealizados = "https://ifruit.herokuapp.com/api/pedidos/realizados";
   }
 
   //ESTA PETICION ME TRAE LOS PEDIDOS

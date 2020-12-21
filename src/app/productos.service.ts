@@ -16,12 +16,12 @@ export class ProductosService {
 
 
   constructor(private httpClient: HttpClient) {
-    this.baseUrl = "http://localhost:3000/api/productos";
-    this.favUrl = "http://localhost:3000/api/productos/favoritos";
-    this.cartUrl = "http://localhost:3000/api/productos/anadir";
-    this.idFavUrl = "http://localhost:3000/api/productos/favoritos/id"
-    this.updateUrl = "http://localhost:3000/api/productos/edit"
-    this.updPrecio = "http://localhost:3000/api/productos/editprecio"
+    this.baseUrl = "https://ifruit.herokuapp.com/api/productos";
+    this.favUrl = "https://ifruit.herokuapp.com/api/productos/favoritos";
+    this.cartUrl = "https://ifruit.herokuapp.com/api/productos/anadir";
+    this.idFavUrl = "https://ifruit.herokuapp.com/api/productos/favoritos/id"
+    this.updateUrl = "https://ifruit.herokuapp.com/api/productos/edit"
+    this.updPrecio = "https://ifruit.herokuapp.com/api/productos/editprecio"
 
   };
 
